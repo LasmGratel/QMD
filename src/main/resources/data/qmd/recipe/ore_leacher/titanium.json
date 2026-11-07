@@ -1,0 +1,109 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/titanium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/titanium"
+      }
+    },
+    {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:dusts/iron"
+          }
+        },
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:ingots/iron"
+          }
+        }
+      ]
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/manganese"
+      }
+    }
+  ],
+  "type": "qmd:ore_leacher",
+  "itemIngredients": [
+    {
+      "ingredient": {
+        "tag": "c:ores/titanium"
+      },
+      "count": 1
+    }
+  ],
+  "fluidIngredients": [
+    {
+      "ingredient": {
+        "tag": "c:nitric_acid"
+      },
+      "amount": 16
+    },
+    {
+      "ingredient": {
+        "tag": "c:hydrochloric_acid"
+      },
+      "amount": 16
+    },
+    {
+      "ingredient": {
+        "tag": "c:sulfuric_acid"
+      },
+      "amount": 16
+    }
+  ],
+  "itemProducts": [
+    {
+      "ingredient": {
+        "tag": "c:dusts/titanium"
+      },
+      "count": 3
+    },
+    {
+      "ingredient": {
+        "type": "neoforge:difference",
+        "base": [
+          {
+            "tag": "c:dusts/iron"
+          },
+          {
+            "tag": "c:ingots/iron"
+          }
+        ],
+        "subtracted": {
+          "item": "minecraft:barrier"
+        }
+      },
+      "count": 1,
+      "chancePercent": 25
+    },
+    {
+      "ingredient": {
+        "tag": "c:dusts/manganese"
+      },
+      "count": 1,
+      "chancePercent": 10
+    }
+  ],
+  "timeModifier": 1,
+  "powerModifier": 1,
+  "radiation": 0
+}

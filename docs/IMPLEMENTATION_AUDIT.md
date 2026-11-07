@@ -1,0 +1,66 @@
+# Implementation and parity audit
+
+Audited 2026-11-07 against the active `src/`, the preserved `legacy-src/`, and the local Nuclearcraft Neohaul source reference at `E:/Nuclearcraft-Neohaul`. Target: Minecraft 1.21.1, NeoForge 21.1.265, Neohaul 0.10.10 and Java 21.
+
+The initial audit was a static source/resource review with no production changes or new test run. Follow-up migration now corrects its three GUI interaction findings and implements both collectors and the salt/air processing slice. This document records current source status; exact commands and verification results are maintained in [DEVELOPMENT_HANDOFF.md](DEVELOPMENT_HANDOFF.md). Headless tests do not establish full legacy parity or rendered client behavior.
+
+## Findings inside the implemented ore-leacher slice
+
+Findings 1–3 below describe the original defects and their implemented corrections. Their client symptoms have not been reproduced in game; common action logic and packet behavior have headless regression coverage. Finding 4 remains open.
+
+1. **Corrected: side-configuration slot guards.** The original QMD screen subclass did not match Neohaul's [input](E:/Nuclearcraft-Neohaul/src/main/java/com/nred/nuclearcraft/menu/slot/ProcessorInputSlot.java), [output](E:/Nuclearcraft-Neohaul/src/main/java/com/nred/nuclearcraft/menu/slot/ProcessorResultSlot.java) or [upgrade](E:/Nuclearcraft-Neohaul/src/main/java/com/nred/nuclearcraft/menu/slot/ProcessorSpecificInputSlot.java) guards, leaving machine slots active over configuration widgets. [OreLeacherScreen.java](E:/QMD/src/main/java/lach_01298/qmd/machine/OreLeacherScreen.java) now uses Neohaul's recognized `SideConfigScreen` superclass while preserving both progress strips and custom dialogs.
+
+2. **Corrected: output modes lost on navigation.** Neohaul's inherited [item output dialog](E:/Nuclearcraft-Neohaul/src/main/java/com/nred/nuclearcraft/screen/processor/ItemSorptionsScreen.java) commits from `onClose()`, which its explicit parent navigation bypasses. [OreLeacherItemOutputScreen.java](E:/QMD/src/main/java/lach_01298/qmd/machine/client/OreLeacherItemOutputScreen.java) now commits each click immediately, as legacy did, and avoids a duplicate close packet that could void newly produced output. It cycles the dialog's current selection so an older server acknowledgement cannot rewind the next action.
+
+3. **Corrected: fluid controls used world faces with relative labels.** Neohaul's [fluid dialog](E:/Nuclearcraft-Neohaul/src/main/java/com/nred/nuclearcraft/screen/processor/FluidSorptionsScreen.java) uses raw world directions where the buttons say left/right/front/back. [OreLeacherFluidInputScreen.java](E:/QMD/src/main/java/lach_01298/qmd/machine/client/OreLeacherFluidInputScreen.java) now derives action/tooltip directions from the machine facing. Icon rendering retains Neohaul's fixed presentation direction order, matching its item dialog.
+
+4. **Recipe-browser integration is absent.** [OreLeacherMachineInfo.java:30](E:/QMD/src/main/java/lach_01298/qmd/machine/OreLeacherMachineInfo.java:30) sets a viewer texture, but no active JEI/EMI plugin registers a category, recipe list, catalyst/workstation, click area or transfer support. Texture metadata alone does not perform registration. [Legacy JEI integration](E:/QMD/legacy-src/main/java/lach_01298/qmd/jei/QMDJEI.java:128) registered these interactions explicitly. The porting requirements are detailed in [ORE_LEACHER_MIGRATION.md](E:/QMD/docs/ORE_LEACHER_MIGRATION.md).
+
+`OreLeacherGuiActionsGameTests` covers all horizontal mappings, all output-mode click combinations, the actual Neohaul output packet codec/handler and delayed acknowledgements between clicks. Rendered navigation, slot guards and icon appearance remain client verification work. The inherited platform-dependent Escape scan-code limitation is recorded in [ORE_LEACHER_MIGRATION.md](ORE_LEACHER_MIGRATION.md).
+
+The ore-leacher processor, recipe codec, menu transfer logic and fluid registrations contain no identified placeholder bodies. Neohaul supplies substantial inherited implementation; an empty handler subclass is not a processing stub.
+
+## Progression and runtime integration blockers
+
+| Gap | Evidence and impact |
+|---|---|
+| Initial salt and acid bootstrap — implemented | Liquid collection in ocean/beach biomes now produces salt water. Crystallization produces QMD salt; distillation provides concentrated sodium chloride solution and water. A server GameTest runs collected salt water through actual crystallizers/enricher/electrolyzer/chemical-reactor processing to hydrochloric acid. This resolves the initial salt dependency; complete survival material/chemistry progression remains open. See [COLLECTORS_MIGRATION.md](COLLECTORS_MIGRATION.md). |
+| Material production routes | [QMDItems.java:40](E:/QMD/src/main/java/lach_01298/qmd/item/QMDItems.java:40) registers alloys, parts, semiconductors and chemical dusts, but most acquisition routes remain absent. Examples are the [legacy superconducting-wire and processor recipes](E:/QMD/legacy-src/main/java/lach_01298/qmd/recipes/QMDRecipes.java:488) and [silicon-boule production](E:/QMD/legacy-src/main/java/lach_01298/qmd/recipes/QMDRecipes.java:413). Registration and creative availability do not restore survival production. |
+| Particle capabilities and gameplay consumers | The base particle domain/storage works, but no production class constructs `ParticleStorage` or calls its `setTileEntity()` method. [Current capability registration](E:/QMD/src/main/java/lach_01298/qmd/registration/QMDMachines.java:47) exposes ore-leacher item/fluid/energy capabilities; Neohaul supplies its radiation capability. There is no QMD particle capability, source/cell data component, specialized source/accelerator/beamline storage, operating beamline, or particle payload synchronization. See the [legacy capability](E:/QMD/legacy-src/main/java/lach_01298/qmd/capabilities/CapabilityParticleStackHandler.java:14) and [beamline storage](E:/QMD/legacy-src/main/java/lach_01298/qmd/particle/ParticleStorageBeamline.java:7). |
+| Actual beam attenuation | The migrated setting is used by particle-stack matching, but the [legacy beamline focus-loss behavior](E:/QMD/legacy-src/main/java/lach_01298/qmd/particle/ParticleStorageBeamline.java:27) has no active runtime equivalent. A setting and value model alone do not create a beam-transfer system. |
+
+## Remaining systems
+
+| System | Active status / missing equivalent | Legacy reference |
+|---|---|---|
+| Standalone machines and utilities | Ore leacher, liquid collector and atmosphere collector are registered. Irradiator/fuel processing, creative particle source, lamps and other utility blocks remain absent. | [QMDBlocks.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/block/QMDBlocks.java) |
+| Accelerators | Linear/ring machines, diverter/splitter, decelerator, mass spectrometer, RF cavities, magnets, coolers, ion sources, ports and multiblock validation/physics are absent. | [AcceleratorLogic.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/accelerator/AcceleratorLogic.java) |
+| Particle chambers | Target/decay/collision chambers, beam dump, detectors and their ports/processing/GUI are absent. | [ParticleChamberLogic.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/particleChamber/ParticleChamberLogic.java) |
+| Vacuum chambers | Containment, nucleosynthesis, coils, lasers, plasma, heaters and their GUI are absent. | [VacuumChamberLogic.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/vacuumChamber/VacuumChamberLogic.java) |
+| Liquefier | Multiblock logic, coolant handling, compressor/nozzle behavior and GUI are absent. | [LiquefierLogic.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/liquefier/LiquefierLogic.java) |
+| Other QMD recipe families | Ore-leacher and both collector types/serializers are registered, including dimension IDs, biome IDs/tags and validated block-state properties. Remaining particle-processing/coolant families and most QMD additions to Neohaul processors remain absent. Salt/air chemistry and conditional air/nitrogen/helium cooling are implemented. | [QMDRecipes.java:162](E:/QMD/legacy-src/main/java/lach_01298/qmd/recipes/QMDRecipes.java:162) |
+| Nuclearcraft extensions | Reflectors/shields, strontium RTG, turbine components, copernicium fuels, radiation mappings and mercury-cycle extensions are absent. | [QMDBlocks.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/block/QMDBlocks.java), [QMDRadSources.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/QMDRadSources.java) |
+| Equipment and entities | Sources/cells, tools/drills, HEV armor behavior, weapons/projectiles, meter, medicine, food and paint are absent. There is no active entity registry. | [QMDItems.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/item/QMDItems.java), [QMDEntities.java:13](E:/QMD/legacy-src/main/java/lach_01298/qmd/entity/QMDEntities.java:13) |
+| Remaining GUI/rendering/networking | Only one machine screen is registered. Other machine/multiblock screens, particle displays, beam/projectile rendering and their specialized payloads remain absent. Existing ore-leacher synchronization uses Neohaul. | [GUIHandler.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/gui/GUIHandler.java), [QMDPackets.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/network/QMDPackets.java) |
+| KubeJS parity | Catalog lookup/stack construction and standard ore-leacher/collector custom recipes are implemented. Supported startup particle/component/antiparticle/source registration, particle ingredients, remaining recipe families and convenience builders are absent. Java particle registration exists; it is not a supported KubeJS registration lifecycle. CraftTweaker/Groovy APIs must be replaced with KubeJS. | [QMDKubeJSPlugin.java:9](E:/QMD/src/main/java/lach_01298/qmd/compat/kubejs/QMDKubeJSPlugin.java:9), [KUBEJS.md](E:/QMD/docs/KUBEJS.md) |
+| Configuration and material policy | Active config has six settings: attenuation, leacher time/power, both collector power costs and reloadable legacy cooling policy. Remaining accelerator/chamber/liquefier/equipment/reactor/rendering settings and configurable shared-material input/preferred-output recipe policy are absent. | [Config.java](E:/QMD/src/main/java/lach_01298/qmd/Config.java), [legacy config](E:/QMD/legacy-src/main/java/lach_01298/qmd/config/QMDConfig.java) |
+| Particle localization | [Particle.java:97](E:/QMD/src/main/java/lach_01298/qmd/particle/Particle.java:97) returns `qmd.particle.<name>.name`, but active English/Russian/Chinese JSONs have no particle translation keys. Names/descriptions remain in [legacy language data](E:/QMD/legacy-src/main/resources/assets/qmd/lang/en_us.lang:778). Current ore-leacher UI does not use these keys; particle presentation will need them. |
+| Manual and audio | The player guide, custom sound registry and sound resources are absent from active content. | [Guide book](E:/QMD/legacy-src/main/resources/assets/qmd/patchouli_books/guide/book.json), [QMDSounds.java](E:/QMD/legacy-src/main/java/lach_01298/qmd/sound/QMDSounds.java) |
+
+## Inventory and placeholder scan
+
+- Active Java: 31 files. Legacy QMD Java: 499 files, plus 39 `nclegacy` support files. File counts are not a feature-completion percentage.
+- Current runtime QMD recipes: 58 JSON files: 17 conditional ore-leacher recipes, 18 smelting recipes, six initial chemistry recipes, four world-collector recipes, four salt/air chemistry recipes, six conditional cooling recipes and three machine crafting recipes. Only one branch of each cooling pair loads. Conditional recipes being disabled for missing optional ore/output tags is intentional.
+- Three machine block entities and one menu/main screen are registered, alongside eleven fluid families. Collectors retain their legacy bucket/status interaction and had no GUI to restore. The legacy registry has 76 block fields with metadata families and 59 explicit fluid registrations. Neither legacy count represents that many independent machines.
+- The 22 legacy GUI-named Java files include routing and base classes. Most concrete machine/multiblock screens have no port.
+- The four legacy entity registrations have no active equivalents.
+- No production `TODO`, `FIXME`, `XXX`, `HACK`, `stub`, `placeholder`, `not implemented`, or `UnsupportedOperationException` marker was found. Reviewed `null`, `false`, zero and empty-collection returns in active code represent validation/empty-state behavior, rather than unfinished methods. Absence of markers does not establish parity.
+
+## Recommended order
+
+1. Complete particle capabilities, specialized storage, item components, sources/cells and beamline transfer before particle-processing machines.
+2. Restore the missing material production routes alongside their consumers; the salt bootstrap and collector slice are now implemented.
+3. Register ore-leacher/collector recipe-viewer integration and continue one complete machine/multiblock slice at a time, including GUI, recipes, scripting and GameTests.
+4. Keep rendered GUI and screen-path verification explicitly separate from headless regression coverage of the corrected configuration interactions.
+
+This audit records missing work; it does not downgrade any legacy feature or treat inherited behavior as automatically complete.

@@ -1,234 +1,97 @@
 package lach_01298.qmd.particle;
 
-import lach_01298.qmd.config.QMDConfig;
-import nc.util.NCMath;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.common.util.Constants;
+import lach_01298.qmd.Config;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 
-public class ParticleStack
-{
+/** A mutable beam: particle count, mean kinetic energy in keV and inverse-area focus. */
+public class ParticleStack {
+    private Particle particle;
+    private int amount;
+    private long meanEnergy;
+    private double focus;
 
-	private Particle particle;
-	private int amount;
-	private long meanEnergy;
-	private double focus;			//Basically inverse area of the beam
-	
-	public ParticleStack()
-	{
-		this.particle =null;
-		this.amount = 0;
-		this.meanEnergy = 0;
-		this.focus= 0;
-		
-	}
-	
-	
-	public ParticleStack(Particle particle, int amount, long meanEnergy, double focus)
-	{
-		this.particle =particle;
-		this.amount = (int) NCMath.clamp(amount,0, Integer.MAX_VALUE);
-		this.meanEnergy = NCMath.clamp(meanEnergy,0, Long.MAX_VALUE);
-		this.focus= focus;
-		
-	}
-	
-	public ParticleStack(Particle particle, int amount, long meanEnergy)
-	{
-		this.particle =particle;
-		this.meanEnergy = NCMath.clamp(meanEnergy,0, Long.MAX_VALUE);
-		this.amount = (int) NCMath.clamp(amount,0, Integer.MAX_VALUE);
-		this.focus= 0;
-		
-	}
-	
-	public ParticleStack(Particle particle, int amount)
-	{
-		this.particle =particle;
-		this.amount = (int) NCMath.clamp(amount,0, Integer.MAX_VALUE);
-		this.meanEnergy = 0;
-		this.focus= 0;
-		
-	}
-	public ParticleStack(Particle particle)
-	{
-		this.particle =particle;
-		this.amount = 1;
-		this.meanEnergy = 0;
-		this.focus= 0;
-		
-	}
+    public ParticleStack() { this(null, 0, 0, 0); }
+    public ParticleStack(Particle particle) { this(particle, 1, 0, 0); }
+    public ParticleStack(Particle particle, int amount) { this(particle, amount, 0, 0); }
+    public ParticleStack(Particle particle, int amount, long meanEnergy) { this(particle, amount, meanEnergy, 0); }
 
-	
-	public Particle getParticle()
-	{
-		return particle;
-	}
-	
+    public ParticleStack(Particle particle, int amount, long meanEnergy, double focus) {
+        this.particle = particle;
+        setAmount(amount);
+        setMeanEnergy(meanEnergy);
+        setFocus(focus);
+    }
 
-	public long getMeanEnergy()
-	{
-		return meanEnergy;
-	}
-	
+    public Particle getParticle() { return particle; }
+    public int getAmount() { return amount; }
+    public long getMeanEnergy() { return meanEnergy; }
+    public double getFocus() { return focus; }
+    public boolean isEmpty() { return particle == null || amount <= 0; }
 
-	public int getAmount()
-	{
-		return amount;
-	}
-	
-	public double getFocus()
-	{
-		return focus;
-	}
-	
-	
-	public void setParticle(Particle newParticle)
-	{
-		this.particle =newParticle;
-	}
-	
-	public void setMeanEnergy(long newMeanEnergy)
-	{
-		this.meanEnergy = newMeanEnergy;
-	}
-	
-	public void addMeanEnergy(long add)
-	{
-		this.meanEnergy += add;
-	}
-	
-	
-	public void setAmount(int newAmount)
-	{
-		this.amount = newAmount;
-	}
-	
-	
-	public void addAmount(long add)
-	{
-		this.amount += add;
-	}
-	
-	public void removeAmount(long remove)
-	{
-		this.amount -= remove;
-		if(amount < 0)
-		{
-			amount = 0;
-			particle = null;		
-		}
-	}
-	
-	public void setFocus(double newFocus)
-	{
-		this.focus = newFocus;
-	}
-	
-	
-	public void addFocus(double add)
-	{
-		this.focus += add;
-	}
+    public void setParticle(Particle particle) {
+        this.particle = particle;
+        if (particle == null) amount = 0;
+    }
 
+    public void setAmount(int amount) { this.amount = particle == null ? 0 : Math.max(0, amount); }
+    public void setMeanEnergy(long meanEnergy) { this.meanEnergy = Math.max(0, meanEnergy); }
+    public void setFocus(double focus) { this.focus = Double.isFinite(focus) ? Math.max(0, focus) : 0; }
 
-	
+    public void addMeanEnergy(long add) {
+        if (add > 0) meanEnergy += Math.min(add, Long.MAX_VALUE - meanEnergy);
+        else if (add < 0) meanEnergy = add < -meanEnergy ? 0 : meanEnergy + add;
+    }
 
-	public NBTTagCompound writeToNBT(NBTTagCompound nbt)
-	{
-		if(particle != null)
-		{
-			nbt.setString("particle", particle.getName());
-		}
-		
-		nbt.setInteger("amount", amount);
-		nbt.setLong("meanEnergy", meanEnergy);
-		nbt.setDouble("focus", focus);
+    public void addAmount(long add) {
+        if (particle == null) return;
+        if (add > 0) amount += (int) Math.min(add, Integer.MAX_VALUE - (long) amount);
+        else if (add < 0) amount = add < -(long) amount ? 0 : (int) (amount + add);
+    }
 
-		
-		return nbt;
-	}
+    public void removeAmount(long remove) {
+        if (remove <= 0) return;
+        amount = remove >= amount ? 0 : (int) (amount - remove);
+    }
 
-	public void readFromNBT(NBTTagCompound nbt)
-	{
+    public void addFocus(double add) { setFocus(focus + add); }
 
-		if(nbt.hasKey("particle"))
-		{
-			this.particle = Particles.getParticleFromName(nbt.getString("particle"));
-		}
-		else
-		{
-			this.particle = null;
-		}
-		
-		this.amount = nbt.getInteger("amount");
-		this.meanEnergy = nbt.getLong("meanEnergy");
-		this.focus = nbt.getDouble("focus");
-		
-	}
+    public CompoundTag writeToNBT(CompoundTag nbt) {
+        if (particle != null) nbt.putString("particle", particle.getName());
+        else nbt.remove("particle");
+        nbt.putInt("amount", amount);
+        nbt.putLong("meanEnergy", meanEnergy);
+        nbt.putDouble("focus", focus);
+        return nbt;
+    }
 
-	
-	public ParticleStack copy()
-	{
-		return new ParticleStack(particle,amount,meanEnergy,focus);
-	}
+    public void readFromNBT(CompoundTag nbt) {
+        particle = nbt.contains("particle", Tag.TAG_STRING) ? Particles.getParticleFromName(nbt.getString("particle")) : null;
+        setAmount(nbt.getInt("amount"));
+        setMeanEnergy(nbt.getLong("meanEnergy"));
+        setFocus(nbt.getDouble("focus"));
+    }
 
-	
-	public static ParticleStack loadParticleStackFromNBT(NBTTagCompound nbt)
-	{
-		if (nbt == null)
-		{
-			return null;
-		}
-		if (!nbt.hasKey("particle", Constants.NBT.TAG_STRING))
-		{
-			return null;
-		}
+    public ParticleStack copy() { return new ParticleStack(particle, amount, meanEnergy, focus); }
 
-		String particleName = nbt.getString("particle");
-		int amount = nbt.getInteger("amount");
-		long energy = nbt.getLong("meanEnergy");
-		double focus = nbt.getDouble("focus");
+    public static ParticleStack loadParticleStackFromNBT(CompoundTag nbt) {
+        if (nbt == null || !nbt.contains("particle", Tag.TAG_STRING)) return null;
+        ParticleStack stack = new ParticleStack();
+        stack.readFromNBT(nbt);
+        return stack.isEmpty() ? null : stack;
+    }
 
-		ParticleStack beam = new ParticleStack(Particles.getParticleFromName(particleName), amount, energy,focus);
+    public static ParticleStack getParticleStack(String particleName, int amount, long meanEnergy, double focus) {
+        return new ParticleStack(Particles.getParticleFromName(particleName), amount, meanEnergy, focus);
+    }
 
-		return beam;
-	}
-	
-	
-	public static ParticleStack getParticleStack(String particleName, int amount, long meanEnergy, double focus)
-	{
-		return new ParticleStack(Particles.getParticleFromName(particleName),amount, meanEnergy, focus);
-	}
+    public boolean matchesType(ParticleStack stack) {
+        return particle != null && stack != null && stack.particle == particle;
+    }
 
-	public boolean matchesType(ParticleStack particleStack)
-	{
-		if(particleStack != null)
-		{
-			if(particleStack.getParticle() == particle)
-			{
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean isInRange(ParticleStack particleStack, long maxEnergy)
-	{
-		if(particleStack != null)
-		{
-			if(particleStack.getParticle() == particle)
-			{
-				if(particleStack.getFocus() >= focus-QMDConfig.beamAttenuationRate/10d)
-				{
-					if(particleStack.getMeanEnergy() >= meanEnergy && particleStack.getMeanEnergy() <= maxEnergy)
-					{
-						return true;
-					}
-				}
-				
-			}
-		}
-		return false;
-	}
-	
+    public boolean isInRange(ParticleStack stack, long maxEnergy) {
+        return matchesType(stack)
+                && stack.focus >= focus - Config.BEAM_ATTENUATION_RATE.get() / 10D
+                && stack.meanEnergy >= meanEnergy && stack.meanEnergy <= maxEnergy;
+    }
 }

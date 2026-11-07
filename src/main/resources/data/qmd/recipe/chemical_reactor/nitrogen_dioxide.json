@@ -1,0 +1,28 @@
+{
+  "type": "nuclearcraftneohaul:chemical_reactor_recipe",
+  "fluidIngredients": [
+    {
+      "ingredient": {
+        "fluid": "qmd:nitric_oxide"
+      },
+      "amount": 2000
+    },
+    {
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      },
+      "amount": 1000
+    }
+  ],
+  "fluidProducts": [
+    {
+      "ingredient": {
+        "fluid": "qmd:nitrogen_dioxide"
+      },
+      "amount": 2000
+    }
+  ],
+  "timeModifier": 1,
+  "powerModifier": 1,
+  "radiation": 0
+}

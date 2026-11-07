@@ -1,0 +1,45 @@
+{
+  "type": "nuclearcraftneohaul:multiblock_distiller_recipe",
+  "timeModifier": 1,
+  "fluidIngredients": [
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "qmd:liquid_air"
+      }
+    }
+  ],
+  "powerModifier": 1,
+  "fluidProducts": [
+    {
+      "amount": 38400,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:nitrogen"
+      }
+    },
+    {
+      "amount": 12800,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 6400,
+      "ingredient": {
+        "fluid": "qmd:argon"
+      }
+    },
+    {
+      "amount": 5120,
+      "ingredient": {
+        "fluid": "qmd:neon"
+      }
+    },
+    {
+      "amount": 1280,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:helium"
+      }
+    }
+  ]
+}

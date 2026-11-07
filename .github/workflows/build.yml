@@ -1,0 +1,52 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      # This is needed to be able to run ./gradlew below
+      # You can run `git update-index --chmod +x gradlew` then remove this step.
+      - name: Make Gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run NeoForge GameTests
+        shell: bash
+        run: |
+          mkdir -p build/reports/migration
+          ./gradlew runGameTestServer 2>&1 | tee build/reports/migration/gametest-base.log
+
+      - name: Run GameTests with KubeJS
+        shell: bash
+        run: |
+          mkdir -p build/reports/migration
+          ./gradlew runGameTestServer -PwithKubeJS 2>&1 | tee build/reports/migration/gametest-kubejs.log
+
+      - name: Upload test reports and GameTest logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            build/reports/tests/
+            build/reports/migration/
+            run/gametest/logs/

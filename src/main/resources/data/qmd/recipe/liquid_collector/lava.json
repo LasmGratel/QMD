@@ -1,0 +1,20 @@
+{
+  "type": "qmd:liquid_collector",
+  "world": {
+    "dimensions": [
+      "minecraft:the_nether"
+    ],
+    "blocks": [
+      {
+        "block": "minecraft:lava",
+        "properties": {
+          "level": "0"
+        }
+      }
+    ]
+  },
+  "output": {
+    "id": "minecraft:lava",
+    "amount": 100
+  }
+}

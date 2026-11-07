@@ -1,0 +1,86 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/thorium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/thorium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/titanium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/hafnium"
+      }
+    }
+  ],
+  "type": "qmd:ore_leacher",
+  "itemIngredients": [
+    {
+      "ingredient": {
+        "tag": "c:ores/thorium"
+      },
+      "count": 1
+    }
+  ],
+  "fluidIngredients": [
+    {
+      "ingredient": {
+        "tag": "c:nitric_acid"
+      },
+      "amount": 16
+    },
+    {
+      "ingredient": {
+        "tag": "c:hydrochloric_acid"
+      },
+      "amount": 16
+    },
+    {
+      "ingredient": {
+        "tag": "c:sulfuric_acid"
+      },
+      "amount": 16
+    }
+  ],
+  "itemProducts": [
+    {
+      "ingredient": {
+        "tag": "c:dusts/thorium"
+      },
+      "count": 3
+    },
+    {
+      "ingredient": {
+        "tag": "c:dusts/titanium"
+      },
+      "count": 1,
+      "chancePercent": 15
+    },
+    {
+      "ingredient": {
+        "tag": "c:dusts/hafnium"
+      },
+      "count": 1,
+      "chancePercent": 10
+    }
+  ],
+  "timeModifier": 1,
+  "powerModifier": 1,
+  "radiation": 0
+}

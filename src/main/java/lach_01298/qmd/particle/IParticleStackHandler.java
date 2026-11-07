@@ -1,75 +1,16 @@
 package lach_01298.qmd.particle;
 
-import net.minecraft.util.EnumFacing;
+import net.minecraft.core.Direction;
+import org.jetbrains.annotations.Nullable;
 
-public interface IParticleStackHandler
-{
-
-	/**
-	 *
-	 * @param side
-	 * @param stack - the ParticleStack to be inputted
-	 * @return if the stack could be inputted
-	 */
-	boolean receiveParticle(EnumFacing side, ParticleStack stack);
-	
-	
-	/**
-	 *
-	 * @param side
-	 * @return the extracted ParticleStack
-	 */
-	ParticleStack extractParticle(EnumFacing side);
-	
-	/**
-	 *
-	 * @param side
-	 * @param type the type of particle
-	 * @return the extracted ParticleStack
-	 */
-	ParticleStack extractParticle(EnumFacing side, Particle type);
-	
-	/**
-	 *
-	 * @param side
-	 *@param Amount the amount of particles
-	 * @return the extracted ParticleStack
-	 */
-	ParticleStack extractParticle(EnumFacing side, int Amount);
-	
-	/**
-	 *
-	 * @param side
-	 * @param type the type of particle
-	 * @param Amount the amount of particles
-	 * @return the extracted ParticleStack
-	 */
-	ParticleStack extractParticle(EnumFacing side, Particle type, int Amount);
-	
-	/**
-	 *
-	 *
-	 * @return a copy of the ParticleStack
-	 */
-	ParticleStack getParticle();
-	
-	
-
-	/**
-	 *
-	 * @param side
-	 * @param stack - the ParticleStack to be inputted
-	 * @return if the stack could be inputted
-	 */
-	boolean canReceiveParticle(EnumFacing side, ParticleStack stack);
-	
-	/**
-	 *
-	 * @param side
-	 * @return if the ParticleStack could be extracted
-	 */
-	boolean canExtractParticle(EnumFacing side);
-	
-	
-	
+/** A complete beam is received atomically; extraction can be limited by species or count. */
+public interface IParticleStackHandler {
+    boolean receiveParticle(@Nullable Direction side, @Nullable ParticleStack stack);
+    @Nullable ParticleStack extractParticle(@Nullable Direction side);
+    @Nullable ParticleStack extractParticle(@Nullable Direction side, Particle type);
+    @Nullable ParticleStack extractParticle(@Nullable Direction side, int amount);
+    @Nullable ParticleStack extractParticle(@Nullable Direction side, Particle type, int amount);
+    @Nullable ParticleStack getParticle();
+    boolean canReceiveParticle(@Nullable Direction side, @Nullable ParticleStack stack);
+    boolean canExtractParticle(@Nullable Direction side);
 }

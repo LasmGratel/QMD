@@ -1,13 +1,7 @@
 {
-    "forge_marker": 1,
-    "defaults": {
-        "model":"cube_all",
-        "textures": {
-            "all": "qmd:blocks/machine/atmosphere_collector"
-        }
-    },
-    "variants": {
-        "inventory": [{}],
-        "normal": [{}]
+  "variants": {
+    "": {
+      "model": "qmd:block/atmosphere_collector"
     }
+  }
 }

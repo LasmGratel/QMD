@@ -1,0 +1,7 @@
+{
+  "flip_gas": false,
+  "loader": "neoforge:fluid_container",
+  "fluid": "qmd:liquid_air",
+  "apply_tint": true,
+  "parent": "neoforge:item/bucket_drip"
+}

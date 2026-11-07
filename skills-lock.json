@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "minecraft-modding": {
+      "source": "AIKUSAN/minecraft-agent-skills-bundle",
+      "sourceType": "github",
+      "skillPath": ".agents/skills/minecraft-modding/SKILL.md",
+      "computedHash": "ad3ee3fb99c98482a6cef1161466f933600f9a9d3c252cfaf7e39fe02e835af2"
+    }
+  }
+}

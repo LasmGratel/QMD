@@ -1,0 +1,28 @@
+{
+  "type": "nuclearcraftneohaul:chemical_reactor_recipe",
+  "fluidIngredients": [
+    {
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      },
+      "amount": 1000
+    },
+    {
+      "ingredient": {
+        "fluid": "qmd:chlorine"
+      },
+      "amount": 1000
+    }
+  ],
+  "fluidProducts": [
+    {
+      "ingredient": {
+        "fluid": "qmd:hydrochloric_acid"
+      },
+      "amount": 2000
+    }
+  ],
+  "timeModifier": 1,
+  "powerModifier": 1,
+  "radiation": 0
+}

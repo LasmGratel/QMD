@@ -1,0 +1,7 @@
+{
+  "flip_gas": true,
+  "loader": "neoforge:fluid_container",
+  "fluid": "qmd:argon",
+  "apply_tint": true,
+  "parent": "neoforge:item/bucket"
+}

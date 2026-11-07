@@ -1,290 +1,161 @@
 package lach_01298.qmd.particle;
 
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import org.jetbrains.annotations.Nullable;
 
-/**
- * The base particle storage class
- * 
- *
- */
-public class ParticleStorage implements IParticleStorage, IParticleStackHandler
-{
+import java.math.BigInteger;
 
-	protected ParticleStack particleStack;
-	protected TileEntity tile;
-	protected long maxEnergy;
-	protected long minEnergy;
-	protected int capacity;
+/** The common bounded particle store. Energy limits are inclusive. */
+public class ParticleStorage implements IParticleStorage, IParticleStackHandler {
+    @Nullable protected ParticleStack particleStack;
+    @Nullable protected BlockEntity tile;
+    protected long maxEnergy;
+    protected long minEnergy;
+    protected int capacity;
 
-	
-	public ParticleStorage(ParticleStack stack, long maxEnergy, int capacity, long minEnergy)
-	{
-		this.particleStack = stack;
-		this.maxEnergy = maxEnergy;
-		this.capacity = capacity;
-		this.minEnergy = minEnergy;
-	}
-	
-	public ParticleStorage(ParticleStack stack, long maxEnergy, int capacity)
-	{
-		this.particleStack = stack;
-		this.maxEnergy = maxEnergy;
-		this.capacity = capacity;
-		this.minEnergy = 0;
-	}
-	
-	public ParticleStorage(ParticleStack stack, long maxEnergy)
-	{
-		this.particleStack = stack;
-		this.maxEnergy = maxEnergy;
-		this.capacity = Integer.MAX_VALUE;
-		this.minEnergy = 0;
-	}
-	
-	public ParticleStorage()
-	{
-		this.particleStack = null;
-		this.maxEnergy = Long.MAX_VALUE;
-		this.capacity = Integer.MAX_VALUE;
-		this.minEnergy = 0;
-	}
+    public ParticleStorage(@Nullable ParticleStack stack, long maxEnergy, int capacity, long minEnergy) {
+        if (capacity < 0 || minEnergy < 0 || maxEnergy < minEnergy) {
+            throw new IllegalArgumentException("Invalid particle storage limits");
+        }
+        this.maxEnergy = maxEnergy;
+        this.minEnergy = minEnergy;
+        this.capacity = capacity;
+        setParticleStack(stack);
+    }
 
-	public void readFromNBT(NBTTagCompound nbt)
-	{
-		if (nbt.hasKey("particle_stack"))
-		{
-			this.particleStack = ParticleStack.loadParticleStackFromNBT(nbt.getCompoundTag("particle_stack"));
-		}
-		else
-		{
-			this.particleStack = null;
-		}
-		
-		this.maxEnergy = nbt.getLong("maxEnergy");
-		this.capacity = nbt.getInteger("capacity");
-		this.minEnergy = nbt.getLong("minEnergy");
-	}
+    public ParticleStorage(@Nullable ParticleStack stack, long maxEnergy, int capacity) {
+        this(stack, maxEnergy, capacity, 0);
+    }
 
-	public NBTTagCompound writeToNBT(NBTTagCompound nbt)
-	{
-		NBTTagCompound tag = new NBTTagCompound();
-		if (particleStack != null)
-		{
-			particleStack.writeToNBT(tag);
-		}
-		else
-		{
-			new ParticleStack().writeToNBT(tag);
-		}
-		nbt.setTag("particle_stack", tag);
-		nbt.setLong("maxEnergy", maxEnergy);
-		nbt.setInteger("capacity", capacity);
-		nbt.setLong("minEnergy", minEnergy);
-		return nbt;
-	}
-	
-	public NBTTagCompound writeToNBT(NBTTagCompound nbt, int id)
-	{
-		
-		NBTTagCompound tag = new NBTTagCompound();
-		writeToNBT(tag);
-		nbt.setTag("ParticleStorage" + id, tag);
-		
-		return nbt;
-	}
+    public ParticleStorage(@Nullable ParticleStack stack, long maxEnergy) {
+        this(stack, maxEnergy, Integer.MAX_VALUE, 0);
+    }
 
-	public void readFromNBT(NBTTagCompound nbt, int id)
-	{
-		if (nbt.hasKey("ParticleStorage" + id)) 
-		{
-			NBTTagCompound tag = nbt.getCompoundTag("ParticleStorage" + id);
-			readFromNBT(tag);
-		}
-	}
-	
-	
-	public void setParticleStack(ParticleStack stack)
-	{
-		this.particleStack = stack;
+    public ParticleStorage() { this(null, Long.MAX_VALUE, Integer.MAX_VALUE, 0); }
 
-	}	
-	
-	public void setTileEntity(TileEntity tile)
-	{
-		this.tile = tile;
-	}
+    public void readFromNBT(CompoundTag nbt) {
+        long readMax = nbt.contains("maxEnergy", Tag.TAG_ANY_NUMERIC) ? nbt.getLong("maxEnergy") : maxEnergy;
+        long readMin = nbt.contains("minEnergy", Tag.TAG_ANY_NUMERIC) ? nbt.getLong("minEnergy") : minEnergy;
+        int readCapacity = nbt.contains("capacity", Tag.TAG_ANY_NUMERIC) ? nbt.getInt("capacity") : capacity;
+        minEnergy = Math.max(0, readMin);
+        maxEnergy = Math.max(minEnergy, readMax);
+        capacity = Math.max(0, readCapacity);
+        particleStack = ParticleStack.loadParticleStackFromNBT(nbt.getCompound("particle_stack"));
+        changed();
+    }
 
-	public ParticleStorageInfo getInfo()
-	{
-		return new ParticleStorageInfo(this);
-	}
+    public CompoundTag writeToNBT(CompoundTag nbt) {
+        nbt.put("particle_stack", particleStack == null ? new CompoundTag() : particleStack.writeToNBT(new CompoundTag()));
+        nbt.putLong("maxEnergy", maxEnergy);
+        nbt.putInt("capacity", capacity);
+        nbt.putLong("minEnergy", minEnergy);
+        return nbt;
+    }
 
-	@Override
-	public boolean receiveParticle(EnumFacing side, ParticleStack stack)
-	{
-		if(stack != null)
-		{
-			if(particleStack == null)
-			{
-				particleStack = stack.copy();
-				return true;
-			}
-			if(particleStack.getParticle() == stack.getParticle())
-			{
-				if(stack.getMeanEnergy() >= minEnergy && stack.getMeanEnergy() <= maxEnergy)
-				{
-					if(particleStack.getAmount()+ stack.getAmount() <= capacity)
-					{
-						
-						particleStack.setMeanEnergy((stack.getMeanEnergy() * stack.getAmount() + particleStack.getMeanEnergy() * particleStack.getAmount())/ (stack.getAmount() + particleStack.getAmount()));
-						particleStack.addAmount(stack.getAmount());
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
+    public CompoundTag writeToNBT(CompoundTag nbt, int id) {
+        nbt.put("ParticleStorage" + id, writeToNBT(new CompoundTag()));
+        return nbt;
+    }
 
+    public void readFromNBT(CompoundTag nbt, int id) {
+        if (nbt.contains("ParticleStorage" + id, Tag.TAG_COMPOUND)) readFromNBT(nbt.getCompound("ParticleStorage" + id));
+    }
 
+    /** Direct machine-state assignment, independent of the insertion limits. */
+    public void setParticleStack(@Nullable ParticleStack stack) {
+        particleStack = stack == null || stack.isEmpty() ? null : stack.copy();
+        changed();
+    }
 
-	@Override
-	public boolean canReceiveParticle(EnumFacing side, ParticleStack stack)
-	{
-		if(stack != null)
-		{
-			if(particleStack == null)
-			{
-				return true;
-			}
-			if(particleStack.getParticle() == stack.getParticle())
-			{
-				if(stack.getMeanEnergy() > minEnergy && stack.getMeanEnergy() < maxEnergy)
-				{
-					if(particleStack.getAmount()+ stack.getAmount() <= capacity)
-					{
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
+    public void setTileEntity(@Nullable BlockEntity tile) { this.tile = tile; }
+    protected void changed() { if (tile != null) tile.setChanged(); }
+    @Override public ParticleStorageInfo getInfo() { return new ParticleStorageInfo(this); }
 
-	@Override
-	public boolean canExtractParticle(EnumFacing side)
-	{
-		return particleStack != null;
-	}
+    @Override
+    public boolean canReceiveParticle(@Nullable Direction side, @Nullable ParticleStack stack) {
+        if (stack == null || stack.isEmpty() || stack.getMeanEnergy() < minEnergy || stack.getMeanEnergy() > maxEnergy) return false;
+        if (particleStack == null || particleStack.isEmpty()) return stack.getAmount() <= capacity;
+        return particleStack.matchesType(stack) && (long) particleStack.getAmount() + stack.getAmount() <= capacity;
+    }
 
-	@Override
-	public ParticleStack getParticleStack()
-	{
-		return particleStack;
-	}
+    @Override
+    public boolean receiveParticle(@Nullable Direction side, @Nullable ParticleStack stack) {
+        if (!canReceiveParticle(side, stack)) return false;
+        if (particleStack == null || particleStack.isEmpty()) {
+            particleStack = stack.copy();
+        } else {
+            // Multiplication may exceed long even when both mean energies are valid.
+            BigInteger energy = BigInteger.valueOf(particleStack.getMeanEnergy()).multiply(BigInteger.valueOf(particleStack.getAmount()))
+                    .add(BigInteger.valueOf(stack.getMeanEnergy()).multiply(BigInteger.valueOf(stack.getAmount())));
+            long totalAmount = (long) particleStack.getAmount() + stack.getAmount();
+            particleStack.setMeanEnergy(energy.divide(BigInteger.valueOf(totalAmount)).longValueExact());
+            particleStack.addAmount(stack.getAmount());
+        }
+        changed();
+        return true;
+    }
 
-	@Override
-	public long getMaxEnergy()
-	{
-		return maxEnergy;
-	}
+    @Override public boolean canExtractParticle(@Nullable Direction side) {
+        return particleStack != null && !particleStack.isEmpty();
+    }
 
-	@Override
-	public long getMinEnergy()
-	{
-		return minEnergy;
-	}
-	
-	@Override
-	public int getCapacity()
-	{
-		return capacity;
-	}
-	
-	public void setCapacity(int capacity)
-	{
-		this.capacity = capacity;
-	}
-	
-	public void setMaxEnergy(long maxEnergy)
-	{
-		this.maxEnergy = maxEnergy;
-	}
+    /** Mutable machine state, as in the original API; getParticle() returns a copy. */
+    @Override @Nullable public ParticleStack getParticleStack() { return particleStack; }
+    @Override public long getMaxEnergy() { return maxEnergy; }
+    @Override public long getMinEnergy() { return minEnergy; }
+    @Override public int getCapacity() { return capacity; }
 
-	public void setMinEnergy(long minEnergy)
-	{
-		this.minEnergy = minEnergy;
-	}
+    public void setCapacity(int capacity) {
+        if (capacity < 0) throw new IllegalArgumentException("Capacity must be nonnegative");
+        this.capacity = capacity;
+        changed();
+    }
 
+    public void setMaxEnergy(long maxEnergy) {
+        if (maxEnergy < minEnergy) throw new IllegalArgumentException("Maximum energy is below minimum");
+        this.maxEnergy = maxEnergy;
+        changed();
+    }
 
-	@Override
-	public ParticleStack extractParticle(EnumFacing side)
-	{
-		if (canExtractParticle(side))
-		{
-			ParticleStack stack = this.particleStack;
-			this.particleStack = null;
-			return stack;
-		}
-		return null;
-	}
-	
-	@Override
-	public ParticleStack extractParticle(EnumFacing side, Particle type)
-	{
-		if (canExtractParticle(side))
-		{
-			if (particleStack.getParticle() == type)
-			{
-				return extractParticle(side);
-			}
-		}
-		return null;
-	}
-	
-	@Override
-	public ParticleStack extractParticle(EnumFacing side, int amount)
-	{
-		if(canExtractParticle(side))
-		{
-			ParticleStack stack = particleStack.copy();
-			if(particleStack.getAmount() > amount)
-			{
-				stack.setAmount(amount);
-			}
-			else
-			{
-				stack.setAmount(particleStack.getAmount());
-			}
-			particleStack.removeAmount(amount);
-		}
-		return null;
-	}
-	
-	@Override
-	public ParticleStack extractParticle(EnumFacing side, Particle type, int Amount)
-	{
+    public void setMinEnergy(long minEnergy) {
+        if (minEnergy < 0 || minEnergy > maxEnergy) throw new IllegalArgumentException("Invalid minimum energy");
+        this.minEnergy = minEnergy;
+        changed();
+    }
 
-		if (canExtractParticle(side))
-		{
-			if (particleStack.getParticle() == type)
-			{
-				return extractParticle(side, Amount);
-			}
-		}
-		return null;
-	}
+    @Override @Nullable
+    public ParticleStack extractParticle(@Nullable Direction side) {
+        if (!canExtractParticle(side)) return null;
+        ParticleStack extracted = particleStack;
+        particleStack = null;
+        changed();
+        return extracted;
+    }
 
-	@Override
-	public ParticleStack getParticle()
-	{
-		if(particleStack != null)
-		{
-			return particleStack.copy();
-		}
-		return null;	
-	}
+    @Override @Nullable
+    public ParticleStack extractParticle(@Nullable Direction side, Particle type) {
+        return canExtractParticle(side) && particleStack.getParticle() == type ? extractParticle(side) : null;
+    }
 
+    @Override @Nullable
+    public ParticleStack extractParticle(@Nullable Direction side, int amount) {
+        if (amount <= 0 || !canExtractParticle(side)) return null;
+        ParticleStack extracted = particleStack.copy();
+        extracted.setAmount(Math.min(amount, particleStack.getAmount()));
+        particleStack.removeAmount(extracted.getAmount());
+        if (particleStack.isEmpty()) particleStack = null;
+        changed();
+        return extracted;
+    }
+
+    @Override @Nullable
+    public ParticleStack extractParticle(@Nullable Direction side, Particle type, int amount) {
+        return canExtractParticle(side) && particleStack.getParticle() == type ? extractParticle(side, amount) : null;
+    }
+
+    @Override @Nullable
+    public ParticleStack getParticle() { return particleStack == null ? null : particleStack.copy(); }
 }

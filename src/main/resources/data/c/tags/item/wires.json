@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "#c:wires/bscco",
+    "#c:wires/gold_tungsten",
+    "#c:wires/ssfaf",
+    "#c:wires/ybco",
+    "#c:wires/hbcco"
+  ]
+}

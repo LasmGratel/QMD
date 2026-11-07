@@ -1,0 +1,11 @@
+{
+  "type": "qmd:liquid_collector",
+  "world": {
+    "blocks": [{ "block": "minecraft:water", "properties": { "level": "0" } }],
+    "biomes": [],
+    "biome_tags": ["qmd:smoke/collector_only"],
+    "dimensions": ["minecraft:overworld"]
+  },
+  "output": { "id": "minecraft:lava", "amount": 8 },
+  "priority": -20000
+}

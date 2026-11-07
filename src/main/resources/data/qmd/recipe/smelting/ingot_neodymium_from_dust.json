@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": {
+    "item": "qmd:dust_neodymium"
+  },
+  "result": {
+    "id": "qmd:ingot_neodymium",
+    "count": 1
+  },
+  "experience": 0,
+  "cookingtime": 200
+}

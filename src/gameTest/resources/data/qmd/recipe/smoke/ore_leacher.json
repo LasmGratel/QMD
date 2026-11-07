@@ -1,0 +1,13 @@
+{
+  "type": "qmd:ore_leacher",
+  "itemIngredients": [{ "ingredient": { "item": "minecraft:cobblestone" }, "count": 1 }],
+  "fluidIngredients": [
+    { "ingredient": { "fluid": "qmd:nitric_acid" }, "amount": 16 },
+    { "ingredient": { "fluid": "qmd:hydrochloric_acid" }, "amount": 16 },
+    { "ingredient": { "fluid": "nuclearcraftneohaul:sulfuric_acid" }, "amount": 16 }
+  ],
+  "itemProducts": [{ "ingredient": { "item": "minecraft:flint" }, "count": 1 }],
+  "timeModifier": 1,
+  "powerModifier": 1,
+  "radiation": 0
+}
