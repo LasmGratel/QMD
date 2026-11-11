@@ -1,0 +1,58 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/hslasteel"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:ingots/hslasteel"
+  },
+  "item_count": 32,
+  "items": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/graphite"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/manganese"
+      }
+    },
+    {
+      "count": 30,
+      "ingredient": {
+        "tag": "c:ingots/iron"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/lithium_7"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/boron_10"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.5,
+  "energyReleased": -2790,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/lithium_7"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/boron_10"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 2000000,
+      "max_energy": 7600,
+      "min_energy": 6500,
+      "particles": [
+        "qmd:alpha"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

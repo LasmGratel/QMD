@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "tag": "c:wires/ybco"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "S S",
+    "CCC"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:accelerator_rf_cavity_ybco"
+  }
+}

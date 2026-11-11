@@ -1,0 +1,19 @@
+{
+  "type": "qmd:accelerator_cooling",
+  "fluid": {
+    "amount": 1,
+    "ingredient": {
+      "tag": "c:liquid_argon"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 64,
+      "ingredient": {
+        "fluid": "qmd:argon"
+      }
+    }
+  ],
+  "heat": 1000,
+  "temperature": 87
+}

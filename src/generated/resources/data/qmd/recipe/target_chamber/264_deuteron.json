@@ -1,0 +1,72 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/gold"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.5,
+  "energyReleased": -10400,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:mercury"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/gold"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 2000000,
+      "max_energy": 24000,
+      "min_energy": 18000,
+      "particles": [
+        "qmd:deuteron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 3,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

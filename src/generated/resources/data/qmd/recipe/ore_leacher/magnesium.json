@@ -1,0 +1,83 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/magnesium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/magnesium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/calcium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/potassium"
+      }
+    }
+  ],
+  "type": "qmd:ore_leacher",
+  "fluidIngredients": [
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:nitric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:hydrochloric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:sulfuric_acid"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/magnesium"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/magnesium"
+      }
+    },
+    {
+      "chancePercent": 10,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/calcium"
+      }
+    },
+    {
+      "chancePercent": 5,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/potassium"
+      }
+    }
+  ]
+}

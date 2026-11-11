@@ -1,0 +1,30 @@
+{
+  "type": "nuclearcraftneohaul:enricher_recipe",
+  "fluidIngredients": [
+    {
+      "amount": 1296,
+      "ingredient": {
+        "tag": "c:yag"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 1296,
+      "ingredient": {
+        "fluid": "qmd:nd_yag"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/neodymium"
+      }
+    }
+  ],
+  "powerModifier": 2.0,
+  "radiation": 0.0,
+  "timeModifier": 2.0
+}

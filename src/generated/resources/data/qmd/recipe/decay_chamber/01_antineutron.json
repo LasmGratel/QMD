@@ -1,0 +1,31 @@
+{
+  "type": "qmd:decay_chamber",
+  "energyReleased": 1490,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:antineutron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "positron"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron_neutrino"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "antiproton"
+    }
+  ]
+}

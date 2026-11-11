@@ -1,0 +1,79 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/cobalt"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/manganese"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.02,
+  "energyReleased": -6940,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/cobalt"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/manganese"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 50000000,
+      "max_energy": 100000,
+      "min_energy": 50000,
+      "particles": [
+        "qmd:electron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "alpha"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron"
+    }
+  ]
+}

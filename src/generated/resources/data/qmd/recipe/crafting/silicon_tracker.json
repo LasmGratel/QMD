@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "qmd:semiconductor_advanced_processor"
+    },
+    "B": {
+      "item": "qmd:semiconductor_basic_processor"
+    },
+    "C": {
+      "item": "qmd:part_detector_casing"
+    }
+  },
+  "pattern": [
+    "BAB",
+    "ACA",
+    "BAB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:silicon_tracker"
+  }
+}

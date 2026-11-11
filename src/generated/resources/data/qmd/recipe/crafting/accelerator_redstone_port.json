@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/redstone"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "qmd:accelerator_casing"
+    },
+    "S": {
+      "tag": "c:dusts/redstone"
+    },
+    "T": {
+      "tag": "c:ingots/steel"
+    }
+  },
+  "pattern": [
+    "STS",
+    "TFT",
+    "STS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:accelerator_redstone_port"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "type": "qmd:cell_filling",
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 100,
+      "ingredient": {
+        "tag": "c:antihydrogen"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:cell_antihydrogen"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:cell_empty"
+      }
+    }
+  ]
+}

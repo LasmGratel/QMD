@@ -1,0 +1,83 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/copper"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/copper"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/zinc"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/iridium"
+      }
+    }
+  ],
+  "type": "qmd:ore_leacher",
+  "fluidIngredients": [
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:nitric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:hydrochloric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:sulfuric_acid"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/copper"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/copper"
+      }
+    },
+    {
+      "chancePercent": 5,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/zinc"
+      }
+    },
+    {
+      "chancePercent": 1,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/iridium"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:silver"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:iodine"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 1.62E7,
+  "particleIngredients": [
+    {
+      "amount": 29300000,
+      "max_energy": 10000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ]
+}

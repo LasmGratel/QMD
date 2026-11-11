@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "qmd:item/materials/dust/chemical/tungsten_oxide"
+  }
+}

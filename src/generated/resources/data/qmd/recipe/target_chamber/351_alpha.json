@@ -1,0 +1,78 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/erbium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/ytterbium"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "energyReleased": -17100,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/erbium"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/ytterbium"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000000,
+      "max_energy": 30500,
+      "min_energy": 22000,
+      "particles": [
+        "qmd:alpha"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 2,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

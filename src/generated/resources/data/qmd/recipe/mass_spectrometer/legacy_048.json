@@ -1,0 +1,59 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/ammonium_persulfate"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 4000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:nitrogen"
+      }
+    },
+    {
+      "amount": 4000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:dusts/ammonium_persulfate"
+  },
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 2,
+      "ingredient": {
+        "tag": "c:dusts/sulfur"
+      }
+    }
+  ]
+}

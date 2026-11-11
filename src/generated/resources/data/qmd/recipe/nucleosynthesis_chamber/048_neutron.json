@@ -1,0 +1,38 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:neodymium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:europium_155"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 9080000.0,
+  "particleIngredients": [
+    {
+      "amount": 17670000,
+      "max_energy": 10000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ]
+}

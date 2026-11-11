@@ -1,0 +1,58 @@
+{
+  "type": "nuclearcraftneohaul:fuel_reprocessor_recipe",
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:waste_spallation_platinum"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "chancePercent": 16,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_osmium"
+      }
+    },
+    {
+      "chancePercent": 17,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_hafnium"
+      }
+    },
+    {
+      "chancePercent": 15,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_erbium"
+      }
+    },
+    {
+      "chancePercent": 15,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:dysprosium_dust"
+      }
+    },
+    {
+      "chancePercent": 18,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:gadolinium_dust"
+      }
+    },
+    {
+      "chancePercent": 19,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_samarium"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "radiation": 0.0,
+  "timeModifier": 1.0
+}

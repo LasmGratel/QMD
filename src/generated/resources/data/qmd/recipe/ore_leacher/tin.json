@@ -1,0 +1,83 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/tin"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/tin"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/zirconium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/tungsten"
+      }
+    }
+  ],
+  "type": "qmd:ore_leacher",
+  "fluidIngredients": [
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:nitric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:hydrochloric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:sulfuric_acid"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/tin"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/tin"
+      }
+    },
+    {
+      "chancePercent": 25,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/zirconium"
+      }
+    },
+    {
+      "chancePercent": 25,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/tungsten"
+      }
+    }
+  ]
+}

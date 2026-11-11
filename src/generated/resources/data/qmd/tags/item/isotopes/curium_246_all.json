@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:curium_246",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:curium_246_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:curium_246_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:curium_246_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:curium_246_za",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:waste_fission/light"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.1,
+  "fluidIngredients": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:mercury"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:waste_fission/light"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 10000000,
+      "max_energy": 600000,
+      "min_energy": 150000,
+      "particles": [
+        "qmd:proton"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 3,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

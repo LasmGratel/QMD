@@ -1,0 +1,49 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "c:nitrogen_dioxide"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:nitrogen"
+      }
+    },
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

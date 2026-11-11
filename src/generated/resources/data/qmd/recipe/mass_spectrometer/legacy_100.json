@@ -1,0 +1,51 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "c:fluorobenzene"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 2500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:fluorine"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 6,
+      "ingredient": {
+        "tag": "c:dusts/graphite"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

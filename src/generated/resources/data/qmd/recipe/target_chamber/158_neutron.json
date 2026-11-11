@@ -1,0 +1,72 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/sulfur"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.2,
+  "energyReleased": 2650,
+  "fluidIngredients": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:chlorine"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/sulfur"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 5000000,
+      "max_energy": 13500,
+      "min_energy": 3000,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "alpha"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron_antineutrino"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron"
+    }
+  ]
+}

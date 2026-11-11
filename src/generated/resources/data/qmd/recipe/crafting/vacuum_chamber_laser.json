@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "nuclearcraftneohaul:elite_plating"
+    },
+    "L": {
+      "item": "qmd:part_laser_assembly"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    }
+  },
+  "pattern": [
+    "OEO",
+    "ELL",
+    "OEO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:vacuum_chamber_laser"
+  }
+}

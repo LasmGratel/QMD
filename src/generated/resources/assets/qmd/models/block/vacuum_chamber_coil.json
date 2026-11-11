@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "qmd:block/vacuum/coil_top",
+    "side": "qmd:block/vacuum/coil_side"
+  }
+}

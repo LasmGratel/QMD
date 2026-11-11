@@ -1,0 +1,12 @@
+{
+  "type": "qmd:atmosphere_collector",
+  "output": {
+    "amount": 1000,
+    "id": "qmd:compressed_air"
+  },
+  "world": {
+    "dimensions": [
+      "minecraft:overworld"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "type": "qmd:decay_chamber",
+  "crossSection": 0.25,
+  "energyReleased": 1500000,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:tau"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_naught"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "tau_neutrino"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_minus"
+    }
+  ]
+}

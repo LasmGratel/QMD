@@ -1,0 +1,56 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/zircaloy"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:ingots/zircaloy"
+  },
+  "item_count": 8,
+  "items": [
+    {
+      "count": 7,
+      "ingredient": {
+        "tag": "c:dusts/zirconium"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/tin"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "qmd:neutral_containment",
+  "fluidProducts": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:antihelium"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000,
+      "max_energy": 1,
+      "min_focus": 2.0,
+      "particles": [
+        "qmd:antialpha"
+      ]
+    },
+    {
+      "amount": 2000,
+      "max_energy": 1,
+      "min_focus": 2.0,
+      "particles": [
+        "qmd:positron"
+      ]
+    }
+  ]
+}

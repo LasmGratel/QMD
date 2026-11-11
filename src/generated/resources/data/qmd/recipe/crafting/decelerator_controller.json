@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "E": {
+      "tag": "c:ingots/extreme"
+    },
+    "F": {
+      "item": "qmd:accelerator_casing"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:elite_plating"
+    }
+  },
+  "pattern": [
+    "PEP",
+    "BFB",
+    "PEP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:decelerator_controller"
+  }
+}

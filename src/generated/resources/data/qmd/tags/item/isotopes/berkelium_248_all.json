@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:berkelium_248",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:berkelium_248_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:berkelium_248_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:berkelium_248_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:berkelium_248_za",
+      "required": false
+    }
+  ]
+}

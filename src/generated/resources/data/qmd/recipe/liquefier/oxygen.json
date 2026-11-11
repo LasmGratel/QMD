@@ -1,0 +1,15 @@
+{
+  "type": "qmd:liquefier",
+  "amount": 64,
+  "energy": 50.0,
+  "heat": 1000.0,
+  "ingredient": {
+    "tag": "c:oxygen"
+  },
+  "input_temperature": 700,
+  "output": {
+    "amount": 1,
+    "id": "qmd:liquid_oxygen"
+  },
+  "output_temperature": 450
+}

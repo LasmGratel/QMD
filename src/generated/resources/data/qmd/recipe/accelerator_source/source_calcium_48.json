@@ -1,0 +1,12 @@
+{
+  "type": "qmd:accelerator_source",
+  "item": {
+    "item": "qmd:source_calcium_48"
+  },
+  "particle": {
+    "amount": 10000,
+    "focus": 0.0,
+    "meanEnergy": 0,
+    "particle": "calcium_48_ion"
+  }
+}

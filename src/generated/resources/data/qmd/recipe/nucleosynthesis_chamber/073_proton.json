@@ -1,0 +1,39 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:cobalt"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:zinc"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 3920000.0,
+  "particleIngredients": [
+    {
+      "amount": 7213000,
+      "max_energy": 17900,
+      "min_energy": 7900,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:proton"
+      ]
+    }
+  ]
+}

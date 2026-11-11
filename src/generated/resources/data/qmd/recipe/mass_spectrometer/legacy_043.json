@@ -1,0 +1,57 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/sodium_hydroxide"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:dusts/sodium_hydroxide"
+  },
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/sodium"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

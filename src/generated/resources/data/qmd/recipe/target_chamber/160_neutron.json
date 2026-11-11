@@ -1,0 +1,70 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/beryllium"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.5,
+  "energyReleased": -1570,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/beryllium"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 2000000,
+      "max_energy": 14000,
+      "min_energy": 4000,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 2,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "alpha"
+    },
+    {
+      "amount": 2,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

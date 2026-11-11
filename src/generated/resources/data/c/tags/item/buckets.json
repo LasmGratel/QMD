@@ -1,0 +1,15 @@
+{
+  "values": [
+    "qmd:hydrochloric_acid_bucket",
+    "qmd:nitric_acid_bucket",
+    "qmd:sodium_chloride_solution_bucket",
+    "qmd:chlorine_bucket",
+    "qmd:nitric_oxide_bucket",
+    "qmd:nitrogen_dioxide_bucket",
+    "qmd:salt_water_bucket",
+    "qmd:compressed_air_bucket",
+    "qmd:liquid_air_bucket",
+    "qmd:argon_bucket",
+    "qmd:neon_bucket"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "qmd:block/samarium_cobalt_liquefier_compressor"
+    }
+  }
+}

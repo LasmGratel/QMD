@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:neptunium_236",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:neptunium_236_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:neptunium_236_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:neptunium_236_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:neptunium_236_za",
+      "required": false
+    }
+  ]
+}

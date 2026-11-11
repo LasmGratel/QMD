@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "qmd:part_accelerating_barrel"
+    },
+    "E": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "L": {
+      "item": "qmd:part_laser_assembly"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    },
+    "T": {
+      "tag": "c:ingots/super_alloy"
+    }
+  },
+  "pattern": [
+    "TT ",
+    "OBB",
+    "EL "
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:gluon_gun"
+  }
+}

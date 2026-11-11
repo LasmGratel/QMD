@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:machine_chassis"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:du_plating"
+    },
+    "T": {
+      "item": "qmd:ingot_tungsten"
+    }
+  },
+  "pattern": [
+    "TPT",
+    "PFP",
+    "TPT"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:irradiator"
+  }
+}

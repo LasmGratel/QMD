@@ -1,0 +1,57 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 1000,
+      "chancePercent": 10,
+      "increment": 10,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 1000,
+      "chancePercent": 3,
+      "increment": 10,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:nitrogen"
+      }
+    },
+    {
+      "amount": 1000,
+      "chancePercent": 65,
+      "increment": 10,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    }
+  ],
+  "item": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "chancePercent": 19,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/graphite"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

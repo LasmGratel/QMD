@@ -1,0 +1,57 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/barite"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 2000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:dusts/barite"
+  },
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/sulfur"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/barium"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

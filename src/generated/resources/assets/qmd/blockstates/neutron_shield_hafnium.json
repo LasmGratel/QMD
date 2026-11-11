@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "nuclearcraftneohaul_active=false": {
+      "model": "qmd:block/neutron_shield_hafnium_off"
+    },
+    "nuclearcraftneohaul_active=true": {
+      "model": "qmd:block/neutron_shield_hafnium_on"
+    }
+  }
+}

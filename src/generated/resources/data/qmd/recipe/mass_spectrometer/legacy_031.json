@@ -1,0 +1,59 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gems/emerald"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 9000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:gems/emerald"
+  },
+  "items": [
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/beryllium"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 6,
+      "ingredient": {
+        "tag": "c:gems/silicon"
+      }
+    },
+    {
+      "count": 2,
+      "ingredient": {
+        "tag": "c:dusts/aluminum"
+      }
+    }
+  ]
+}

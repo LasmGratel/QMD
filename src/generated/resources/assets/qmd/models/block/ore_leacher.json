@@ -1,0 +1,6 @@
+{
+  "parent": "nuclearcraftneohaul:block/processor",
+  "textures": {
+    "front": "qmd:block/machine/ore_leacher_front_off"
+  }
+}

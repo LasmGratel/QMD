@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qmd:beamline"
+    },
+    "F": {
+      "item": "nuclearcraftneohaul:empty_frame"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    },
+    "T": {
+      "tag": "c:ingots/tough"
+    }
+  },
+  "pattern": [
+    "OTO",
+    "BFB",
+    "OTO"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:vacuum_chamber_beam_port"
+  }
+}

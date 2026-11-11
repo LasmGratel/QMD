@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/carpet",
+  "textures": {
+    "wool": "qmd:block/other/orange_luminous_paint"
+  }
+}

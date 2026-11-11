@@ -1,0 +1,29 @@
+{
+  "type": "qmd:neutral_containment",
+  "fluidProducts": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:tauonium"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000,
+      "max_energy": 1,
+      "min_focus": 2.0,
+      "particles": [
+        "qmd:tau"
+      ]
+    },
+    {
+      "amount": 1000,
+      "max_energy": 1,
+      "min_focus": 2.0,
+      "particles": [
+        "qmd:antitau"
+      ]
+    }
+  ]
+}

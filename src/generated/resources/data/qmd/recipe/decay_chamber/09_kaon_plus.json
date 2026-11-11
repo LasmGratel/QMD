@@ -1,0 +1,32 @@
+{
+  "type": "qmd:decay_chamber",
+  "crossSection": 0.63,
+  "energyReleased": 388000,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:kaon_plus"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "antimuon"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "muon_neutrino"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/lithium_7"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "energyReleased": 15100,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/lithium_7"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000000,
+      "max_energy": 9000,
+      "min_energy": 3500,
+      "particles": [
+        "qmd:deuteron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 2,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "alpha"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

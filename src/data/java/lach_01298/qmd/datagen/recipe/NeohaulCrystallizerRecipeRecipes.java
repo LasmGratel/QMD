@@ -11,22 +11,22 @@ import static lach_01298.qmd.datagen.recipe.NeohaulRecipeIngredients.*;
 final class NeohaulCrystallizerRecipeRecipes {
     static void add(RecipeOutput output) {
         new ProcessorRecipeBuilder(CrystallizerRecipe.class, 2, 2, 0)
-                .addFluidInput(fluid("qmd:nd_yag"), 432)
+                .addFluidInput(fluidTag("c:nd_yag"), 432)
                 .addItemResult(item("qmd:part_rod_nd_yag"), 1)
                 .save(RecipeOutputs.named(output, "qmd:crystallizer/nd_yag_rod"), ResourceLocation.parse("qmd:crystallizer/nd_yag_rod"));
 
         new ProcessorRecipeBuilder(CrystallizerRecipe.class, 2, 4, 0)
-                .addFluidInput(fluid("qmd:salt_water"), 10000)
+                .addFluidInput(fluidTag("c:salt_water"), 10000)
                 .addItemResult(itemTag("c:dusts/salt"), 1)
                 .save(RecipeOutputs.named(output, "qmd:crystallizer/salt_from_salt_water"), ResourceLocation.parse("qmd:crystallizer/salt_from_salt_water"));
 
         new ProcessorRecipeBuilder(CrystallizerRecipe.class, 1, 1, 0)
-                .addFluidInput(fluid("qmd:sodium_chloride_solution"), 666)
+                .addFluidInput(fluidTag("c:sodium_chloride_solution"), 666)
                 .addItemResult(itemTag("c:dusts/salt"), 1)
                 .save(RecipeOutputs.named(output, "qmd:crystallizer/salt_from_sodium_chloride_solution"), ResourceLocation.parse("qmd:crystallizer/salt_from_sodium_chloride_solution"));
 
         new ProcessorRecipeBuilder(CrystallizerRecipe.class, 2, 2, 0)
-                .addFluidInput(fluid("qmd:silicon"), 1296)
+                .addFluidInput(fluidTag("c:silicon"), 1296)
                 .addItemResult(item("qmd:semiconductor_silicon_boule"), 1)
                 .save(RecipeOutputs.named(output, "qmd:crystallizer/silicon_boule"), ResourceLocation.parse("qmd:crystallizer/silicon_boule"));
     }

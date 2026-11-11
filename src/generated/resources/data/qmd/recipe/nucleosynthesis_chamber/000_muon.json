@@ -1,0 +1,40 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:hydrogen"
+      }
+    },
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:hydrogen"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:deuterium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 1950000.0,
+  "particleIngredients": [
+    {
+      "amount": 951300,
+      "max_energy": 1000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:muon"
+      ]
+    }
+  ]
+}

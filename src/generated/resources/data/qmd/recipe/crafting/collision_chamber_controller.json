@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "F": {
+      "item": "qmd:particle_chamber_casing"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:elite_plating"
+    },
+    "T": {
+      "tag": "c:ingots/tough"
+    }
+  },
+  "pattern": [
+    "PTP",
+    "BFB",
+    "PTP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:collision_chamber_controller"
+  }
+}

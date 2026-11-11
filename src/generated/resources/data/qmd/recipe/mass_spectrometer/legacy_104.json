@@ -1,0 +1,49 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "c:carbon_dioxide"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "items": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/graphite"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

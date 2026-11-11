@@ -1,0 +1,79 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/cobalt"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/cobalt_60"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "crossSection": 0.1,
+  "energyReleased": -226,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/cobalt"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/cobalt_60"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 10000000,
+      "max_energy": 24000,
+      "min_energy": 14000,
+      "particles": [
+        "qmd:helion"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 2,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "proton"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

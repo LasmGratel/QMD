@@ -1,0 +1,8 @@
+{
+  "values": {
+    "qmd:reflector_tungsten_carbide": {
+      "efficiency": 0.75,
+      "reflectivity": 0.75
+    }
+  }
+}

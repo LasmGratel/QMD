@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "nuclearcraftneohaul:steel_chassis"
+    },
+    "I": {
+      "tag": "c:ingots/steel"
+    },
+    "M": {
+      "item": "nuclearcraftneohaul:servomechanism"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    }
+  },
+  "pattern": [
+    "ISI",
+    "MCM",
+    "ISI"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:liquefier_fluid_port"
+  }
+}

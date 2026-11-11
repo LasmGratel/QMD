@@ -1,0 +1,33 @@
+{
+  "type": "qmd:decay_chamber",
+  "energyReleased": -1020,
+  "particleIngredients": [
+    {
+      "max_energy": 230000,
+      "min_energy": 1120,
+      "particles": [
+        "qmd:photon"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "positron"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "nuclearcraftneohaul:bioplastic"
+    },
+    "S": {
+      "item": "qmd:isotope_sodium_22"
+    }
+  },
+  "pattern": [
+    "BSB",
+    "SSS",
+    "BSB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:source_sodium_22"
+  }
+}

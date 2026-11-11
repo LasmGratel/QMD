@@ -1,0 +1,40 @@
+{
+  "type": "nuclearcraftneohaul:assembler_recipe",
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:processors/advanced"
+      }
+    },
+    {
+      "count": 4,
+      "ingredient": {
+        "tag": "c:wires/bscco"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/hafnium_oxide"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/platinum"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:semiconductor_elite_processor"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "radiation": 0.0,
+  "timeModifier": 1.0
+}

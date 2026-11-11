@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "qmd:item/part/wire_chamber_casing"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:samarium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:dysprosium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 2490000.0,
+  "particleIngredients": [
+    {
+      "amount": 6133000,
+      "max_energy": 22800,
+      "min_energy": 12800,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:proton"
+      ]
+    }
+  ]
+}

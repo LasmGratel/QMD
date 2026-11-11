@@ -123,7 +123,7 @@ final class QmdRecipeBuilders {
         private final AbstractAcceleratorRecipe.Factory<R> factory;
         private Ingredient item = Ingredient.EMPTY;
         private int count = 1;
-        private FluidStack fluid = FluidStack.EMPTY;
+        private SizedChanceFluidIngredient fluid = SizedChanceFluidIngredient.EMPTY;
         private ParticleBeam particle = ParticleBeam.EMPTY;
         private final List<SizedChanceItemIngredient> items = new ArrayList<>();
         private final List<SizedChanceFluidIngredient> fluids = new ArrayList<>();
@@ -132,7 +132,7 @@ final class QmdRecipeBuilders {
 
         Accelerator(AbstractAcceleratorRecipe.Factory<R> factory) { this.factory = factory; }
         Accelerator<R> item(Ingredient value, int amount) { item = value; count = amount; return this; }
-        Accelerator<R> fluid(FluidStack value) { fluid = value; return this; }
+        Accelerator<R> fluid(SizedChanceFluidIngredient value) { fluid = value; return this; }
         Accelerator<R> particle(ParticleBeam value) { particle = value; return this; }
         Accelerator<R> itemOutput(SizedChanceItemIngredient value) { items.add(value); return this; }
         Accelerator<R> fluidOutput(SizedChanceFluidIngredient value) { fluids.add(value); return this; }

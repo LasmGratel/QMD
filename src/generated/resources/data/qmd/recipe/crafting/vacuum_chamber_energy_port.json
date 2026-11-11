@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:empty_frame"
+    },
+    "I": {
+      "item": "qmd:part_wire_bscco"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    },
+    "T": {
+      "tag": "c:ingots/tough"
+    }
+  },
+  "pattern": [
+    "OIO",
+    "TFT",
+    "OIO"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:vacuum_chamber_energy_port"
+  }
+}

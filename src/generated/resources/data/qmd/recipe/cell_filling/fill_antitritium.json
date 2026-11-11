@@ -1,0 +1,33 @@
+{
+  "type": "qmd:cell_filling",
+  "fluidIngredients": [
+    {
+      "amount": 100,
+      "ingredient": {
+        "tag": "c:antitritium"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:cell_empty"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:cell_antitritium"
+      }
+    }
+  ]
+}

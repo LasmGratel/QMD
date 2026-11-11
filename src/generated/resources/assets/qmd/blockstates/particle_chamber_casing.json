@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "qmd:block/particle_chamber_casing",
+      "x": 90
+    },
+    "active=false,facing=east": {
+      "model": "qmd:block/particle_chamber_casing",
+      "y": 90
+    },
+    "active=false,facing=north": {
+      "model": "qmd:block/particle_chamber_casing"
+    },
+    "active=false,facing=south": {
+      "model": "qmd:block/particle_chamber_casing",
+      "y": 180
+    },
+    "active=false,facing=up": {
+      "model": "qmd:block/particle_chamber_casing",
+      "x": 270
+    },
+    "active=false,facing=west": {
+      "model": "qmd:block/particle_chamber_casing",
+      "y": 270
+    },
+    "active=true,facing=down": {
+      "model": "qmd:block/particle_chamber_casing",
+      "x": 90
+    },
+    "active=true,facing=east": {
+      "model": "qmd:block/particle_chamber_casing",
+      "y": 90
+    },
+    "active=true,facing=north": {
+      "model": "qmd:block/particle_chamber_casing"
+    },
+    "active=true,facing=south": {
+      "model": "qmd:block/particle_chamber_casing",
+      "y": 180
+    },
+    "active=true,facing=up": {
+      "model": "qmd:block/particle_chamber_casing",
+      "x": 270
+    },
+    "active=true,facing=west": {
+      "model": "qmd:block/particle_chamber_casing",
+      "y": 270
+    }
+  }
+}

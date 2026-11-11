@@ -1,0 +1,32 @@
+{
+  "type": "qmd:decay_chamber",
+  "crossSection": 0.57,
+  "energyReleased": 116000000,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:higgs_boson"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "bottom_eta"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 1000,
+      "chancePercent": 48,
+      "increment": 10,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 1000,
+      "chancePercent": 24,
+      "increment": 10,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "item": "minecraft:sugar"
+  },
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "chancePercent": 26,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/graphite"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

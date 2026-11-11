@@ -1,0 +1,40 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:tritium"
+      }
+    },
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:tritium"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 1000,
+      "ingredient": {
+        "tag": "c:helium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 1.13E7,
+  "particleIngredients": [
+    {
+      "amount": 161600,
+      "max_energy": 1000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:muon"
+      ]
+    }
+  ]
+}

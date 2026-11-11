@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:steel_chassis"
+    },
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    },
+    "V": {
+      "item": "nuclearcraftneohaul:servomechanism"
+    }
+  },
+  "pattern": [
+    "SHS",
+    "VFV",
+    "SHS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:accelerator_port"
+  }
+}

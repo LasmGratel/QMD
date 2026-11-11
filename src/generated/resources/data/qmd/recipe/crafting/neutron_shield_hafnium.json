@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "nuclearcraftneohaul:basic_plating"
+    },
+    "E": {
+      "item": "qmd:dust_erbium"
+    },
+    "F": {
+      "item": "nuclearcraftneohaul:steel_chassis"
+    },
+    "H": {
+      "item": "qmd:ingot_hafnium"
+    }
+  },
+  "pattern": [
+    "BHB",
+    "EFE",
+    "BHB"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:neutron_shield_hafnium"
+  }
+}

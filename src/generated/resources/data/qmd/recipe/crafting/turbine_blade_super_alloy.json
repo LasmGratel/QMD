@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "c:ingots/hsla_steel"
+    },
+    "S": {
+      "tag": "c:ingots/super_alloy"
+    }
+  },
+  "pattern": [
+    "SHS",
+    "SHS",
+    "SHS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:turbine_blade_super_alloy"
+  }
+}

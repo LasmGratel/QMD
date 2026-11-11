@@ -1,0 +1,28 @@
+{
+  "values": [
+    "qmd:vacuum_chamber_casing",
+    "qmd:vacuum_chamber_glass",
+    "qmd:vacuum_chamber_beam",
+    "qmd:vacuum_chamber_coil",
+    "qmd:vacuum_chamber_plasma_glass",
+    "qmd:vacuum_chamber_plasma_nozzle",
+    "qmd:vacuum_chamber_laser",
+    "qmd:vacuum_chamber_energy_port",
+    "qmd:vacuum_chamber_port",
+    "qmd:vacuum_chamber_fluid_port",
+    "qmd:vacuum_chamber_beam_port",
+    "qmd:vacuum_chamber_vent",
+    "qmd:vacuum_chamber_heater_vent",
+    "qmd:vacuum_chamber_redstone_port",
+    "qmd:vacuum_chamber_heater_iron",
+    "qmd:vacuum_chamber_heater_redstone",
+    "qmd:vacuum_chamber_heater_quartz",
+    "qmd:vacuum_chamber_heater_obsidian",
+    "qmd:vacuum_chamber_heater_glowstone",
+    "qmd:vacuum_chamber_heater_lapis",
+    "qmd:vacuum_chamber_heater_gold",
+    "qmd:vacuum_chamber_heater_diamond",
+    "qmd:neutral_containment_controller",
+    "qmd:nucleosynthesis_chamber_controller"
+  ]
+}

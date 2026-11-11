@@ -1,0 +1,34 @@
+{
+  "type": "qmd:liquid_collector",
+  "output": {
+    "amount": 1000,
+    "id": "qmd:salt_water"
+  },
+  "world": {
+    "biomes": [
+      "minecraft:ocean",
+      "minecraft:deep_ocean",
+      "minecraft:frozen_ocean",
+      "minecraft:deep_frozen_ocean",
+      "minecraft:cold_ocean",
+      "minecraft:deep_cold_ocean",
+      "minecraft:lukewarm_ocean",
+      "minecraft:deep_lukewarm_ocean",
+      "minecraft:warm_ocean",
+      "minecraft:beach",
+      "minecraft:snowy_beach",
+      "minecraft:stony_shore"
+    ],
+    "blocks": [
+      {
+        "block": "minecraft:water",
+        "properties": {
+          "level": "0"
+        }
+      }
+    ],
+    "dimensions": [
+      "minecraft:overworld"
+    ]
+  }
+}

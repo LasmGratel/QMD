@@ -1,0 +1,38 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 666,
+      "ingredient": {
+        "tag": "c:arsenic"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:strontium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 1.2E7,
+  "particleIngredients": [
+    {
+      "amount": 20800000,
+      "max_energy": 10000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ]
+}

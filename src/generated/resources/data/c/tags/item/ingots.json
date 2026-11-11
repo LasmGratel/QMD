@@ -1,0 +1,30 @@
+{
+  "values": [
+    "#c:ingots/tungsten",
+    "#c:ingots/niobium",
+    "#c:ingots/chromium",
+    "#c:ingots/titanium",
+    "#c:ingots/cobalt",
+    "#c:ingots/nickel",
+    "#c:ingots/hafnium",
+    "#c:ingots/zinc",
+    "#c:ingots/osmium",
+    "#c:ingots/iridium",
+    "#c:ingots/platinum",
+    "#c:ingots/sodium",
+    "#c:ingots/potassium",
+    "#c:ingots/calcium",
+    "#c:ingots/strontium",
+    "#c:ingots/barium",
+    "#c:ingots/yttrium",
+    "#c:ingots/neodymium",
+    "#c:ingots/mercury",
+    "#c:ingots/tungsten_carbide",
+    "#c:ingots/niobium_tin",
+    "#c:ingots/stainless_steel",
+    "#c:ingots/niobium_titanium",
+    "#c:ingots/osmiridium",
+    "#c:ingots/nichrome",
+    "#c:ingots/super_alloy"
+  ]
+}

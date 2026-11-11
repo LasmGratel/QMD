@@ -1,0 +1,40 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:deuterium"
+      }
+    },
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:lithium_6"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 2000,
+      "ingredient": {
+        "tag": "c:helium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 2.24E7,
+  "particleIngredients": [
+    {
+      "amount": 252200,
+      "max_energy": 1000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:muon"
+      ]
+    }
+  ]
+}

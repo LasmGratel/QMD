@@ -1,0 +1,96 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/gold"
+      }
+    },
+    {
+      "type": "neoforge:or",
+      "values": [
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:dusts/gold"
+          }
+        },
+        {
+          "type": "neoforge:not",
+          "value": {
+            "type": "neoforge:tag_empty",
+            "tag": "c:ingots/gold"
+          }
+        }
+      ]
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/silver"
+      }
+    }
+  ],
+  "type": "qmd:ore_leacher",
+  "fluidIngredients": [
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:nitric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:hydrochloric_acid"
+      }
+    },
+    {
+      "amount": 16,
+      "ingredient": {
+        "tag": "c:sulfuric_acid"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ores/gold"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 3,
+      "ingredient": {
+        "type": "neoforge:difference",
+        "base": [
+          {
+            "tag": "c:dusts/gold"
+          },
+          {
+            "tag": "c:ingots/gold"
+          }
+        ],
+        "subtracted": {
+          "item": "minecraft:barrier"
+        }
+      }
+    },
+    {
+      "chancePercent": 10,
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/silver"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "nuclearcraftneohaul:electrolyzer_recipe",
+  "fluidIngredients": [
+    {
+      "amount": 1332,
+      "ingredient": {
+        "tag": "c:sodium_chloride_solution"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "qmd:chlorine"
+      }
+    },
+    {
+      "amount": 1332,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:sodium_hydroxide_solution"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "radiation": 0.0,
+  "timeModifier": 0.5
+}

@@ -1,0 +1,59 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gems/lapis"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:gems/lapis"
+  },
+  "items": [
+    {
+      "count": 4,
+      "ingredient": {
+        "tag": "c:dusts/calcium"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/aluminum"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:gems/silicon"
+      }
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/sulfur"
+      }
+    }
+  ]
+}

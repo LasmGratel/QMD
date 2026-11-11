@@ -1,0 +1,14 @@
+{
+  "type": "qmd:liquefier_coolant",
+  "amount": 1,
+  "heat": 1000.0,
+  "ingredient": {
+    "tag": "c:liquid_helium"
+  },
+  "input_temperature": 4,
+  "output": {
+    "amount": 64,
+    "id": "nuclearcraftneohaul:helium"
+  },
+  "output_temperature": 300
+}

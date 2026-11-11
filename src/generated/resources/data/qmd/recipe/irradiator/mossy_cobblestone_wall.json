@@ -1,0 +1,10 @@
+{
+  "type": "qmd:irradiator",
+  "ingredient": {
+    "item": "minecraft:mossy_cobblestone_wall"
+  },
+  "output": {
+    "count": 1,
+    "id": "minecraft:cobblestone_wall"
+  }
+}

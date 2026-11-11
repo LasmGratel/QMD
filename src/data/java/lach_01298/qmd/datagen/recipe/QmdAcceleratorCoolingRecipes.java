@@ -10,35 +10,35 @@ import static lach_01298.qmd.datagen.recipe.QmdRecipeIngredients.*;
 final class QmdAcceleratorCoolingRecipes {
     static void add(RecipeOutput output) {
         accelerator(AcceleratorCoolingRecipe::new)
-                .fluid(fluidStack("qmd:liquid_argon", 1))
+                .fluid(sizedFluid(tagFluid("c:liquid_argon"), 1))
                 .fluidOutput(sizedFluid(fluid("qmd:argon"), 64))
                 .heat(1000)
                 .temperature(87)
                 .save(output, id("qmd:accelerator_cooling/argon"));
 
         accelerator(AcceleratorCoolingRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:liquid_helium", 1))
+                .fluid(sizedFluid(tagFluid("c:liquid_helium"), 1))
                 .fluidOutput(sizedFluid(fluid("nuclearcraftneohaul:helium"), 64))
                 .heat(1000)
                 .temperature(4)
                 .save(output, id("qmd:accelerator_cooling/helium"));
 
         accelerator(AcceleratorCoolingRecipe::new)
-                .fluid(fluidStack("qmd:liquid_neon", 1))
+                .fluid(sizedFluid(tagFluid("c:liquid_neon"), 1))
                 .fluidOutput(sizedFluid(fluid("qmd:neon"), 64))
                 .heat(1000)
                 .temperature(27)
                 .save(output, id("qmd:accelerator_cooling/neon"));
 
         accelerator(AcceleratorCoolingRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:liquid_nitrogen", 1))
+                .fluid(sizedFluid(tagFluid("c:liquid_nitrogen"), 1))
                 .fluidOutput(sizedFluid(fluid("nuclearcraftneohaul:nitrogen"), 64))
                 .heat(1000)
                 .temperature(77)
                 .save(output, id("qmd:accelerator_cooling/nitrogen"));
 
         accelerator(AcceleratorCoolingRecipe::new)
-                .fluid(fluidStack("minecraft:water", 1))
+                .fluid(sizedFluid(tagFluid("c:water"), 1))
                 .fluidOutput(sizedFluid(fluid("nuclearcraftneohaul:condensate_water"), 1))
                 .heat(32)
                 .temperature(300)

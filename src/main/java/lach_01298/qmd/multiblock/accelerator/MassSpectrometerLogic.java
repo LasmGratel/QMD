@@ -78,7 +78,7 @@ public final class MassSpectrometerLogic extends AbstractAcceleratorLogic {
             false);
         machine.processFluids[0].drain(
             recipe.fluid()
-                .getAmount(),
+                .amount(),
             FluidAction.EXECUTE);
         machine.work = Math.max(0, machine.work - machine.recipeWork);
     }

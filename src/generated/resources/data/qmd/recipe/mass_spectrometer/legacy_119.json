@@ -1,0 +1,51 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "c:sulfuric_acid"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 1000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 2000,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/sulfur"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

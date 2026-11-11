@@ -1,0 +1,6 @@
+{
+  "type": "qmd:irradiator_fuel",
+  "ingredient": {
+    "item": "qmd:source_cobalt_60"
+  }
+}

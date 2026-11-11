@@ -1,0 +1,11 @@
+{
+  "type": "qmd:irradiator",
+  "ingredient": {
+    "item": "minecraft:brown_mushroom"
+  },
+  "multiplier": 4.0,
+  "output": {
+    "count": 1,
+    "id": "nuclearcraftneohaul:glowing_mushroom"
+  }
+}

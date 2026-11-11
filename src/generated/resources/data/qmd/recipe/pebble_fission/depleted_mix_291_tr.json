@@ -1,0 +1,23 @@
+{
+  "type": "nuclearcraftneohaul:pebble_fission_recipe",
+  "criticality": 20,
+  "decayFactor": 0.11,
+  "efficiency": 5.0,
+  "heat": 2000,
+  "intrinsic_flux": 10,
+  "itemIngredient": {
+    "count": 1,
+    "ingredient": {
+      "item": "qmd:mix_291_tr"
+    }
+  },
+  "itemProduct": {
+    "count": 1,
+    "ingredient": {
+      "item": "qmd:depleted_mix_291_tr"
+    }
+  },
+  "radiation": 8.33E-4,
+  "selfPriming": true,
+  "time": 10000
+}

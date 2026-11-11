@@ -1,0 +1,11 @@
+{
+  "values": [
+    "qmd:liquefier_controller",
+    "qmd:liquefier_nozzle",
+    "qmd:liquefier_fluid_port",
+    "qmd:liquefier_energy_port",
+    "qmd:copper_liquefier_compressor",
+    "qmd:neodymium_liquefier_compressor",
+    "qmd:samarium_cobalt_liquefier_compressor"
+  ]
+}

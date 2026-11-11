@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "qmd:vacuum_chamber_casing"
+    },
+    {
+      "tag": "c:glass_blocks"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:vacuum_chamber_glass"
+  }
+}

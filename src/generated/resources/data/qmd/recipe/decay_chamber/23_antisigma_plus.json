@@ -1,0 +1,32 @@
+{
+  "type": "qmd:decay_chamber",
+  "crossSection": 0.52,
+  "energyReleased": 117000,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:antisigma_plus"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_naught"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "antiproton"
+    }
+  ]
+}

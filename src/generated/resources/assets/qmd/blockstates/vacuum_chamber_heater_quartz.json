@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "active=false,facing=down": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "x": 90
+    },
+    "active=false,facing=east": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "y": 90
+    },
+    "active=false,facing=north": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz"
+    },
+    "active=false,facing=south": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "y": 180
+    },
+    "active=false,facing=up": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "x": 270
+    },
+    "active=false,facing=west": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "y": 270
+    },
+    "active=true,facing=down": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "x": 90
+    },
+    "active=true,facing=east": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "y": 90
+    },
+    "active=true,facing=north": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz"
+    },
+    "active=true,facing=south": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "y": 180
+    },
+    "active=true,facing=up": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "x": 270
+    },
+    "active=true,facing=west": {
+      "model": "qmd:block/vacuum_chamber_heater_quartz",
+      "y": 270
+    }
+  }
+}

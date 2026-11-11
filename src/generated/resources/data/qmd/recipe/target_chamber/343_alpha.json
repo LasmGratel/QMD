@@ -1,0 +1,63 @@
+{
+  "type": "qmd:target_chamber",
+  "crossSection": 0.032,
+  "energyReleased": -9920,
+  "fluidIngredients": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:oxygen"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:fluorine"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 31250000,
+      "max_energy": 25000,
+      "min_energy": 18000,
+      "particles": [
+        "qmd:alpha"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "positron"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron_neutrino"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "qmd:block/discharge_lamp_sodium_off"
+    },
+    "lit=true": {
+      "model": "qmd:block/discharge_lamp_sodium"
+    }
+  }
+}

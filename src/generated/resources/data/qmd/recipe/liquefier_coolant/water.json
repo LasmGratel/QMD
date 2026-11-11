@@ -1,0 +1,14 @@
+{
+  "type": "qmd:liquefier_coolant",
+  "amount": 1,
+  "heat": 32.0,
+  "ingredient": {
+    "tag": "c:water"
+  },
+  "input_temperature": 300,
+  "output": {
+    "amount": 1,
+    "id": "nuclearcraftneohaul:condensate_water"
+  },
+  "output_temperature": 350
+}

@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/tungsten_carbide"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/steel"
+      }
+    },
+    {
+      "type": "qmd:equipment_enabled",
+      "equipment": "drills"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "nuclearcraftneohaul:advanced_voltaic_pile"
+    },
+    "M": {
+      "item": "nuclearcraftneohaul:electric_motor"
+    },
+    "S": {
+      "tag": "c:ingots/steel"
+    },
+    "T": {
+      "tag": "c:ingots/tungsten_carbide"
+    }
+  },
+  "pattern": [
+    " T ",
+    "TMT",
+    "SBS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:drill_basic"
+  }
+}

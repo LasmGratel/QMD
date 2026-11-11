@@ -1,0 +1,20 @@
+{
+  "type": "nuclearcraftneohaul:condenser_recipe",
+  "coolingRequired": 128.0,
+  "flowDirectionBonus": 0.0,
+  "fluidIngredient": {
+    "amount": 6,
+    "ingredient": {
+      "tag": "c:exhaust_mercury"
+    }
+  },
+  "fluidProduct": {
+    "amount": 1,
+    "ingredient": {
+      "tag": "c:hot_mercury"
+    }
+  },
+  "inputTemp": 700,
+  "outputTemp": 700,
+  "preferredFlowDir": -1
+}

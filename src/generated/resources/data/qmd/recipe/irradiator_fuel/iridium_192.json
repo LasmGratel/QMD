@@ -1,0 +1,7 @@
+{
+  "type": "qmd:irradiator_fuel",
+  "ingredient": {
+    "item": "qmd:source_iridium_192"
+  },
+  "multiplier": 10.0
+}

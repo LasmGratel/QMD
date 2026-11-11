@@ -1,0 +1,51 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluid": {
+    "amount": 1000,
+    "ingredient": {
+      "tag": "c:boric_acid"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 1500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:hydrogen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 1500,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:oxygen"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/boron"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

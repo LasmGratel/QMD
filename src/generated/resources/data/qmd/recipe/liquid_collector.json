@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nuclearcraftneohaul:advanced_plating"
+    },
+    "B": {
+      "item": "minecraft:bucket"
+    },
+    "M": {
+      "item": "nuclearcraftneohaul:electric_motor"
+    },
+    "S": {
+      "tag": "c:ingots/bronze"
+    }
+  },
+  "pattern": [
+    "ASA",
+    "BMB",
+    "ASA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:liquid_collector"
+  }
+}

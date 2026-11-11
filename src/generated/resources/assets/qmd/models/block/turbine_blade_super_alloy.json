@@ -1,0 +1,6 @@
+{
+  "parent": "nuclearcraftneohaul:block/turbine_rotor_blade",
+  "textures": {
+    "texture": "qmd:block/turbine_blade_super_alloy"
+  }
+}

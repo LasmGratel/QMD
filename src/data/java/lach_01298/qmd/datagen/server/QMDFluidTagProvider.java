@@ -11,14 +11,24 @@ import net.minecraft.data.tags.FluidTagsProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
-/** Common fluid tags retain the original source/flowing-fluid membership contract. */
+/** Common chemical inputs, including the Neohaul fluids used by QMD's production chains. */
 public final class QMDFluidTagProvider extends FluidTagsProvider {
     static final List<String> COLLECTOR_FLUIDS = List.of("hydrochloric_acid", "nitric_acid",
             "sodium_chloride_solution", "chlorine", "nitric_oxide", "nitrogen_dioxide", "salt_water",
             "compressed_air", "liquid_air", "argon", "neon");
+    private static final List<String> NEOHAUL_CHEMICALS = List.of(
+            "alumina", "aluminum_sulfide", "ammonia", "barium_sulfide", "bef2", "benzene", "boric_acid",
+            "carbon_dioxide", "carbon_monoxide", "coal", "cryotheum", "deuterium", "diborane",
+            "difluorobenzene", "dimethyldifluorosilane", "enderium", "ethanol", "ethene", "ethyne",
+            "fluorobenzene", "fluoromethane", "heavy_water", "helium", "helium_3", "hydrofluoric_acid",
+            "hydrogen", "hydrogen_peroxide", "hydrogen_sulfide", "koh", "lif", "liquid_helium",
+            "liquid_nitrogen", "methane", "methanol", "naoh", "nickel_sulfide", "nitrogen", "oxygen",
+            "oxygen_difluoride", "phenol", "potassium_sulfide", "redstone", "sodium_sulfide", "sulfur",
+            "sulfur_dioxide", "sulfur_hexafluoride", "sulfur_trioxide", "sulfuric_acid", "tetrafluoroethene", "tritium");
 
     public QMDFluidTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider,
                               ExistingFileHelper existingFiles) {
@@ -39,6 +49,11 @@ public final class QMDFluidTagProvider extends FluidTagsProvider {
             tag(common(nativeFluid)).add(ResourceKey.create(Registries.FLUID,
                     ResourceLocation.fromNamespaceAndPath("nuclearcraftneohaul", nativeFluid)));
         }
+        for (String chemical : NEOHAUL_CHEMICALS) {
+            tag(common(chemical)).add(ResourceKey.create(Registries.FLUID,
+                    ResourceLocation.fromNamespaceAndPath("nuclearcraftneohaul", chemical)));
+        }
+        tag(common("water")).addTag(FluidTags.WATER);
     }
 
     private static TagKey<Fluid> common(String path) {

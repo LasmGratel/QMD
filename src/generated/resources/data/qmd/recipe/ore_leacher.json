@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "nuclearcraftneohaul:chemical_reactor"
+    },
+    "F": {
+      "item": "nuclearcraftneohaul:machine_chassis"
+    },
+    "H": {
+      "tag": "c:ingots/hard_carbon"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:elite_plating"
+    },
+    "R": {
+      "item": "nuclearcraftneohaul:rock_crusher"
+    }
+  },
+  "pattern": [
+    "PRP",
+    "CFC",
+    "PHP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:ore_leacher"
+  }
+}

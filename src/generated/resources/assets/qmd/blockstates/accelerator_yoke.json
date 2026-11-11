@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "qmd:block/accelerator_yoke"
+    }
+  }
+}

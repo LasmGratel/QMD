@@ -1,0 +1,59 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ores/boron"
+      }
+    }
+  ],
+  "type": "qmd:mass_spectrometer",
+  "fluids": [
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 1500,
+      "ingredient": {
+        "fluid": "qmd:chlorine"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "item": {
+    "tag": "c:ores/boron"
+  },
+  "items": [
+    {
+      "count": 4,
+      "ingredient": {
+        "tag": "c:dusts/boron"
+      }
+    },
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/sodium"
+      }
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/iodine"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:americium_243",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:americium_243_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:americium_243_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:americium_243_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:americium_243_za",
+      "required": false
+    }
+  ]
+}

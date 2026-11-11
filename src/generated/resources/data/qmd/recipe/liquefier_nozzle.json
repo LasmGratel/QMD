@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "nuclearcraftneohaul:steel_chassis"
+    },
+    "I": {
+      "tag": "c:ingots/steel"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    }
+  },
+  "pattern": [
+    "I I",
+    "SCS",
+    "I I"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:liquefier_nozzle"
+  }
+}

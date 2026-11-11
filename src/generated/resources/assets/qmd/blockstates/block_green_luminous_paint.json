@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "qmd:block/green_luminous_paint",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "qmd:block/green_luminous_paint",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "qmd:block/green_luminous_paint",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "qmd:block/green_luminous_paint",
+      "x": 270
+    },
+    "facing=up": {
+      "model": "qmd:block/green_luminous_paint"
+    },
+    "facing=west": {
+      "model": "qmd:block/green_luminous_paint",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "qmd:beam_dump",
+  "fluidProducts": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:deuterium"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 2000,
+      "particles": [
+        "qmd:deuteron"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nuclearcraftneohaul:advanced_plating"
+    },
+    "G": {
+      "item": "nuclearcraftneohaul:graphite_ingot"
+    },
+    "S": {
+      "item": "qmd:strontium_90_block"
+    }
+  },
+  "pattern": [
+    "AGA",
+    "GSG",
+    "AGA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:rtg_strontium"
+  }
+}

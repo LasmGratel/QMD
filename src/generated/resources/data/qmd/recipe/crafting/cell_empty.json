@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "O": {
+      "item": "qmd:ingot_osmiridium"
+    },
+    "R": {
+      "item": "nuclearcraftneohaul:rtg_californium"
+    },
+    "W": {
+      "item": "qmd:part_wire_bscco"
+    }
+  },
+  "pattern": [
+    "WEW",
+    "O O",
+    "WRW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:cell_empty"
+  }
+}

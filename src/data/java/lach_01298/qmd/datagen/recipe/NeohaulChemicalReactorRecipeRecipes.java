@@ -11,27 +11,27 @@ import static lach_01298.qmd.datagen.recipe.NeohaulRecipeIngredients.*;
 final class NeohaulChemicalReactorRecipeRecipes {
     static void add(RecipeOutput output) {
         new ProcessorRecipeBuilder(ChemicalReactorRecipe.class, 1, 1, 0)
-                .addFluidInput(fluid("nuclearcraftneohaul:hydrogen"), 1000)
-                .addFluidInput(fluid("qmd:chlorine"), 1000)
+                .addFluidInput(fluidTag("c:hydrogen"), 1000)
+                .addFluidInput(fluidTag("c:chlorine"), 1000)
                 .addFluidResult(fluid("qmd:hydrochloric_acid"), 2000)
                 .save(RecipeOutputs.named(output, "qmd:chemical_reactor/hydrochloric_acid"), ResourceLocation.parse("qmd:chemical_reactor/hydrochloric_acid"));
 
         new ProcessorRecipeBuilder(ChemicalReactorRecipe.class, 1, 1, 0)
-                .addFluidInput(fluid("qmd:nitrogen_dioxide"), 3000)
-                .addFluidInput(fluid("minecraft:water"), 1000)
+                .addFluidInput(fluidTag("c:nitrogen_dioxide"), 3000)
+                .addFluidInput(fluidTag("c:water"), 1000)
                 .addFluidResult(fluid("qmd:nitric_acid"), 2000)
                 .addFluidResult(fluid("qmd:nitric_oxide"), 1000)
                 .save(RecipeOutputs.named(output, "qmd:chemical_reactor/nitric_acid"), ResourceLocation.parse("qmd:chemical_reactor/nitric_acid"));
 
         new ProcessorRecipeBuilder(ChemicalReactorRecipe.class, 1, 1, 0)
-                .addFluidInput(fluid("nuclearcraftneohaul:nitrogen"), 1000)
-                .addFluidInput(fluid("nuclearcraftneohaul:oxygen"), 1000)
+                .addFluidInput(fluidTag("c:nitrogen"), 1000)
+                .addFluidInput(fluidTag("c:oxygen"), 1000)
                 .addFluidResult(fluid("qmd:nitric_oxide"), 2000)
                 .save(RecipeOutputs.named(output, "qmd:chemical_reactor/nitric_oxide"), ResourceLocation.parse("qmd:chemical_reactor/nitric_oxide"));
 
         new ProcessorRecipeBuilder(ChemicalReactorRecipe.class, 1, 1, 0)
-                .addFluidInput(fluid("qmd:nitric_oxide"), 2000)
-                .addFluidInput(fluid("nuclearcraftneohaul:oxygen"), 1000)
+                .addFluidInput(fluidTag("c:nitric_oxide"), 2000)
+                .addFluidInput(fluidTag("c:oxygen"), 1000)
                 .addFluidResult(fluid("qmd:nitrogen_dioxide"), 2000)
                 .save(RecipeOutputs.named(output, "qmd:chemical_reactor/nitrogen_dioxide"), ResourceLocation.parse("qmd:chemical_reactor/nitrogen_dioxide"));
     }

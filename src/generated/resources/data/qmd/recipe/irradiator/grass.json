@@ -1,0 +1,10 @@
+{
+  "type": "qmd:irradiator",
+  "ingredient": {
+    "item": "minecraft:short_grass"
+  },
+  "output": {
+    "count": 1,
+    "id": "minecraft:dead_bush"
+  }
+}

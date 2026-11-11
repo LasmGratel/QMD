@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "nuclearcraftneohaul:bioplastic"
+    },
+    "S": {
+      "item": "qmd:isotope_calcium_48"
+    }
+  },
+  "pattern": [
+    "BSB",
+    "SSS",
+    "BSB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:source_calcium_48"
+  }
+}

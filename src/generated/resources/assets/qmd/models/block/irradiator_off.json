@@ -1,0 +1,6 @@
+{
+  "parent": "nuclearcraftneohaul:block/processor",
+  "textures": {
+    "front": "qmd:block/machine/irradiator_front_off"
+  }
+}

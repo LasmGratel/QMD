@@ -1,0 +1,21 @@
+{
+  "values": [
+    "qmd:particle_chamber_casing",
+    "qmd:particle_chamber_glass",
+    "qmd:particle_chamber_beam",
+    "qmd:particle_chamber",
+    "qmd:particle_chamber_energy_port",
+    "qmd:particle_chamber_port",
+    "qmd:particle_chamber_fluid_port",
+    "qmd:particle_chamber_beam_port",
+    "qmd:bubble_chamber",
+    "qmd:silicon_tracker",
+    "qmd:wire_chamber",
+    "qmd:em_calorimeter",
+    "qmd:hadron_calorimeter",
+    "qmd:target_chamber_controller",
+    "qmd:decay_chamber_controller",
+    "qmd:collision_chamber_controller",
+    "qmd:beam_dump_controller"
+  ]
+}

@@ -35,27 +35,27 @@ final class QmdAcceleratorSourceRecipes {
                 .save(output, id("qmd:accelerator_source/cell_antitritium"));
 
         accelerator(AcceleratorSourceRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:deuterium", 5))
+                .fluid(sizedFluid(tagFluid("c:deuterium"), 5))
                 .particle(beam("deuteron", 10000, 0L, 0D))
                 .save(output, id("qmd:accelerator_source/deuterium"));
 
         accelerator(AcceleratorSourceRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:diborane", 5))
+                .fluid(sizedFluid(tagFluid("c:diborane"), 5))
                 .particle(beam("boron_ion", 10000, 0L, 0D))
                 .save(output, id("qmd:accelerator_source/diborane"));
 
         accelerator(AcceleratorSourceRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:helium", 10))
+                .fluid(sizedFluid(tagFluid("c:helium"), 10))
                 .particle(beam("alpha", 10000, 0L, 0D))
                 .save(output, id("qmd:accelerator_source/helium"));
 
         accelerator(AcceleratorSourceRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:helium_3", 10))
+                .fluid(sizedFluid(tagFluid("c:helium_3"), 10))
                 .particle(beam("helion", 10000, 0L, 0D))
                 .save(output, id("qmd:accelerator_source/helium_3"));
 
         accelerator(AcceleratorSourceRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:hydrogen", 5))
+                .fluid(sizedFluid(tagFluid("c:hydrogen"), 5))
                 .particle(beam("proton", 10000, 0L, 0D))
                 .save(output, id("qmd:accelerator_source/hydrogen"));
 
@@ -75,7 +75,7 @@ final class QmdAcceleratorSourceRecipes {
                 .save(output, id("qmd:accelerator_source/source_tungsten_filament"));
 
         accelerator(AcceleratorSourceRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:tritium", 5))
+                .fluid(sizedFluid(tagFluid("c:tritium"), 5))
                 .particle(beam("triton", 10000, 0L, 0D))
                 .save(output, id("qmd:accelerator_source/tritium"));
     }

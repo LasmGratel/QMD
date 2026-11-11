@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:uranium_233",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:uranium_233_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:uranium_233_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:uranium_233_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:uranium_233_za",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "qmd:accelerator_cooling",
+  "fluid": {
+    "amount": 1,
+    "ingredient": {
+      "tag": "c:water"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:condensate_water"
+      }
+    }
+  ],
+  "heat": 32,
+  "temperature": 300
+}

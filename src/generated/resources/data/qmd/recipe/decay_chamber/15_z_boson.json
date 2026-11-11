@@ -1,0 +1,32 @@
+{
+  "type": "qmd:decay_chamber",
+  "crossSection": 0.068,
+  "energyReleased": 91200000,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:z_boson"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron_neutrino"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "electron_antineutrino"
+    }
+  ]
+}

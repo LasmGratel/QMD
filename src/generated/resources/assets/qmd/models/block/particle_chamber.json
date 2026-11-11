@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "qmd:block/chamber/beam",
+    "east": "qmd:block/chamber/chamber",
+    "north": "qmd:block/chamber/chamber",
+    "particle": "qmd:block/chamber/beam",
+    "south": "qmd:block/chamber/chamber",
+    "up": "qmd:block/chamber/beam",
+    "west": "qmd:block/chamber/chamber"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:empty_frame"
+    },
+    "I": {
+      "item": "nuclearcraftneohaul:servomechanism"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    },
+    "T": {
+      "tag": "c:ingots/tough"
+    }
+  },
+  "pattern": [
+    "OTO",
+    "TFT",
+    "OIO"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:vacuum_chamber_heater_vent"
+  }
+}

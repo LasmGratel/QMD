@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "qmd:block/chamber/beam_dump_controller_front_on",
+    "side": "qmd:block/chamber/casing",
+    "top": "qmd:block/chamber/casing"
+  }
+}

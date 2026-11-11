@@ -1,0 +1,49 @@
+{
+  "type": "qmd:collision_chamber",
+  "crossSection": 0.025,
+  "energyReleased": -91500000,
+  "particleIngredients": [
+    {
+      "max_energy": 152000000,
+      "min_energy": 101000000,
+      "min_focus": 5.0,
+      "particles": [
+        "qmd:proton"
+      ]
+    },
+    {
+      "max_energy": 152000000,
+      "min_energy": 101000000,
+      "min_focus": 5.0,
+      "particles": [
+        "qmd:proton"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "delta_plus_plus"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "z_boson"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

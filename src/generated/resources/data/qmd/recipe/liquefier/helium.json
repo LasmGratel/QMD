@@ -1,0 +1,16 @@
+{
+  "type": "qmd:liquefier",
+  "amount": 64,
+  "energy": 50.0,
+  "heat": 1000.0,
+  "ingredient": {
+    "tag": "c:helium"
+  },
+  "input_temperature": 40,
+  "output": {
+    "amount": 1,
+    "id": "nuclearcraftneohaul:liquid_helium"
+  },
+  "output_temperature": 400,
+  "pressure_coefficient": 0.1
+}

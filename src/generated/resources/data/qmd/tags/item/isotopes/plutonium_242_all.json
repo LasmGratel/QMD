@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:plutonium_242",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:plutonium_242_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:plutonium_242_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:plutonium_242_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:plutonium_242_za",
+      "required": false
+    }
+  ]
+}

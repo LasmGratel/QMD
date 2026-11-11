@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "qmd:block/chamber/decay_chamber_controller_front_off",
+    "side": "qmd:block/chamber/casing",
+    "top": "qmd:block/chamber/casing"
+  }
+}

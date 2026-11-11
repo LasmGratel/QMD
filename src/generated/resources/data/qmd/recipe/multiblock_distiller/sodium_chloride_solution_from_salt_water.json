@@ -1,0 +1,27 @@
+{
+  "type": "nuclearcraftneohaul:multiblock_distiller_recipe",
+  "fluidIngredients": [
+    {
+      "amount": 10000,
+      "ingredient": {
+        "tag": "c:salt_water"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 666,
+      "ingredient": {
+        "fluid": "qmd:sodium_chloride_solution"
+      }
+    },
+    {
+      "amount": 9000,
+      "ingredient": {
+        "fluid": "minecraft:water"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "timeModifier": 1.0
+}

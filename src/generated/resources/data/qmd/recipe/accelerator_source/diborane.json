@@ -1,0 +1,15 @@
+{
+  "type": "qmd:accelerator_source",
+  "fluid": {
+    "amount": 5,
+    "ingredient": {
+      "tag": "c:diborane"
+    }
+  },
+  "particle": {
+    "amount": 10000,
+    "focus": 0.0,
+    "meanEnergy": 0,
+    "particle": "boron_ion"
+  }
+}

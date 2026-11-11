@@ -335,7 +335,7 @@ final class QmdMassSpectrometerRecipes {
 
     private static void part1(RecipeOutput output) {
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:coal", 100))
+                .fluid(sizedFluid(tagFluid("c:coal"), 100))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1220,7 +1220,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_092"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("minecraft:water", 1000))
+                .fluid(sizedFluid(tagFluid("c:water"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1232,7 +1232,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_093"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:heavy_water", 1000))
+                .fluid(sizedFluid(tagFluid("c:heavy_water"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1244,7 +1244,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_094"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:hydrogen_peroxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:hydrogen_peroxide"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1256,7 +1256,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_095"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:ethanol", 1000))
+                .fluid(sizedFluid(tagFluid("c:ethanol"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1270,7 +1270,7 @@ final class QmdMassSpectrometerRecipes {
 
     private static void part4(RecipeOutput output) {
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:methanol", 1000))
+                .fluid(sizedFluid(tagFluid("c:methanol"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1282,7 +1282,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_097"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:benzene", 1000))
+                .fluid(sizedFluid(tagFluid("c:benzene"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 6))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1294,7 +1294,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_098"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:phenol", 1000))
+                .fluid(sizedFluid(tagFluid("c:phenol"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 6))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1306,7 +1306,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_099"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:fluorobenzene", 1000))
+                .fluid(sizedFluid(tagFluid("c:fluorobenzene"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 6))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1318,7 +1318,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_100"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:difluorobenzene", 1000))
+                .fluid(sizedFluid(tagFluid("c:difluorobenzene"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 6))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1330,7 +1330,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_101"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:dimethyldifluorosilane", 1000))
+                .fluid(sizedFluid(tagFluid("c:dimethyldifluorosilane"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1342,7 +1342,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_102"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:methane", 1000))
+                .fluid(sizedFluid(tagFluid("c:methane"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1354,7 +1354,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_103"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:carbon_dioxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:carbon_dioxide"), 1000))
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1366,7 +1366,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_104"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:carbon_monoxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:carbon_monoxide"), 1000))
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1378,7 +1378,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_105"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:ethene", 1000))
+                .fluid(sizedFluid(tagFluid("c:ethene"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1390,7 +1390,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_106"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:ethyne", 1000))
+                .fluid(sizedFluid(tagFluid("c:ethyne"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1402,7 +1402,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_107"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:fluoromethane", 1000))
+                .fluid(sizedFluid(tagFluid("c:fluoromethane"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1414,7 +1414,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_108"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:ammonia", 1000))
+                .fluid(sizedFluid(tagFluid("c:ammonia"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1426,7 +1426,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_109"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:oxygen_difluoride", 1000))
+                .fluid(sizedFluid(tagFluid("c:oxygen_difluoride"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1438,7 +1438,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_110"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:diborane", 1000))
+                .fluid(sizedFluid(tagFluid("c:diborane"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/boron"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1450,7 +1450,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_111"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:sulfur_dioxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:sulfur_dioxide"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1462,7 +1462,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_112"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:sulfur_trioxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:sulfur_trioxide"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1474,7 +1474,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_113"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:sulfur_hexafluoride", 1000))
+                .fluid(sizedFluid(tagFluid("c:sulfur_hexafluoride"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1486,7 +1486,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_114"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:tetrafluoroethene", 1000))
+                .fluid(sizedFluid(tagFluid("c:tetrafluoroethene"), 1000))
                 .itemOutput(sizedItem(tagItem("c:dusts/graphite"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1498,7 +1498,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_115"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:hydrogen_sulfide", 1000))
+                .fluid(sizedFluid(tagFluid("c:hydrogen_sulfide"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1510,7 +1510,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_116"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:hydrofluoric_acid", 1000))
+                .fluid(sizedFluid(tagFluid("c:hydrofluoric_acid"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1522,7 +1522,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_117"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:boric_acid", 1000))
+                .fluid(sizedFluid(tagFluid("c:boric_acid"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/boron"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1534,7 +1534,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_118"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:sulfuric_acid", 1000))
+                .fluid(sizedFluid(tagFluid("c:sulfuric_acid"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
@@ -1546,7 +1546,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_119"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("qmd:hydrochloric_acid", 1000))
+                .fluid(sizedFluid(tagFluid("c:hydrochloric_acid"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1560,7 +1560,7 @@ final class QmdMassSpectrometerRecipes {
 
     private static void part5(RecipeOutput output) {
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("qmd:nitric_acid", 1000))
+                .fluid(sizedFluid(tagFluid("c:nitric_acid"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1572,7 +1572,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_121"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("qmd:nitric_oxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:nitric_oxide"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1584,7 +1584,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_122"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("qmd:nitrogen_dioxide", 1000))
+                .fluid(sizedFluid(tagFluid("c:nitrogen_dioxide"), 1000))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1596,7 +1596,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_123"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:lif", 144))
+                .fluid(sizedFluid(tagFluid("c:lif"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/lithium"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1608,7 +1608,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_124"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:bef2", 144))
+                .fluid(sizedFluid(tagFluid("c:bef2"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/beryllium"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1620,7 +1620,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_125"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:naoh", 666))
+                .fluid(sizedFluid(tagFluid("c:naoh"), 666))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/sodium"), 1))
@@ -1632,7 +1632,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_126"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:koh", 666))
+                .fluid(sizedFluid(tagFluid("c:koh"), 666))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/potassium"), 1))
@@ -1644,7 +1644,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_127"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:barium_sulfide", 144))
+                .fluid(sizedFluid(tagFluid("c:barium_sulfide"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(sizedItem(tagItem("c:dusts/barium"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1656,7 +1656,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_128"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:sodium_sulfide", 144))
+                .fluid(sizedFluid(tagFluid("c:sodium_sulfide"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/sodium"), 2))
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1668,7 +1668,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_129"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:potassium_sulfide", 144))
+                .fluid(sizedFluid(tagFluid("c:potassium_sulfide"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(sizedItem(tagItem("c:dusts/potassium"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1680,7 +1680,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_130"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:aluminum_sulfide", 144))
+                .fluid(sizedFluid(tagFluid("c:aluminum_sulfide"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/aluminum"), 2))
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 3))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1692,7 +1692,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_131"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:nickel_sulfide", 144))
+                .fluid(sizedFluid(tagFluid("c:nickel_sulfide"), 144))
                 .itemOutput(sizedItem(tagItem("c:dusts/sulfur"), 1))
                 .itemOutput(sizedItem(tagItem("c:dusts/nickel"), 1))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
@@ -1704,7 +1704,7 @@ final class QmdMassSpectrometerRecipes {
                 .save(output, id("qmd:mass_spectrometer/legacy_132"));
 
         accelerator(MassSpectrometerRecipe::new)
-                .fluid(fluidStack("nuclearcraftneohaul:alumina", 144))
+                .fluid(sizedFluid(tagFluid("c:alumina"), 144))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)
                 .itemOutput(sizedItem(tagItem("c:dusts/aluminum"), 2))
                 .itemOutput(SizedChanceItemIngredient.EMPTY)

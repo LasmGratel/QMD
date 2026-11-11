@@ -1,0 +1,28 @@
+{
+  "type": "nuclearcraftneohaul:assembler_recipe",
+  "itemIngredients": [
+    {
+      "count": 3,
+      "ingredient": {
+        "tag": "c:dusts/bscco"
+      }
+    },
+    {
+      "count": 6,
+      "ingredient": {
+        "tag": "c:ingots/silver"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 6,
+      "ingredient": {
+        "item": "qmd:part_wire_bscco"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "radiation": 0.0,
+  "timeModifier": 1.0
+}

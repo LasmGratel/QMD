@@ -1,6 +1,7 @@
 package lach_01298.qmd.recipe.accelerator;
 
 import com.mojang.serialization.Codec;
+import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import com.nred.nuclearcraft.recipe.SizedChanceFluidIngredient;
@@ -14,26 +15,40 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.crafting.DataComponentFluidIngredient;
 
 import java.util.List;
 
 /** Reloadable ion-source, cryogenic cooling and mass-separation recipes. */
 public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAcceleratorRecipe.Input> {
 
+    /** Keep existing datapack/KubeJS stack inputs readable while writing native fluid ingredients. */
+    private static final Codec<SizedChanceFluidIngredient> FLUID_INPUT_CODEC = Codec
+        .either(SizedChanceFluidIngredient.FLAT_CODEC, FluidStack.OPTIONAL_CODEC)
+        .xmap(
+            input -> input.map(
+                ingredient -> ingredient,
+                stack -> stack.isEmpty() ? SizedChanceFluidIngredient.EMPTY
+                    : new SizedChanceFluidIngredient(DataComponentFluidIngredient.of(true, stack), stack.getAmount())),
+            Either::left);
+
     private final AcceleratorRecipeKind mode;
     private final Ingredient item;
     private final int itemCount;
-    private final FluidStack fluid;
+    private final SizedChanceFluidIngredient fluid;
     private final ParticleBeam particle;
     private final List<SizedChanceItemIngredient> itemProducts;
     private final List<SizedChanceFluidIngredient> fluidProducts;
     private final int heat, temperature;
     private final double time;
 
-    protected AbstractAcceleratorRecipe(AcceleratorRecipeKind mode, Ingredient item, int itemCount, FluidStack fluid,
-        ParticleBeam particle, List<SizedChanceItemIngredient> itemProducts,
+    protected AbstractAcceleratorRecipe(AcceleratorRecipeKind mode, Ingredient item, int itemCount,
+        SizedChanceFluidIngredient fluid, ParticleBeam particle, List<SizedChanceItemIngredient> itemProducts,
         List<SizedChanceFluidIngredient> fluidProducts, int heat, int temperature, double time) {
         if (itemCount < 1 || heat < 0
+            || !fluid.isEmpty() && fluid.amount() <= 0
+            || fluid.chancePercent() != 100
+            || fluid.minStackSize() != 0
             || temperature < 0
             || !Double.isFinite(time)
             || time <= 0
@@ -42,7 +57,7 @@ public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAccele
         this.mode = mode;
         this.item = item;
         this.itemCount = itemCount;
-        this.fluid = fluid.copy();
+        this.fluid = fluid;
         this.particle = particle;
         this.itemProducts = List.copyOf(itemProducts);
         this.fluidProducts = List.copyOf(fluidProducts);
@@ -64,7 +79,7 @@ public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAccele
                 Codec.intRange(1, 64)
                     .optionalFieldOf("item_count", 1)
                     .forGetter(AbstractAcceleratorRecipe::itemCount),
-                FluidStack.OPTIONAL_CODEC.optionalFieldOf("fluid", FluidStack.EMPTY)
+                FLUID_INPUT_CODEC.optionalFieldOf("fluid", SizedChanceFluidIngredient.EMPTY)
                     .forGetter(AbstractAcceleratorRecipe::fluid),
                 ParticleBeam.CODEC.optionalFieldOf("particle", ParticleBeam.EMPTY)
                     .forGetter(AbstractAcceleratorRecipe::particle),
@@ -124,8 +139,8 @@ public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAccele
         return time;
     }
 
-    public final FluidStack fluid() {
-        return fluid.copy();
+    public final SizedChanceFluidIngredient fluid() {
+        return fluid;
     }
 
     public List<ItemStack> items() {
@@ -145,8 +160,7 @@ public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAccele
     @Override
     public boolean matches(Input input, Level level) {
         return !isIncomplete() && (item.isEmpty() || item.test(input.item) && input.item.getCount() >= itemCount)
-            && (fluid.isEmpty() || FluidStack.isSameFluidSameComponents(fluid, input.fluid)
-                && input.fluid.getAmount() >= fluid.getAmount());
+            && (fluid.isEmpty() || fluid.test(input.fluid) && input.fluid.getAmount() >= fluid.amount());
     }
 
     @Override
@@ -173,7 +187,7 @@ public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAccele
 
     @Override
     public boolean isIncomplete() {
-        return itemProducts.stream()
+        return !fluid.isEmpty() && fluid.getFluidsRaw().length == 0 || itemProducts.stream()
             .anyMatch(p -> !p.isEmpty() && p.getItemsRaw().length == 0)
             || fluidProducts.stream()
                 .anyMatch(p -> !p.isEmpty() && p.getFluidsRaw().length == 0);
@@ -207,7 +221,7 @@ public abstract class AbstractAcceleratorRecipe implements Recipe<AbstractAccele
     @FunctionalInterface
     public interface Factory<R extends AbstractAcceleratorRecipe> {
 
-        R create(Ingredient item, int itemCount, FluidStack fluid, ParticleBeam particle,
+        R create(Ingredient item, int itemCount, SizedChanceFluidIngredient fluid, ParticleBeam particle,
             List<SizedChanceItemIngredient> items, List<SizedChanceFluidIngredient> fluids, int heat, int temperature,
             double time);
     }

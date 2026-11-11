@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "qmd:block/fission/reflector_tungsten_carbide"
+  }
+}

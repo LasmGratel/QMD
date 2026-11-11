@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qmd:semiconductor_advanced_processor"
+    },
+    "E": {
+      "tag": "c:ingots/tough"
+    },
+    "F": {
+      "item": "qmd:accelerator_casing"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:advanced_plating"
+    }
+  },
+  "pattern": [
+    "PEP",
+    "BFB",
+    "PEP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:beam_diverter_controller"
+  }
+}

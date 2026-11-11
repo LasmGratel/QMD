@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:empty_frame"
+    },
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    },
+    "V": {
+      "item": "nuclearcraftneohaul:servomechanism"
+    }
+  },
+  "pattern": [
+    "OHO",
+    "VFV",
+    "OHO"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:vacuum_chamber_port"
+  }
+}

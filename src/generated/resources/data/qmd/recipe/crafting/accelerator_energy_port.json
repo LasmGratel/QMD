@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:steel_chassis"
+    },
+    "I": {
+      "tag": "c:ingots/niobium_tin"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    },
+    "T": {
+      "tag": "c:ingots/tough"
+    }
+  },
+  "pattern": [
+    "SIS",
+    "TFT",
+    "SIS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:accelerator_energy_port"
+  }
+}

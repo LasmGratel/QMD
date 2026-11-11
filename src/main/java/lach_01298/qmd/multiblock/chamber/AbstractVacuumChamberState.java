@@ -210,13 +210,12 @@ public abstract class AbstractVacuumChamberState {
         for (var holder : level.getRecipeManager()
             .getAllRecipesFor(QMDRecipes.ACCELERATOR_COOLING_TYPE.get())) {
             var recipe = holder.value();
-            FluidStack input = recipe.fluid();
+            var input = recipe.fluid();
             if (input.isEmpty() || recipe.heat() <= 0
                 || recipe.fluids()
                     .isEmpty()
                 || temperature() <= recipe.temperature()
-                || !FluidStack.isSameFluidSameComponents(
-                    input,
+                || !input.test(
                     owner.tank(0)
                         .getFluid()))
                 continue;
@@ -231,7 +230,7 @@ public abstract class AbstractVacuumChamberState {
             cycles = Math.min(
                 cycles,
                 owner.tank(0)
-                    .getFluidAmount() / input.getAmount());
+                    .getFluidAmount() / input.amount());
             cycles = Math.min(
                 cycles,
                 owner.tank(1)
@@ -239,7 +238,7 @@ public abstract class AbstractVacuumChamberState {
                     / output.getAmount());
             if (cycles > 0) {
                 owner.tank(0)
-                    .drain(cycles * input.getAmount(), IFluidHandler.FluidAction.EXECUTE);
+                    .drain(cycles * input.amount(), IFluidHandler.FluidAction.EXECUTE);
                 owner.tank(1)
                     .fill(output.copyWithAmount(cycles * output.getAmount()), IFluidHandler.FluidAction.EXECUTE);
                 heat = Math.max(0, heat - (long) cycles * recipe.heat());

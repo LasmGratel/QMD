@@ -1,0 +1,49 @@
+{
+  "type": "qmd:mass_spectrometer",
+  "fluid": {
+    "amount": 100,
+    "ingredient": {
+      "tag": "c:coal"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 100,
+      "ingredient": {
+        "fluid": "qmd:carbon"
+      }
+    },
+    {
+      "amount": 111,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:sulfur"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "items": [
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    },
+    {
+      "count": 0,
+      "ingredient": []
+    }
+  ]
+}

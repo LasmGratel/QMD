@@ -1,0 +1,24 @@
+{
+  "type": "qmd:neutral_containment",
+  "fluidProducts": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:glueballs"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:glueball"
+      ]
+    },
+    {
+      "amount": 0,
+      "particles": []
+    }
+  ]
+}

@@ -691,23 +691,23 @@ public final class Accelerator extends Multiblock<Accelerator> {
                 || !recipe
                     .matches(new AbstractAcceleratorRecipe.Input(ItemStack.EMPTY, coolantInput.getFluid()), getWorld())
                 || temperature() <= recipe.temperature()) continue;
-            FluidStack input = recipe.fluid(), output = recipe.fluids()
+            var input = recipe.fluid();
+            FluidStack output = recipe.fluids()
                 .getFirst();
             if (input.isEmpty() || output.isEmpty()) continue;
             long thermalFloor = (long) (recipe.temperature() / 400D * heatCapacity);
             double possible = Math
                 .min(cooling / (double) recipe.heat(), (heat - thermalFloor) / (double) recipe.heat());
-            possible = Math.min(possible, coolantInput.getFluidAmount() / (double) input.getAmount());
+            possible = Math.min(possible, coolantInput.getFluidAmount() / (double) input.amount());
             int outputRoom = coolantOutput.fill(output.copyWithAmount(Integer.MAX_VALUE), FluidAction.SIMULATE);
             possible = Math.min(possible, outputRoom / (double) output.getAmount());
             coolingRemainder += Math.max(0, possible);
             int count = (int) Math.min(Integer.MAX_VALUE, Math.floor(coolingRemainder));
-            count = Math.min(
-                count,
-                Math.min(coolantInput.getFluidAmount() / input.getAmount(), outputRoom / output.getAmount()));
+            count = Math
+                .min(count, Math.min(coolantInput.getFluidAmount() / input.amount(), outputRoom / output.getAmount()));
             count = (int) Math.min(count, Math.max(0, heat - thermalFloor) / recipe.heat());
             if (count > 0) {
-                coolantInput.drain(count * input.getAmount(), FluidAction.EXECUTE);
+                coolantInput.drain(count * input.amount(), FluidAction.EXECUTE);
                 coolantOutput.fill(output.copyWithAmount(count * output.getAmount()), FluidAction.EXECUTE);
                 heat -= (long) count * recipe.heat();
                 coolingRemainder -= count;
@@ -728,7 +728,7 @@ public final class Accelerator extends Multiblock<Accelerator> {
                 && (recipe.fluid()
                     .isEmpty()
                     || source.sourceTank.getFluidAmount() >= (long) recipe.fluid()
-                        .getAmount() * sourceSettings(source).multiplier()
+                        .amount() * sourceSettings(source).multiplier()
                             .get())
                 && (recipe.item()
                     .isEmpty()
@@ -813,7 +813,7 @@ public final class Accelerator extends Multiblock<Accelerator> {
             .isEmpty())
             source.sourceTank.drain(
                 recipe.fluid()
-                    .getAmount()
+                    .amount()
                     * sourceSettings(source).multiplier()
                         .get(),
                 FluidAction.EXECUTE);

@@ -12,12 +12,12 @@ import static lach_01298.qmd.datagen.recipe.NeohaulRecipeIngredients.*;
 final class NeohaulSupercoolerRecipeRecipes {
     static void add(RecipeOutput output) {
         new ProcessorRecipeBuilder(SupercoolerRecipe.class, 0.013333333333333334, 1, 0)
-                .addFluidInput(fluid("qmd:compressed_air"), 64)
+                .addFluidInput(fluidTag("c:compressed_air"), 64)
                 .addFluidResult(fluid("qmd:liquid_air"), 1)
                 .save(RecipeOutputs.named(output.withConditions(new OverrideNCRecipesCondition(true)), "qmd:supercooler/liquid_air_from_compressed_air_override"), ResourceLocation.parse("qmd:supercooler/liquid_air_from_compressed_air_override"));
 
         new ProcessorRecipeBuilder(SupercoolerRecipe.class, 0.5, 0.5, 0)
-                .addFluidInput(fluid("qmd:compressed_air"), 8000)
+                .addFluidInput(fluidTag("c:compressed_air"), 8000)
                 .addFluidResult(fluid("qmd:liquid_air"), 25)
                 .save(RecipeOutputs.named(output.withConditions(new OverrideNCRecipesCondition(false)), "qmd:supercooler/liquid_air_from_compressed_air_standard"), ResourceLocation.parse("qmd:supercooler/liquid_air_from_compressed_air_standard"));
 

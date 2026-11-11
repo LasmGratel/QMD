@@ -1,0 +1,15 @@
+{
+  "type": "qmd:accelerator_source",
+  "fluid": {
+    "amount": 10,
+    "ingredient": {
+      "tag": "c:helium"
+    }
+  },
+  "particle": {
+    "amount": 10000,
+    "focus": 0.0,
+    "meanEnergy": 0,
+    "particle": "alpha"
+  }
+}

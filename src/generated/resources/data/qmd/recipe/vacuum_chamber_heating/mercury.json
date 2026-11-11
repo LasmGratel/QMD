@@ -1,0 +1,20 @@
+{
+  "type": "qmd:vacuum_chamber_heating",
+  "fluidIngredients": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:mercury"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 2,
+      "ingredient": {
+        "tag": "c:high_pressure_mercury"
+      }
+    }
+  ],
+  "heat": 256.0
+}

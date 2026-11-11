@@ -1,0 +1,49 @@
+{
+  "type": "qmd:collision_chamber",
+  "crossSection": 0.5,
+  "energyReleased": 11300,
+  "particleIngredients": [
+    {
+      "max_energy": 10000,
+      "min_energy": 700,
+      "min_focus": 5.0,
+      "particles": [
+        "qmd:triton"
+      ]
+    },
+    {
+      "max_energy": 10000,
+      "min_energy": 700,
+      "min_focus": 5.0,
+      "particles": [
+        "qmd:triton"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "alpha"
+    },
+    {
+      "amount": 2,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "neutron"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "nuclearcraftneohaul:machine_chassis"
+    },
+    "N": {
+      "tag": "c:ingots/niobium_tin"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    }
+  },
+  "pattern": [
+    "NSN",
+    "NCN",
+    "NSN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:particle_chamber"
+  }
+}

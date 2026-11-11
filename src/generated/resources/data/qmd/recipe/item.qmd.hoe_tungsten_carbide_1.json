@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/tungsten_carbide"
+      }
+    },
+    {
+      "type": "qmd:equipment_enabled",
+      "equipment": "tools"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "M": {
+      "tag": "c:ingots/tungsten_carbide"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "MM",
+    "S ",
+    "S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:hoe_tungsten_carbide"
+  }
+}

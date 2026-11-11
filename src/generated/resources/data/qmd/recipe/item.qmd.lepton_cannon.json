@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "qmd:part_accelerating_barrel"
+    },
+    "E": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "L": {
+      "item": "qmd:part_laser_assembly"
+    },
+    "O": {
+      "tag": "c:ingots/osmiridium"
+    },
+    "S": {
+      "item": "nuclearcraftneohaul:copper_solenoid"
+    },
+    "T": {
+      "tag": "c:ingots/super_alloy"
+    }
+  },
+  "pattern": [
+    "EL ",
+    "OBS",
+    "T  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:lepton_cannon"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "F": {
+      "item": "qmd:accelerator_casing"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:elite_plating"
+    },
+    "W": {
+      "tag": "c:wires/bscco"
+    }
+  },
+  "pattern": [
+    "PWP",
+    "AFA",
+    "PWP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:mass_spectrometer_controller"
+  }
+}

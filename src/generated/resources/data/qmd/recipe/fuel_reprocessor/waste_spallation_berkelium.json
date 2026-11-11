@@ -1,0 +1,58 @@
+{
+  "type": "nuclearcraftneohaul:fuel_reprocessor_recipe",
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:waste_spallation_berkelium"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "chancePercent": 15,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:radium_dust"
+      }
+    },
+    {
+      "chancePercent": 18,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:polonium_dust"
+      }
+    },
+    {
+      "chancePercent": 12,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:bismuth_dust"
+      }
+    },
+    {
+      "chancePercent": 31,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:lead_dust"
+      }
+    },
+    {
+      "chancePercent": 11,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:ingot_mercury"
+      }
+    },
+    {
+      "chancePercent": 13,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_platinum"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "radiation": 0.0,
+  "timeModifier": 1.0
+}

@@ -1,0 +1,42 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 500,
+      "ingredient": {
+        "tag": "c:nitrogen"
+      }
+    },
+    {
+      "amount": 1000,
+      "ingredient": {
+        "tag": "c:hydrogen"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 100,
+      "ingredient": {
+        "tag": "c:carbon"
+      }
+    },
+    {
+      "amount": 1000,
+      "ingredient": {
+        "tag": "c:helium"
+      }
+    }
+  ],
+  "heat": 1.4E7,
+  "particleIngredients": [
+    {
+      "amount": 594700,
+      "max_energy": 1000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:muon"
+      ]
+    }
+  ]
+}

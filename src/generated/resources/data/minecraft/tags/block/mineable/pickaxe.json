@@ -1,0 +1,18 @@
+{
+  "values": [
+    "#qmd:accelerator_parts",
+    "#qmd:chamber_parts",
+    "#qmd:fission_parts",
+    "#qmd:irradiator",
+    "#qmd:lamps",
+    "#qmd:liquefier_parts",
+    "#qmd:vacuum_parts",
+    "qmd:accelerator_computer_port",
+    "qmd:accelerator_port",
+    "qmd:atmosphere_collector",
+    "qmd:beamline",
+    "qmd:liquid_collector",
+    "qmd:ore_leacher",
+    "qmd:turbine_blade_super_alloy"
+  ]
+}

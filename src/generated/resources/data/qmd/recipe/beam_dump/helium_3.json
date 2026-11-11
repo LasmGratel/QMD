@@ -1,0 +1,19 @@
+{
+  "type": "qmd:beam_dump",
+  "fluidProducts": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:helium_3"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000,
+      "particles": [
+        "qmd:helion"
+      ]
+    }
+  ]
+}

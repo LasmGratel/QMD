@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:gems/boron_nitride"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/tungsten_carbide"
+      }
+    },
+    {
+      "type": "qmd:equipment_enabled",
+      "equipment": "drills"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "nuclearcraftneohaul:basic_lithium_ion_battery"
+    },
+    "M": {
+      "item": "nuclearcraftneohaul:electric_motor"
+    },
+    "N": {
+      "tag": "c:gems/boron_nitride"
+    },
+    "S": {
+      "item": "qmd:part_magnet_nd"
+    },
+    "T": {
+      "tag": "c:ingots/tungsten_carbide"
+    }
+  },
+  "pattern": [
+    "NTN",
+    "TMT",
+    "SBS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:drill_advanced"
+  }
+}

@@ -19,10 +19,9 @@ public abstract class AbstractVacuumChamberBlockEntity extends AbstractChamberBl
             .getAllRecipesFor(QMDRecipes.ACCELERATOR_COOLING_TYPE.get())
             .stream()
             .anyMatch(
-                holder -> index == 0 ? FluidStack.isSameFluidSameComponents(
-                    holder.value()
-                        .fluid(),
-                    stack)
+                holder -> index == 0 ? holder.value()
+                    .fluid()
+                    .test(stack)
                     : holder.value()
                         .fluidProducts()
                         .stream()

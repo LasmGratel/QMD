@@ -1,0 +1,44 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:copernicium_291",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:copernicium_291_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:copernicium_291_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:copernicium_291_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:copernicium_291_za",
+      "required": false
+    },
+    {
+      "id": "qmd:copernicium_291",
+      "required": false
+    },
+    {
+      "id": "qmd:copernicium_291_c",
+      "required": false
+    },
+    {
+      "id": "qmd:copernicium_291_ox",
+      "required": false
+    },
+    {
+      "id": "qmd:copernicium_291_ni",
+      "required": false
+    },
+    {
+      "id": "qmd:copernicium_291_za",
+      "required": false
+    }
+  ]
+}

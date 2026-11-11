@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "qmd:part_empty_cooler"
+    },
+    "D": {
+      "tag": "c:dusts/obsidian"
+    },
+    "I": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "DID",
+    "ICI",
+    "DID"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:accelerator_cooler_obsidian"
+  }
+}

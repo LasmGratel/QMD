@@ -10,7 +10,7 @@ import static lach_01298.qmd.datagen.recipe.QmdRecipeIngredients.*;
 final class QmdLiquefierRecipes {
     static void add(RecipeOutput output) {
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("qmd:argon"), 64)
+                .input(tagFluid("c:argon"), 64)
                 .output(fluidStack("qmd:liquid_argon", 1))
                 .heat(1000D)
                 .temperatures(600, 450)
@@ -19,7 +19,7 @@ final class QmdLiquefierRecipes {
                 .save(output, id("qmd:liquefier/argon"));
 
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("qmd:compressed_air"), 64)
+                .input(tagFluid("c:compressed_air"), 64)
                 .output(fluidStack("qmd:liquid_air", 1))
                 .heat(1000D)
                 .temperatures(600, 450)
@@ -28,7 +28,7 @@ final class QmdLiquefierRecipes {
                 .save(output, id("qmd:liquefier/compressed_air"));
 
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("nuclearcraftneohaul:helium"), 64)
+                .input(tagFluid("c:helium"), 64)
                 .output(fluidStack("nuclearcraftneohaul:liquid_helium", 1))
                 .heat(1000D)
                 .temperatures(40, 400)
@@ -37,7 +37,7 @@ final class QmdLiquefierRecipes {
                 .save(output, id("qmd:liquefier/helium"));
 
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("nuclearcraftneohaul:hydrogen"), 64)
+                .input(tagFluid("c:hydrogen"), 64)
                 .output(fluidStack("qmd:liquid_hydrogen", 1))
                 .heat(1000D)
                 .temperatures(200, 400)
@@ -46,7 +46,7 @@ final class QmdLiquefierRecipes {
                 .save(output, id("qmd:liquefier/hydrogen"));
 
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("qmd:neon"), 64)
+                .input(tagFluid("c:neon"), 64)
                 .output(fluidStack("qmd:liquid_neon", 1))
                 .heat(1000D)
                 .temperatures(230, 400)
@@ -55,7 +55,7 @@ final class QmdLiquefierRecipes {
                 .save(output, id("qmd:liquefier/neon"));
 
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("nuclearcraftneohaul:nitrogen"), 64)
+                .input(tagFluid("c:nitrogen"), 64)
                 .output(fluidStack("nuclearcraftneohaul:liquid_nitrogen", 1))
                 .heat(1000D)
                 .temperatures(600, 450)
@@ -64,7 +64,7 @@ final class QmdLiquefierRecipes {
                 .save(output, id("qmd:liquefier/nitrogen"));
 
         liquefier(LiquefierRecipe.Kind.GAS)
-                .input(fluid("nuclearcraftneohaul:oxygen"), 64)
+                .input(tagFluid("c:oxygen"), 64)
                 .output(fluidStack("qmd:liquid_oxygen", 1))
                 .heat(1000D)
                 .temperatures(700, 450)

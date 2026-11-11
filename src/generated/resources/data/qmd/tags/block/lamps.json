@@ -1,0 +1,13 @@
+{
+  "values": [
+    "qmd:discharge_lamp_empty",
+    "qmd:discharge_lamp_hydrogen",
+    "qmd:discharge_lamp_helium",
+    "qmd:discharge_lamp_nitrogen",
+    "qmd:discharge_lamp_oxygen",
+    "qmd:discharge_lamp_neon",
+    "qmd:discharge_lamp_argon",
+    "qmd:discharge_lamp_sodium",
+    "qmd:discharge_lamp_mercury"
+  ]
+}

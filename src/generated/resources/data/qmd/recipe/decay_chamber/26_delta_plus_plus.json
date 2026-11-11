@@ -1,0 +1,31 @@
+{
+  "type": "qmd:decay_chamber",
+  "energyReleased": 152000,
+  "particleIngredients": [
+    {
+      "particles": [
+        "qmd:delta_plus_plus"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "proton"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_plus"
+    }
+  ]
+}

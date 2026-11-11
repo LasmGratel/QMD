@@ -1,0 +1,38 @@
+{
+  "type": "qmd:nucleosynthesis_chamber",
+  "fluidIngredients": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:zirconium"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 144,
+      "ingredient": {
+        "tag": "c:ruthenium_106"
+      }
+    },
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "heat": 1.27E7,
+  "particleIngredients": [
+    {
+      "amount": 24490000,
+      "max_energy": 10000,
+      "min_focus": 1.0,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ]
+}

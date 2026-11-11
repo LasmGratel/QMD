@@ -11,7 +11,7 @@ import static lach_01298.qmd.datagen.recipe.NeohaulRecipeIngredients.*;
 final class NeohaulElectrolyzerRecipeRecipes {
     static void add(RecipeOutput output) {
         new ProcessorRecipeBuilder(ElectrolyzerRecipe.class, 0.5, 1, 0)
-                .addFluidInput(fluid("qmd:sodium_chloride_solution"), 1332)
+                .addFluidInput(fluidTag("c:sodium_chloride_solution"), 1332)
                 .addFluidResult(fluid("nuclearcraftneohaul:hydrogen"), 1000)
                 .addFluidResult(fluid("qmd:chlorine"), 1000)
                 .addFluidResult(fluid("nuclearcraftneohaul:sodium_hydroxide_solution"), 1332)

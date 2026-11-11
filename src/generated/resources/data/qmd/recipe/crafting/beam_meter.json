@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/ferroboron"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:processors/basic"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/copper"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "nuclearcraftneohaul:bioplastic"
+    },
+    "C": {
+      "tag": "c:ingots/copper"
+    },
+    "F": {
+      "tag": "c:ingots/ferroboron"
+    },
+    "P": {
+      "tag": "c:processors/basic"
+    },
+    "S": {
+      "item": "qmd:part_scintillator_plastic"
+    }
+  },
+  "pattern": [
+    "FFS",
+    "PPC",
+    "FFB"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:beam_meter"
+  }
+}

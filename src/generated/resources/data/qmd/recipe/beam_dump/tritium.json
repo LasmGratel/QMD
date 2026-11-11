@@ -1,0 +1,19 @@
+{
+  "type": "qmd:beam_dump",
+  "fluidProducts": [
+    {
+      "amount": 1,
+      "ingredient": {
+        "tag": "c:tritium"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 2000,
+      "particles": [
+        "qmd:triton"
+      ]
+    }
+  ]
+}

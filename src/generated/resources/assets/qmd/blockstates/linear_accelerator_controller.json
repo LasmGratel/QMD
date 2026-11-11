@@ -1,0 +1,96 @@
+{
+  "variants": {
+    "active=false,facing=down,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_off_in",
+      "x": 90
+    },
+    "active=false,facing=down,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_off_out",
+      "x": 90
+    },
+    "active=false,facing=east,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_off_in",
+      "y": 90
+    },
+    "active=false,facing=east,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_off_out",
+      "y": 90
+    },
+    "active=false,facing=north,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_off_in"
+    },
+    "active=false,facing=north,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_off_out"
+    },
+    "active=false,facing=south,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_off_in",
+      "y": 180
+    },
+    "active=false,facing=south,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_off_out",
+      "y": 180
+    },
+    "active=false,facing=up,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_off_in",
+      "x": 270
+    },
+    "active=false,facing=up,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_off_out",
+      "x": 270
+    },
+    "active=false,facing=west,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_off_in",
+      "y": 270
+    },
+    "active=false,facing=west,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_off_out",
+      "y": 270
+    },
+    "active=true,facing=down,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_on_in",
+      "x": 90
+    },
+    "active=true,facing=down,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_on_out",
+      "x": 90
+    },
+    "active=true,facing=east,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_on_in",
+      "y": 90
+    },
+    "active=true,facing=east,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_on_out",
+      "y": 90
+    },
+    "active=true,facing=north,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_on_in"
+    },
+    "active=true,facing=north,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_on_out"
+    },
+    "active=true,facing=south,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_on_in",
+      "y": 180
+    },
+    "active=true,facing=south,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_on_out",
+      "y": 180
+    },
+    "active=true,facing=up,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_on_in",
+      "x": 270
+    },
+    "active=true,facing=up,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_on_out",
+      "x": 270
+    },
+    "active=true,facing=west,output=false": {
+      "model": "qmd:block/linear_accelerator_controller_on_in",
+      "y": 270
+    },
+    "active=true,facing=west,output=true": {
+      "model": "qmd:block/linear_accelerator_controller_on_out",
+      "y": 270
+    }
+  }
+}

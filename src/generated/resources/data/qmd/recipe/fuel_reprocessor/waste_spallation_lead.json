@@ -1,0 +1,58 @@
+{
+  "type": "nuclearcraftneohaul:fuel_reprocessor_recipe",
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:waste_spallation_lead"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "chancePercent": 18,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:ingot_mercury"
+      }
+    },
+    {
+      "chancePercent": 18,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_osmium"
+      }
+    },
+    {
+      "chancePercent": 15,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_tungsten"
+      }
+    },
+    {
+      "chancePercent": 19,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_hafnium"
+      }
+    },
+    {
+      "chancePercent": 15,
+      "count": 1,
+      "ingredient": {
+        "item": "qmd:dust_ytterbium"
+      }
+    },
+    {
+      "chancePercent": 15,
+      "count": 1,
+      "ingredient": {
+        "item": "nuclearcraftneohaul:gadolinium_dust"
+      }
+    }
+  ],
+  "powerModifier": 1.0,
+  "radiation": 0.0,
+  "timeModifier": 1.0
+}

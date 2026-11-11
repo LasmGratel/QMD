@@ -1,0 +1,14 @@
+{
+  "type": "qmd:liquefier_coolant",
+  "amount": 1,
+  "heat": 1000.0,
+  "ingredient": {
+    "tag": "c:liquid_neon"
+  },
+  "input_temperature": 27,
+  "output": {
+    "amount": 64,
+    "id": "qmd:neon"
+  },
+  "output_temperature": 300
+}

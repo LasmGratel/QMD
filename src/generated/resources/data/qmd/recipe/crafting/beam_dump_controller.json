@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "qmd:semiconductor_basic_processor"
+    },
+    "F": {
+      "item": "minecraft:copper_block"
+    },
+    "P": {
+      "item": "nuclearcraftneohaul:elite_plating"
+    },
+    "T": {
+      "tag": "c:ingots/tough"
+    }
+  },
+  "pattern": [
+    "PTP",
+    "BFB",
+    "PTP"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:beam_dump_controller"
+  }
+}

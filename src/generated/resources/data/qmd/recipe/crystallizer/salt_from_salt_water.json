@@ -1,0 +1,22 @@
+{
+  "type": "nuclearcraftneohaul:crystallizer_recipe",
+  "fluidIngredients": [
+    {
+      "amount": 10000,
+      "ingredient": {
+        "tag": "c:salt_water"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/salt"
+      }
+    }
+  ],
+  "powerModifier": 4.0,
+  "radiation": 0.0,
+  "timeModifier": 2.0
+}

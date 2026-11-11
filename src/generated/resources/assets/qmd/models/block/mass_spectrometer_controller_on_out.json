@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "qmd:block/accelerator/casing",
+    "east": "qmd:block/accelerator/casing",
+    "north": "qmd:block/accelerator/mass_spectrometer_controller_front_on",
+    "particle": "qmd:block/accelerator/casing",
+    "south": "qmd:block/accelerator/casing",
+    "up": "qmd:block/accelerator/casing",
+    "west": "qmd:block/accelerator/casing"
+  }
+}

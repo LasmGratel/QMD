@@ -1,0 +1,14 @@
+{
+  "type": "qmd:liquefier_coolant",
+  "amount": 1,
+  "heat": 1000.0,
+  "ingredient": {
+    "tag": "c:liquid_argon"
+  },
+  "input_temperature": 87,
+  "output": {
+    "amount": 64,
+    "id": "qmd:argon"
+  },
+  "output_temperature": 300
+}

@@ -1,0 +1,47 @@
+{
+  "type": "qmd:collision_chamber",
+  "crossSection": 0.5,
+  "energyReleased": 2220,
+  "particleIngredients": [
+    {
+      "max_energy": 30000,
+      "min_focus": 5.0,
+      "particles": [
+        "qmd:proton"
+      ]
+    },
+    {
+      "max_energy": 30000,
+      "min_focus": 5.0,
+      "particles": [
+        "qmd:neutron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "deuteron"
+    },
+    {
+      "amount": 1,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "photon"
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    },
+    {
+      "amount": 0,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": ""
+    }
+  ]
+}

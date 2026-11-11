@@ -1,0 +1,33 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/gold"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "qmd:accelerator_casing"
+    },
+    "S": {
+      "item": "qmd:semiconductor_basic_processor"
+    },
+    "T": {
+      "tag": "c:ingots/gold"
+    }
+  },
+  "pattern": [
+    "STS",
+    "TFT",
+    "STS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:accelerator_computer_port"
+  }
+}

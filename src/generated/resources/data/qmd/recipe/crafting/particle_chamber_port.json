@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:empty_frame"
+    },
+    "H": {
+      "item": "minecraft:hopper"
+    },
+    "T": {
+      "tag": "c:ingots/tungsten"
+    },
+    "V": {
+      "item": "nuclearcraftneohaul:servomechanism"
+    }
+  },
+  "pattern": [
+    "THT",
+    "VFV",
+    "THT"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:particle_chamber_port"
+  }
+}

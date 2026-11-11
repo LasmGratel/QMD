@@ -14,7 +14,7 @@ final class NeohaulMultiblockElectrolyzerRecipeRecipes {
     static void add(RecipeOutput output) {
         new BasicRecipeBuilder<>(new MultiblockElectrolyzerRecipe(
                 List.of(),
-                List.of(SizedChanceFluidIngredient.of(fluid("qmd:sodium_chloride_solution"), 1332)),
+                List.of(SizedChanceFluidIngredient.of(fluidTag("c:sodium_chloride_solution"), 1332)),
                 List.of(),
                 List.of(SizedChanceFluidIngredient.of(fluid("nuclearcraftneohaul:hydrogen"), 1000), SizedChanceFluidIngredient.of(fluid("qmd:chlorine"), 1000), SizedChanceFluidIngredient.of(fluid("nuclearcraftneohaul:sodium_hydroxide_solution"), 1332)),
                 0.5, 1, "chloride_solution"))

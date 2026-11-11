@@ -1,0 +1,30 @@
+{
+  "type": "nuclearcraftneohaul:enricher_recipe",
+  "fluidIngredients": [
+    {
+      "amount": 120,
+      "ingredient": {
+        "tag": "c:alumina"
+      }
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 48,
+      "ingredient": {
+        "fluid": "qmd:yag"
+      }
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:ingots/yttrium"
+      }
+    }
+  ],
+  "powerModifier": 2.0,
+  "radiation": 0.0,
+  "timeModifier": 2.0
+}

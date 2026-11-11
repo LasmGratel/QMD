@@ -96,55 +96,55 @@ final class NeohaulInfuserRecipeRecipes {
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(item("qmd:part_empty_cooler"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:cryotheum"), 1000)
+                .addFluidInput(fluidTag("c:cryotheum"), 1000)
                 .addItemResult(item("qmd:accelerator_cooler_cryotheum"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/accelerator_cooler_cryotheum"), ResourceLocation.parse("qmd:infuser/accelerator_cooler_cryotheum"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(item("qmd:part_empty_cooler"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:enderium"), 576)
+                .addFluidInput(fluidTag("c:enderium"), 576)
                 .addItemResult(item("qmd:accelerator_cooler_enderium"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/accelerator_cooler_enderium"), ResourceLocation.parse("qmd:infuser/accelerator_cooler_enderium"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(item("qmd:part_empty_cooler"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:liquid_helium"), 1000)
+                .addFluidInput(fluidTag("c:liquid_helium"), 1000)
                 .addItemResult(item("qmd:accelerator_cooler_liquid_helium"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/accelerator_cooler_liquid_helium"), ResourceLocation.parse("qmd:infuser/accelerator_cooler_liquid_helium"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(item("qmd:part_empty_cooler"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:liquid_nitrogen"), 1000)
+                .addFluidInput(fluidTag("c:liquid_nitrogen"), 1000)
                 .addItemResult(item("qmd:accelerator_cooler_liquid_nitrogen"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/accelerator_cooler_liquid_nitrogen"), ResourceLocation.parse("qmd:infuser/accelerator_cooler_liquid_nitrogen"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(item("qmd:part_empty_cooler"), 1)
-                .addFluidInput(fluid("minecraft:water"), 1000)
+                .addFluidInput(fluidTag("c:water"), 1000)
                 .addItemResult(item("qmd:accelerator_cooler_water"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/accelerator_cooler_water"), ResourceLocation.parse("qmd:infuser/accelerator_cooler_water"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(itemTag("c:dusts/copper"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:oxygen"), 1000)
+                .addFluidInput(fluidTag("c:oxygen"), 1000)
                 .addItemResult(item("qmd:chemical_dust_copper_oxide"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/copper_oxide"), ResourceLocation.parse("qmd:infuser/copper_oxide"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(itemTag("c:dusts/hafnium"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:oxygen"), 1000)
+                .addFluidInput(fluidTag("c:oxygen"), 1000)
                 .addItemResult(item("qmd:chemical_dust_hafnium_oxide"), 1)
                 .save(RecipeOutputs.named(output, "qmd:infuser/hafnium_oxide"), ResourceLocation.parse("qmd:infuser/hafnium_oxide"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(itemTag("c:dusts/iron"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:hydrofluoric_acid"), 1500)
+                .addFluidInput(fluidTag("c:hydrofluoric_acid"), 1500)
                 .addItemResult(item("qmd:chemical_dust_iron_fluoride"), 1)
                 .save(RecipeOutputs.named(output.withConditions(hasTag("c:dusts/iron")), "qmd:infuser/iron_fluoride_from_dusts"), ResourceLocation.parse("qmd:infuser/iron_fluoride_from_dusts"));
 
         new ProcessorRecipeBuilder(FluidInfuserRecipe.class, 1, 1, 0)
                 .addItemInput(itemTag("c:ingots/iron"), 1)
-                .addFluidInput(fluid("nuclearcraftneohaul:hydrofluoric_acid"), 1500)
+                .addFluidInput(fluidTag("c:hydrofluoric_acid"), 1500)
                 .addItemResult(item("qmd:chemical_dust_iron_fluoride"), 1)
                 .save(RecipeOutputs.named(output.withConditions(hasTag("c:ingots/iron")), "qmd:infuser/iron_fluoride_from_ingots"), ResourceLocation.parse("qmd:infuser/iron_fluoride_from_ingots"));
     }

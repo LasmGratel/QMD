@@ -11,8 +11,8 @@ import static lach_01298.qmd.datagen.recipe.NeohaulRecipeIngredients.*;
 final class NeohaulSaltMixerRecipeRecipes {
     static void add(RecipeOutput output) {
         new ProcessorRecipeBuilder(FluidMixerRecipe.class, 1, 1, 0)
-                .addFluidInput(fluid("qmd:mercury"), 144)
-                .addFluidInput(fluid("nuclearcraftneohaul:sulfur"), 666)
+                .addFluidInput(fluidTag("c:mercury"), 144)
+                .addFluidInput(fluidTag("c:sulfur"), 666)
                 .addFluidResult(fluid("nuclearcraftneohaul:redstone"), 100)
                 .save(RecipeOutputs.named(output, "qmd:fluid_mixer/redstone"), ResourceLocation.parse("qmd:fluid_mixer/redstone"));
     }

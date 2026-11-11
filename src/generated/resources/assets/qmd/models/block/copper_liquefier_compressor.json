@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "qmd:block/liquefier/compressor_bottom",
+    "side": "nuclearcraftneohaul:block/heat_exchanger/controller_side",
+    "top": "qmd:block/liquefier/compressor_copper"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "nuclearcraftneohaul:californium_251",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:californium_251_c",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:californium_251_ox",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:californium_251_ni",
+      "required": false
+    },
+    {
+      "id": "nuclearcraftneohaul:californium_251_za",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/super_alloy"
+      }
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": {
+      "item": "nuclearcraftneohaul:boron_nitride_boots"
+    },
+    "B": {
+      "item": "nuclearcraftneohaul:lithium_ion_cell"
+    },
+    "H": {
+      "item": "nuclearcraftneohaul:heavy_radiation_shielding"
+    },
+    "P": {
+      "item": "qmd:semiconductor_elite_processor"
+    },
+    "S": {
+      "tag": "c:ingots/super_alloy"
+    }
+  },
+  "pattern": [
+    "SBS",
+    "HAH",
+    "SPS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:boots_hev"
+  }
+}

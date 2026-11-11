@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "qmd:block/copper_liquefier_compressor"
+    }
+  }
+}

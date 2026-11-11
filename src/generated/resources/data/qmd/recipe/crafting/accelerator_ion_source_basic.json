@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "nuclearcraftneohaul:advanced_plating"
+    },
+    "C": {
+      "item": "qmd:accelerator_casing"
+    },
+    "T": {
+      "item": "qmd:source_tungsten_filament"
+    }
+  },
+  "pattern": [
+    "AAA",
+    " CT",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "qmd:accelerator_ion_source_basic"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "qmd:block/liquefier/controller_bottom",
+    "east": "qmd:block/liquefier/controller_side",
+    "north": "qmd:block/liquefier/fluid_port_out",
+    "particle": "qmd:block/liquefier/controller_side",
+    "south": "qmd:block/liquefier/controller_back",
+    "up": "qmd:block/liquefier/controller_top",
+    "west": "qmd:block/liquefier/controller_side"
+  }
+}

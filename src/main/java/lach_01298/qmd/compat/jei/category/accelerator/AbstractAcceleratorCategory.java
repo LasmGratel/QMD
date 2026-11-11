@@ -121,11 +121,17 @@ public abstract class AbstractAcceleratorCategory<R extends AbstractAcceleratorR
             builder.addInputSlot(x() + fluidInputX(), fluidInputY())
                 .setFluidRenderer(
                     recipe.fluid()
-                        .getAmount(),
+                        .amount(),
                     false,
                     16,
                     16)
-                .addIngredient(NeoForgeTypes.FLUID_STACK, recipe.fluid());
+                .addIngredients(
+                    NeoForgeTypes.FLUID_STACK,
+                    Arrays.stream(
+                        recipe.fluid()
+                            .getFluidsRaw())
+                        .map(stack -> stack.copy())
+                        .toList());
         if (recipe.particle()
             .toStack() != null)
             builder.addOutputSlot(x() + 55, 12)

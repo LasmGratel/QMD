@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "dir=invisible": {
+      "model": "nuclearcraftneohaul:block/block_invisible"
+    },
+    "dir=x": {
+      "model": "qmd:block/turbine_blade_super_alloy",
+      "x": 90,
+      "y": 90
+    },
+    "dir=y": {
+      "model": "qmd:block/turbine_blade_super_alloy"
+    },
+    "dir=z": {
+      "model": "qmd:block/turbine_blade_super_alloy",
+      "x": 90
+    }
+  }
+}

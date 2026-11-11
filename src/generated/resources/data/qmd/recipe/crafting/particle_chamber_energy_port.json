@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "nuclearcraftneohaul:empty_frame"
+    },
+    "I": {
+      "tag": "c:ingots/niobium_tin"
+    },
+    "S": {
+      "tag": "c:ingots/stainless_steel"
+    },
+    "T": {
+      "tag": "c:ingots/tungsten"
+    }
+  },
+  "pattern": [
+    "SIS",
+    "TFT",
+    "SIS"
+  ],
+  "result": {
+    "count": 4,
+    "id": "qmd:particle_chamber_energy_port"
+  }
+}

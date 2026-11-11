@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,nuclearcraftneohaul_active=false": {
+      "model": "qmd:block/ore_leacher",
+      "y": 90
+    },
+    "facing=east,nuclearcraftneohaul_active=true": {
+      "model": "qmd:block/ore_leacher_active",
+      "y": 90
+    },
+    "facing=north,nuclearcraftneohaul_active=false": {
+      "model": "qmd:block/ore_leacher"
+    },
+    "facing=north,nuclearcraftneohaul_active=true": {
+      "model": "qmd:block/ore_leacher_active"
+    },
+    "facing=south,nuclearcraftneohaul_active=false": {
+      "model": "qmd:block/ore_leacher",
+      "y": 180
+    },
+    "facing=south,nuclearcraftneohaul_active=true": {
+      "model": "qmd:block/ore_leacher_active",
+      "y": 180
+    },
+    "facing=west,nuclearcraftneohaul_active=false": {
+      "model": "qmd:block/ore_leacher",
+      "y": 270
+    },
+    "facing=west,nuclearcraftneohaul_active=true": {
+      "model": "qmd:block/ore_leacher_active",
+      "y": 270
+    }
+  }
+}

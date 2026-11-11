@@ -1,0 +1,77 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:dusts/polonium"
+      }
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:waste_spallation/polonium"
+      }
+    }
+  ],
+  "type": "qmd:target_chamber",
+  "energyReleased": 2090000,
+  "fluidIngredients": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "fluidProducts": [
+    {
+      "amount": 0,
+      "ingredient": []
+    }
+  ],
+  "itemIngredients": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:dusts/polonium"
+      }
+    }
+  ],
+  "itemProducts": [
+    {
+      "count": 1,
+      "ingredient": {
+        "tag": "c:waste_spallation/polonium"
+      }
+    }
+  ],
+  "particleIngredients": [
+    {
+      "amount": 1000000,
+      "max_energy": 10000000,
+      "particles": [
+        "qmd:antideuteron"
+      ]
+    }
+  ],
+  "particleProducts": [
+    {
+      "amount": 4,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_plus"
+    },
+    {
+      "amount": 4,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_naught"
+    },
+    {
+      "amount": 4,
+      "focus": 0.0,
+      "meanEnergy": 0,
+      "particle": "pion_minus"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "type": "qmd:accelerator_cooling",
+  "fluid": {
+    "amount": 1,
+    "ingredient": {
+      "tag": "c:liquid_helium"
+    }
+  },
+  "fluids": [
+    {
+      "amount": 64,
+      "ingredient": {
+        "fluid": "nuclearcraftneohaul:helium"
+      }
+    }
+  ],
+  "heat": 1000,
+  "temperature": 4
+}

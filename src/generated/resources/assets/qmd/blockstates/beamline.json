@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "qmd:block/beamline",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "qmd:block/beamline",
+      "x": 90
+    },
+    "axis=z": {
+      "model": "qmd:block/beamline"
+    }
+  }
+}
