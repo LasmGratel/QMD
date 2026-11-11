@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "qmd:item/tools/boots_hev",
+    "layer1": "qmd:item/tools/boots_hev_overlay"
+  }
+}

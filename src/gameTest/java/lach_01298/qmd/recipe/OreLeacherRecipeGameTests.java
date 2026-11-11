@@ -4,6 +4,7 @@ import com.mojang.serialization.JsonOps;
 import com.nred.nuclearcraft.recipe.SizedChanceFluidIngredient;
 import com.nred.nuclearcraft.recipe.SizedChanceItemIngredient;
 import io.netty.buffer.Unpooled;
+import lach_01298.qmd.registry.QMDRecipes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
@@ -30,7 +31,7 @@ public final class OreLeacherRecipeGameTests {
     @GameTest(template = "empty")
     public static void loadedGoldRecipeSurvivesDataAndNetworkCodecs(GameTestHelper helper) {
         OreLeacherRecipe loaded = helper.getLevel().getRecipeManager()
-                .getAllRecipesFor(QMDMachineRecipes.ORE_LEACHER_TYPE.get()).stream()
+                .getAllRecipesFor(QMDRecipes.ORE_LEACHER_TYPE.get()).stream()
                 .filter(holder -> holder.id().equals(GOLD_RECIPE)).findFirst()
                 .orElseThrow(() -> new IllegalStateException("Default gold ore leacher recipe must load")).value();
         helper.assertTrue(loaded.getItemIngredients().size() == 1
@@ -67,7 +68,7 @@ public final class OreLeacherRecipeGameTests {
     }
 
     private static void assertRoundTrips(GameTestHelper helper, OreLeacherRecipe original) {
-        var serializer = QMDMachineRecipes.ORE_LEACHER_SERIALIZER.get();
+        var serializer = QMDRecipes.ORE_LEACHER_SERIALIZER.get();
         var registryOps = helper.getLevel().registryAccess().createSerializationContext(JsonOps.INSTANCE);
         var encoded = serializer.codec().codec().encodeStart(registryOps, original).getOrThrow();
         OreLeacherRecipe fromData = serializer.codec().codec().parse(registryOps, encoded).getOrThrow();

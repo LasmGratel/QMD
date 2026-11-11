@@ -1,0 +1,248 @@
+package lach_01298.qmd.datagen.recipe;
+
+
+import net.minecraft.data.recipes.RecipeOutput;
+
+import static lach_01298.qmd.datagen.recipe.QmdRecipeBuilders.*;
+import static lach_01298.qmd.datagen.recipe.QmdRecipeIngredients.*;
+
+/** Typed OreLeacher recipe declarations. */
+final class QmdOreLeacherRecipes {
+    static void add(RecipeOutput output) {
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/aluminum"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/aluminum"), 3))
+                .itemOutput(sizedItem(excludingItem(anyItem(tagItem("c:dusts/iron"), tagItem("c:ingots/iron")), item("minecraft:barrier")), 1, 25, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/aluminum"), tagPresent("c:dusts/aluminum"), anyTagPresent("c:dusts/iron", "c:ingots/iron"))
+                .save(output, id("qmd:ore_leacher/aluminum"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/boron"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/boron"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/salt"), 2, 50, 1))
+                .itemOutput(sizedItem(tagItem("c:dusts/iodine"), 1, 25, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/boron"), tagPresent("c:dusts/boron"), tagPresent("c:dusts/salt"), tagPresent("c:dusts/iodine"))
+                .save(output, id("qmd:ore_leacher/boron"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/copper"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/copper"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/zinc"), 1, 5, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/iridium"), 1, 1, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/copper"), tagPresent("c:dusts/copper"), tagPresent("c:dusts/zinc"), tagPresent("c:dusts/iridium"))
+                .save(output, id("qmd:ore_leacher/copper"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/gold"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(excludingItem(anyItem(tagItem("c:dusts/gold"), tagItem("c:ingots/gold")), item("minecraft:barrier")), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/silver"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/gold"), anyTagPresent("c:dusts/gold", "c:ingots/gold"), tagPresent("c:dusts/silver"))
+                .save(output, id("qmd:ore_leacher/gold"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/iridium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/iridium"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/platinum"), 1, 10, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/osmium"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/iridium"), tagPresent("c:dusts/iridium"), tagPresent("c:dusts/platinum"), tagPresent("c:dusts/osmium"))
+                .save(output, id("qmd:ore_leacher/iridium"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/iron"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(excludingItem(anyItem(tagItem("c:dusts/iron"), tagItem("c:ingots/iron")), item("minecraft:barrier")), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/chromium"), 1, 60, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/manganese"), 1, 5, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/iron"), anyTagPresent("c:dusts/iron", "c:ingots/iron"), tagPresent("c:dusts/chromium"), tagPresent("c:dusts/manganese"))
+                .save(output, id("qmd:ore_leacher/iron"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/lead"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/lead"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/nickel"), 1, 10, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/cobalt"), 1, 5, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/lead"), tagPresent("c:dusts/lead"), tagPresent("c:dusts/nickel"), tagPresent("c:dusts/cobalt"))
+                .save(output, id("qmd:ore_leacher/lead"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/lithium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/lithium"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/aluminum"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/lithium"), tagPresent("c:dusts/lithium"), tagPresent("c:dusts/aluminum"))
+                .save(output, id("qmd:ore_leacher/lithium"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/magnesium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/magnesium"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/calcium"), 1, 10, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/potassium"), 1, 5, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/magnesium"), tagPresent("c:dusts/magnesium"), tagPresent("c:dusts/calcium"), tagPresent("c:dusts/potassium"))
+                .save(output, id("qmd:ore_leacher/magnesium"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/nickel"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/nickel"), 3))
+                .itemOutput(sizedItem(excludingItem(anyItem(tagItem("c:dusts/iron"), tagItem("c:ingots/iron")), item("minecraft:barrier")), 1, 25, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/aluminum"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/nickel"), tagPresent("c:dusts/nickel"), anyTagPresent("c:dusts/iron", "c:ingots/iron"), tagPresent("c:dusts/aluminum"))
+                .save(output, id("qmd:ore_leacher/nickel"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/osmium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/osmium"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/platinum"), 1, 10, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/iridium"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/osmium"), tagPresent("c:dusts/osmium"), tagPresent("c:dusts/platinum"), tagPresent("c:dusts/iridium"))
+                .save(output, id("qmd:ore_leacher/osmium"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/platinum"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/platinum"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/iridium"), 1, 10, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/osmium"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/platinum"), tagPresent("c:dusts/platinum"), tagPresent("c:dusts/iridium"), tagPresent("c:dusts/osmium"))
+                .save(output, id("qmd:ore_leacher/platinum"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/silver"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/silver"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/lead"), 1, 25, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/silver"), tagPresent("c:dusts/silver"), tagPresent("c:dusts/lead"))
+                .save(output, id("qmd:ore_leacher/silver"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/thorium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/thorium"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/titanium"), 1, 15, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/hafnium"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/thorium"), tagPresent("c:dusts/thorium"), tagPresent("c:dusts/titanium"), tagPresent("c:dusts/hafnium"))
+                .save(output, id("qmd:ore_leacher/thorium"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/tin"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/tin"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/zirconium"), 1, 25, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/tungsten"), 1, 25, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/tin"), tagPresent("c:dusts/tin"), tagPresent("c:dusts/zirconium"), tagPresent("c:dusts/tungsten"))
+                .save(output, id("qmd:ore_leacher/tin"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/titanium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/titanium"), 3))
+                .itemOutput(sizedItem(excludingItem(anyItem(tagItem("c:dusts/iron"), tagItem("c:ingots/iron")), item("minecraft:barrier")), 1, 25, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/manganese"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/titanium"), tagPresent("c:dusts/titanium"), anyTagPresent("c:dusts/iron", "c:ingots/iron"), tagPresent("c:dusts/manganese"))
+                .save(output, id("qmd:ore_leacher/titanium"));
+
+        oreLeacher()
+                .itemInput(sizedItem(tagItem("c:ores/uranium"), 1))
+                .fluidInput(sizedFluid(tagFluid("c:nitric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:hydrochloric_acid"), 16))
+                .fluidInput(sizedFluid(tagFluid("c:sulfuric_acid"), 16))
+                .itemOutput(sizedItem(tagItem("c:dusts/uranium"), 3))
+                .itemOutput(sizedItem(tagItem("c:dusts/thorium"), 1, 10, 0))
+                .itemOutput(sizedItem(tagItem("c:dusts/niobium"), 1, 10, 0))
+                .time(1D)
+                .power(1D)
+                .radiation(0D)
+                .conditions(tagPresent("c:ores/uranium"), tagPresent("c:dusts/uranium"), tagPresent("c:dusts/thorium"), tagPresent("c:dusts/niobium"))
+                .save(output, id("qmd:ore_leacher/uranium"));
+    }
+
+    private QmdOreLeacherRecipes() {}
+}

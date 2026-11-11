@@ -1,0 +1,92 @@
+{
+  "name": "State Field Reference",
+  "icon": "qmd:accelerator_computer_port",
+  "category": "qmd:open_computers",
+  "sortnum": 1,
+  "pages": [
+    {
+      "anchor": "snapshot",
+      "type": "patchouli:text",
+      "text": "$(l)computerSnapshot()$() replaces the historical OpenComputers getter collection with one CompoundTag. The following pages give exact field names and map the removed commands to their current state."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)kind$() is the accelerator kind ID and replaces getAcceleratorType(). $(l)assembled$() reports current assembly. $(l)initialized$() reports initialized machine state. $(l)validation$() contains the latest validation message."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)energy$() and $(l)energyCapacity$() are stored and maximum energy. $(l)requiredEnergy$() is the current per-tick requirement. These fields replace getEnergyInfo() together with $(l)efficiency$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)heat$() and $(l)heatCapacity$() replace getHeatBufferInfo(). $(l)rawHeating$() is component heating before cooling, and $(l)cooling$() is applied cooling per tick."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)percentage$() replaces getEnergyPercentage(). $(l)operating$() replaces isAcceleratorOn(). $(l)error$() is the current numeric operation error. Use assembled and validation for structure errors."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)coolingRemainder$() preserves fractional cooling work. The former getHeatingInfo() ambient and external-heating tuple is not recreated; rawHeating and cooling expose the common machine values used by the current simulation."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)cavities$(), $(l)quadrupoles$(), and $(l)dipoles$() replace getNumberOfRfCavity(), getNumberOfQuadrupole(), and getNumberOfDipole(). Each is an integer count."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)voltage$() is accelerating voltage. $(l)quadrupoleStrength$() and $(l)dipoleStrength$() are the assembled magnet strengths. $(l)efficiency$() is the current energy efficiency. Together they replace getStats()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)maxTemperature$() replaces getMaxTemperature(). Current temperature is represented by the heat and heatCapacity state used by the migrated accelerator rather than the removed getTemperature() callback."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)work$() and $(l)recipeWork$() report current and required recipe work. They allow scripts to monitor mass-spectrometer processing without relying on a client screen."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)coolantInput$() and $(l)coolantOutput$() are serialized fluid-tank compounds. They retain the fluid identity, amount, and tank data needed to replace the cooling portion of getCoolingInfo()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)processFluid0$(), $(l)processFluid1$(), and later numbered processFluid fields are serialized process tanks. Read each compound as a fluid stack; the number available depends on accelerator kind."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Beam state is stored in numbered $(l)ParticleStorage0$(), ParticleStorage1, and later compounds. Each contains $(l)particle_stack$(), $(l)maxEnergy$(), $(l)minEnergy$(), and $(l)capacity$()."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Inside each $(l)particle_stack$() compound, $(l)particle$() is the particle ID, $(l)amount$() is pu/t, $(l)meanEnergy$() is mean energy in keV, and $(l)focus$() is beam focus. An absent particle ID means no beam."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The numbered beam compounds replace getInputParticleInfo(), getOutputParticleInfo(), getSynchrotronParticleInfo(), and hasParticle(). The old getParticleInfo() intrinsic particle-property table is not part of the machine snapshot."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Ion-source item and fluid state is available through the Computer Port's owning accelerator and process tanks, but the historical getIonSourceInfo() and hasIonSource() tuple callbacks are not reintroduced as standalone methods."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The old getSizeInfo(), isBeamPort(), getBeamPortMode(), and getBeamPortSwitchMode() callbacks described structure geometry. The common snapshot intentionally exposes machine state, not an unrestricted coordinate query API."
+    },
+    {
+      "anchor": "set_computer_controlled",
+      "type": "patchouli:text",
+      "text": "$(l)setComputerControlled(boolean)$() is historical only. It is not reintroduced. Use $(l)computerSetPercentage(-1)$() to select redstone control, or pass 0 through 100 for direct server-script control."
+    },
+    {
+      "anchor": "set_energy_percentage",
+      "type": "patchouli:text",
+      "text": "$(l)computerSetPercentage(int)$() replaces setEnergyPercentage(). It returns true only when called server-side on an assembled accelerator through its Computer Port and the value is in the inclusive range -1 through 100."
+    },
+    {
+      "anchor": "switch_beam_port",
+      "type": "patchouli:text",
+      "text": "$(l)switchBeamPort(int,int,int)$() is historical only and has no common API replacement. OC peripherals and component.qmd_accelerator are not reintroduced; integrations should use computerSnapshot() and computerSetPercentage(int)."
+    }
+  ]
+}

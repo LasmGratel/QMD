@@ -1,10 +1,11 @@
 package lach_01298.qmd.recipe;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import lach_01298.qmd.registration.QMDMachines;
+import lach_01298.qmd.registry.QMDBlocks;
+import lach_01298.qmd.registry.QMDRecipes;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -23,17 +24,15 @@ import net.neoforged.neoforge.fluids.FluidStack;
 
 import java.util.Objects;
 
-/** A world-conditioned fluid output, expressed as a full-efficiency amount per tick. */
-public final class CollectorRecipe implements Recipe<CollectorRecipe.Input> {
-    private static final Codec<FluidStack> OUTPUT_CODEC = FluidStack.CODEC.validate(output ->
-            !output.isEmpty() && output.getAmount() > 0
-                    ? DataResult.success(output)
-                    : DataResult.error(() -> "Collector output amount must be positive"));
+/**
+ * A world-conditioned fluid output, expressed as a full-efficiency amount per tick.
+ */
+public record CollectorRecipe(Kind kind, WorldCondition world, FluidStack output, int priority)
+    implements Recipe<CollectorRecipe.Input> {
 
-    private final Kind kind;
-    private final WorldCondition world;
-    private final FluidStack output;
-    private final int priority;
+    private static final Codec<FluidStack> OUTPUT_CODEC = FluidStack.CODEC.validate(
+        output -> !output.isEmpty() && output.getAmount() > 0 ? DataResult.success(output)
+            : DataResult.error(() -> "Collector output amount must be positive"));
 
     public CollectorRecipe(Kind kind, WorldCondition world, FluidStack output, int priority) {
         this.kind = Objects.requireNonNull(kind);
@@ -46,27 +45,20 @@ public final class CollectorRecipe implements Recipe<CollectorRecipe.Input> {
     }
 
     public static MapCodec<CollectorRecipe> codec(Kind kind) {
-        return RecordCodecBuilder.mapCodec(instance -> instance.group(
-                WorldCondition.CODEC.optionalFieldOf("world", WorldCondition.ANY).forGetter(CollectorRecipe::world),
-                OUTPUT_CODEC.fieldOf("output").forGetter(CollectorRecipe::output),
-                Codec.INT.optionalFieldOf("priority", 0).forGetter(CollectorRecipe::priority)
-        ).apply(instance, (world, output, priority) -> new CollectorRecipe(kind, world, output, priority)));
+        return RecordCodecBuilder.mapCodec(
+            instance -> instance.group(
+                WorldCondition.CODEC.optionalFieldOf("world", WorldCondition.ANY)
+                    .forGetter(CollectorRecipe::world),
+                OUTPUT_CODEC.fieldOf("output")
+                    .forGetter(CollectorRecipe::output),
+                Codec.INT.optionalFieldOf("priority", 0)
+                    .forGetter(CollectorRecipe::priority))
+                .apply(instance, (world, output, priority) -> new CollectorRecipe(kind, world, output, priority)));
     }
 
-    public Kind kind() {
-        return kind;
-    }
-
-    public WorldCondition world() {
-        return world;
-    }
-
+    @Override
     public FluidStack output() {
         return output.copy();
-    }
-
-    public int priority() {
-        return priority;
     }
 
     @Override
@@ -101,27 +93,29 @@ public final class CollectorRecipe implements Recipe<CollectorRecipe.Input> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return kind == Kind.LIQUID ? QMDMachineRecipes.LIQUID_COLLECTOR_SERIALIZER.get()
-                : QMDMachineRecipes.ATMOSPHERE_COLLECTOR_SERIALIZER.get();
+        return kind == Kind.LIQUID ? QMDRecipes.LIQUID_COLLECTOR_SERIALIZER.get()
+            : QMDRecipes.ATMOSPHERE_COLLECTOR_SERIALIZER.get();
     }
 
     @Override
     public RecipeType<CollectorRecipe> getType() {
-        return kind == Kind.LIQUID ? QMDMachineRecipes.LIQUID_COLLECTOR_TYPE.get()
-                : QMDMachineRecipes.ATMOSPHERE_COLLECTOR_TYPE.get();
+        return kind == Kind.LIQUID ? QMDRecipes.LIQUID_COLLECTOR_TYPE.get()
+            : QMDRecipes.ATMOSPHERE_COLLECTOR_TYPE.get();
     }
 
     @Override
     public ItemStack getToastSymbol() {
-        return new ItemStack(kind == Kind.LIQUID ? QMDMachines.LIQUID_COLLECTOR.get()
-                : QMDMachines.ATMOSPHERE_COLLECTOR.get());
+        return new ItemStack(
+            kind == Kind.LIQUID ? QMDBlocks.LIQUID_COLLECTOR.get() : QMDBlocks.ATMOSPHERE_COLLECTOR.get());
     }
 
     public enum Kind {
-        LIQUID, ATMOSPHERE
+        LIQUID,
+        ATMOSPHERE
     }
 
     public record Input(BlockState block, Holder<Biome> biome, ResourceKey<Level> dimension) implements RecipeInput {
+
         @Override
         public ItemStack getItem(int index) {
             throw new IndexOutOfBoundsException("Collectors do not have item inputs");
@@ -139,6 +133,7 @@ public final class CollectorRecipe implements Recipe<CollectorRecipe.Input> {
     }
 
     public static final class Serializer implements RecipeSerializer<CollectorRecipe> {
+
         private final MapCodec<CollectorRecipe> codec;
         private final StreamCodec<RegistryFriendlyByteBuf, CollectorRecipe> streamCodec;
 

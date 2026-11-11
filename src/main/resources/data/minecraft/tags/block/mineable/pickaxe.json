@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "qmd:ore_leacher",
-    "qmd:liquid_collector",
-    "qmd:atmosphere_collector"
-  ]
-}

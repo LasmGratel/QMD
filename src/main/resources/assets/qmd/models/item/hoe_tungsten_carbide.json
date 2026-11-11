@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "qmd:item/tools/hoe_tungsten_carbide"
+  }
+}

@@ -35,8 +35,7 @@ ServerEvents.recipes(event => qmdSmokeGuard(() => {
   event.remove({ id: 'qmd:smoke/removed_ore_leacher' })
   event.remove({ id: 'qmd:smoke/collector' })
   event.remove({ id: 'qmd:smoke/collector_removed' })
-  event.custom({
-    type: 'qmd:ore_leacher',
+  event.recipes.qmd.ore_leacher({
     itemIngredients: [{ ingredient: { item: 'minecraft:cobblestone' }, count: 1 }],
     fluidIngredients: [
       { ingredient: { fluid: 'qmd:nitric_acid' }, amount: 16 },

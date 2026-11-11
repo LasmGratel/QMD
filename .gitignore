@@ -30,5 +30,6 @@ bin/
 run/
 !**/src/**/run/
 **/src/generated/**/.cache/
+src/generated/
 repo/
 !**/src/**/repo/

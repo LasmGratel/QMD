@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "lach_01298.qmd.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["HeatExchangerLogicMixin"],
+  "injectors": {"defaultRequire": 1}
+}

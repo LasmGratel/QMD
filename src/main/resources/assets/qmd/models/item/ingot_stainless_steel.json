@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "qmd:item/materials/alloy/ingot_stainless_steel"
-  }
-}

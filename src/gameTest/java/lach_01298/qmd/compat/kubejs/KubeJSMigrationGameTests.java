@@ -2,7 +2,7 @@ package lach_01298.qmd.compat.kubejs;
 
 import lach_01298.qmd.recipe.CollectorRecipe;
 import lach_01298.qmd.recipe.OreLeacherRecipe;
-import lach_01298.qmd.recipe.QMDMachineRecipes;
+import lach_01298.qmd.registry.QMDRecipes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTestGenerator;
@@ -136,7 +136,7 @@ public final class KubeJSMigrationGameTests {
                 "Recipe manager must contain this script generation's replacement values");
         helper.assertTrue(manager.byKey(REMOVED).isEmpty(),
                 "KubeJS event.remove must remove the existing test datapack recipe on every load");
-        long copies = manager.getAllRecipesFor(QMDMachineRecipes.ORE_LEACHER_TYPE.get()).stream()
+        long copies = manager.getAllRecipesFor(QMDRecipes.ORE_LEACHER_TYPE.get()).stream()
                 .filter(value -> value.id().equals(SMOKE)).count();
         helper.assertTrue(copies == 1, "Recipe reload must contain exactly one replacement recipe");
         return recipe;
@@ -151,7 +151,7 @@ public final class KubeJSMigrationGameTests {
                 "KubeJS event.custom must decode through the real collector serializer");
         CollectorRecipe recipe = (CollectorRecipe) holder.value();
         helper.assertTrue(recipe.kind() == CollectorRecipe.Kind.LIQUID
-                        && recipe.getType() == QMDMachineRecipes.LIQUID_COLLECTOR_TYPE.get()
+                        && recipe.getType() == QMDRecipes.LIQUID_COLLECTOR_TYPE.get()
                         && BuiltInRegistries.FLUID.getKey(recipe.output().getFluid()).equals(SALT_WATER)
                         && recipe.output().getAmount() == 137 * generation
                         && recipe.priority() == -10000 - generation,
@@ -167,7 +167,7 @@ public final class KubeJSMigrationGameTests {
                 "The missing smoke-only biome tag must isolate this fixture from normal collector world tests");
         helper.assertTrue(manager.byKey(REMOVED_COLLECTOR).isEmpty(),
                 "KubeJS event.remove must remove the existing collector fixture on every load");
-        long copies = manager.getAllRecipesFor(QMDMachineRecipes.LIQUID_COLLECTOR_TYPE.get()).stream()
+        long copies = manager.getAllRecipesFor(QMDRecipes.LIQUID_COLLECTOR_TYPE.get()).stream()
                 .filter(value -> value.id().equals(COLLECTOR)).count();
         helper.assertTrue(copies == 1, "Collector reload must contain exactly one decoded replacement recipe");
         return recipe;

@@ -7,7 +7,7 @@ import com.nred.nuclearcraft.recipe.SizedChanceFluidIngredient;
 import com.nred.nuclearcraft.recipe.machine.MultiblockDistillerRecipe;
 import com.nred.nuclearcraft.registration.BlockRegistration;
 import com.nred.nuclearcraft.registration.ItemRegistration;
-import lach_01298.qmd.Config;
+import lach_01298.qmd.config.QMDConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.gametest.framework.GameTest;
@@ -68,7 +68,7 @@ public final class CollectorChemistryGameTests {
 
     @GameTest(template = "empty")
     public static void defaultCoolingReplacesNeohaulRecipesWithoutDuplicates(GameTestHelper helper) {
-        helper.assertTrue(Config.OVERRIDE_NC_RECIPES.get(), "This fixture checks the default enabled override policy");
+        helper.assertTrue(QMDConfig.OVERRIDE_NC_RECIPES.get(), "This fixture checks the default enabled override policy");
         String[] gases = {"compressed_air", "nitrogen", "helium"};
         double[] powers = {1, 2.5, 5};
         for (int gas = 0; gas < gases.length; ++gas) {

@@ -9,6 +9,7 @@ import java.util.Objects;
 
 /** A particle species. Mass is in MeV/c², charge in e and spin in units of ħ. */
 public class Particle {
+
     protected final String name;
     protected final double mass;
     protected final double charge;
@@ -24,12 +25,13 @@ public class Particle {
         this(name, texture, mass, charge, spin, true, true);
     }
 
-    public Particle(String name, ResourceLocation texture, double mass, double charge, double spin, boolean weakInteract) {
+    public Particle(String name, ResourceLocation texture, double mass, double charge, double spin,
+        boolean weakInteract) {
         this(name, texture, mass, charge, spin, weakInteract, false);
     }
 
     public Particle(String name, ResourceLocation texture, double mass, double charge, double spin,
-                    boolean weakInteract, boolean strongInteract) {
+        boolean weakInteract, boolean strongInteract) {
         this.name = Objects.requireNonNull(name);
         this.texture = Objects.requireNonNull(texture);
         this.mass = mass;
@@ -40,19 +42,46 @@ public class Particle {
         this.antiparticle = this;
     }
 
-    public String getName() { return name; }
-    public double getMass() { return mass; }
-    public double getCharge() { return charge; }
-    public double getSpin() { return spin; }
-    public Particle getAntiParticle() { return antiparticle; }
-    public ResourceLocation getTexture() { return texture; }
-    public boolean interactsWithEM() { return charge != 0; }
-    public boolean interactsWithStrong() { return strongInteract; }
-    public boolean interactsWithWeak() { return weakInteract; }
+    public String getName() {
+        return name;
+    }
+
+    public double getMass() {
+        return mass;
+    }
+
+    public double getCharge() {
+        return charge;
+    }
+
+    public double getSpin() {
+        return spin;
+    }
+
+    public Particle getAntiParticle() {
+        return antiparticle;
+    }
+
+    public ResourceLocation getTexture() {
+        return texture;
+    }
+
+    public boolean interactsWithEM() {
+        return charge != 0;
+    }
+
+    public boolean interactsWithStrong() {
+        return strongInteract;
+    }
+
+    public boolean interactsWithWeak() {
+        return weakInteract;
+    }
 
     public void setAntiParticle(Particle antiparticle) {
         ensureMutable();
-        Objects.requireNonNull(antiparticle).ensureMutable();
+        Objects.requireNonNull(antiparticle)
+            .ensureMutable();
         this.antiparticle = antiparticle;
         antiparticle.antiparticle = this;
     }
@@ -84,10 +113,14 @@ public class Particle {
         return new HashMap<>(componentParticles);
     }
 
-    public boolean hasComponentParticles() { return !componentParticles.isEmpty(); }
+    public boolean hasComponentParticles() {
+        return !componentParticles.isEmpty();
+    }
 
     /** Registration completes construction; runtime lookups must not change catalog physics. */
-    final void freeze() { frozen = true; }
+    final void freeze() {
+        frozen = true;
+    }
 
     private void ensureMutable() {
         if (frozen) throw new IllegalStateException("Registered particle definition is immutable: " + name);

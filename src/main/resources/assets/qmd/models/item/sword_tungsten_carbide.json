@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "qmd:item/tools/sword_tungsten_carbide"
+  }
+}

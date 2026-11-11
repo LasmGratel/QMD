@@ -1,0 +1,30 @@
+{
+  "name": "State Access",
+  "icon": "qmd:accelerator_computer_port",
+  "category": "qmd:open_computers",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Older QMD releases exposed accelerators as the OpenComputers component $(l)component.qmd_accelerator$(). That optional ABI and its OC peripherals are not reintroduced. These pages retain the old command names as a migration reference for server-side scripts."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Accelerator Computer Port now exposes two common server-side methods with no scripting-mod dependency: $(l)computerSnapshot()$() reads machine state and $(l)computerSetPercentage(int)$() controls output. A server integration can call these methods directly."
+    },
+    {
+      "anchor": "accelerator_control",
+      "title": "Accelerator Control",
+      "type": "patchouli:text",
+      "text": "$(l:multiblocks/open_computers/oc_commands#set_energy_percentage)computerSetPercentage(int)$(/l) is the supported control operation. $(l:multiblocks/open_computers/oc_commands#snapshot)computerSnapshot()$(/l) returns a CompoundTag containing a consistent copy of the accelerator's synchronized state."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The percentage accepts every value from -1 through 100. A value of -1 selects redstone control; 0 stops accelerator output; values from 1 through 100 select the requested operating percentage. Invalid values and calls on an unavailable or unassembled machine return false."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Calls must target an Accelerator Computer Port on the logical server. Snapshot data is read-only input to the script; changing the returned tag does not change the machine. Beam-port switching and the old computer-control toggle have no replacement in this common API."
+    }
+  ]
+}

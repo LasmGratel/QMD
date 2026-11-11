@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.148'
     id 'idea'
+    id 'com.diffplug.spotless' version '8.11.0'
 }
 
 // Keep the tested Neohaul release and its required dependencies in one place.
@@ -14,14 +15,44 @@ def withKubeJS = providers.gradleProperty('withKubeJS')
 
 version = mod_version
 group = mod_group_id
-base.archivesName = mod_id
+base.archivesName = mod_jarname
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+spotless {
+    encoding 'UTF-8'
+
+    format 'misc', {
+        target '.gitignore'
+
+        trimTrailingWhitespace()
+        leadingTabsToSpaces(4)
+        endWithNewline()
+    }
+    java {
+        target 'src/main/java/**/*.java', 'src/test/java/**/*.java' // exclude api as they are not our files
+        def formatFile = rootProject.file('spotless/spotless.eclipseformat.xml')
+
+        toggleOffOn()
+        removeUnusedImports()
+        endWithNewline()
+        leadingTabsToSpaces(4)
+        //noinspection GroovyAssignabilityCheck
+        eclipse('4.19').configFile(formatFile)
+    }
+}
 
 repositories {
     mavenCentral()
     maven {
         url = 'https://www.cursemaven.com'
         content { includeGroup 'curse.maven' }
+    }
+    exclusiveContent {
+        forRepository { maven { url = 'https://maven.blamejared.com' } }
+        filter {
+            includeGroup 'mezz.jei'
+            includeGroup 'net.mezzdev.config'
+        }
     }
     maven {
         url = 'https://maven.minecraftforge.net/'
@@ -42,6 +73,10 @@ repositories {
         url = 'https://jitpack.io'
         content { includeGroup 'com.github.rtyley' }
     }
+    maven {
+        url = 'https://maven.theillusivec4.top/'
+        content { includeGroup 'top.theillusivec4.curios' }
+    }
 }
 
 sourceSets.main.resources {
@@ -49,7 +84,16 @@ sourceSets.main.resources {
     exclude '**/*.bbmodel', '**/.cache/**'
 }
 
+// A resource belongs to either the authored or generated tree, never both.
+tasks.named('processResources', ProcessResources) {
+    duplicatesStrategy = DuplicatesStrategy.FAIL
+}
+
 sourceSets {
+    data {
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
     gameTest {
         compileClasspath += sourceSets.main.output
         runtimeClasspath += sourceSets.main.output
@@ -57,6 +101,8 @@ sourceSets {
 }
 
 configurations {
+    dataImplementation.extendsFrom implementation
+    dataRuntimeOnly.extendsFrom runtimeOnly
     gameTestImplementation.extendsFrom implementation
     gameTestRuntimeOnly.extendsFrom runtimeOnly
 }
@@ -76,16 +122,24 @@ neoForge {
             sourceSet sourceSets.main
             sourceSet sourceSets.gameTest
         }
+        qmdData {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.data
+        }
     }
     runs {
         configureEach {
-            loadedMods = [neoForge.mods."${mod_id}"]
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
             logLevel = org.slf4j.event.Level.INFO
         }
-        client { client() }
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
         server {
             server()
             programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
         gameTestServer {
             type = 'gameTestServer'
@@ -95,11 +149,15 @@ neoForge {
         }
         data {
             data()
+            sourceSet = sourceSets.data
+            loadedMods = [neoForge.mods.qmdData]
             programArguments.addAll '--mod', project.mod_id, '--all', '--output',
-                    file('src/generated/resources').absolutePath, '--existing', file('src/main/resources').absolutePath
+                    file('src/generated/resources').absolutePath, '--existing', file('src/main/resources').absolutePath,
+                    '--existing-mod', 'nuclearcraftneohaul'
         }
     }
     addModdingDependenciesTo sourceSets.gameTest
+    addModdingDependenciesTo sourceSets.data
     unitTest {
         enable()
         loadedMods = [neoForge.mods."${mod_id}"]
@@ -147,6 +205,12 @@ dependencies {
     implementation "maven.modrinth:${neohaul_project_id}:${neohaul_file_id}"
     implementation "curse.maven:zerocore-247921:${zerocore_version}"
     implementation "com.github.glitchfiend:TerraBlender-neoforge:${minecraft_version}-${terrablender_version}"
+    implementation "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
+    implementation "maven.modrinth:nU0bVIaL:BIogJv2D"
+
+    // Neohaul eagerly constructs its Curios provider even for --mod qmd.
+    // Keep the workaround local to data generation instead of all game runs.
+    dataRuntimeOnly "top.theillusivec4.curios:curios-neoforge:${curios_datagen_version}"
 
     // Optional integration: the base mod must also load without KubeJS.
     compileOnly "dev.latvian.mods:kubejs-neoforge:${kubejs_version}"
@@ -171,7 +235,8 @@ def generateModMetadata = tasks.register('generateModMetadata', ProcessResources
             mod_license: mod_license,
             mod_version: mod_version,
             neohaul_version_range: neohaul_version_range,
-            kubejs_version: kubejs_version
+            kubejs_version: kubejs_version,
+            jei_version: jei_version
     ]
     inputs.properties replaceProperties
     expand replaceProperties

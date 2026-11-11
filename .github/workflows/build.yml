@@ -26,6 +26,12 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
 
+      - name: Check generated resources
+        run: |
+          ./gradlew runData --console=plain
+          git diff --exit-code -- src/generated/resources
+          test -z "$(git ls-files --others --exclude-standard -- src/generated/resources)"
+
       - name: Build with Gradle
         run: ./gradlew build
 

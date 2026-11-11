@@ -1,0 +1,38 @@
+{
+    "components": [
+        {
+			"type": "patchouli:header",
+			"text": "#header",
+			"x": -1,
+			"y": -1
+		},
+		{
+			"type": "patchouli:separator",
+			"x": -1,
+			"y": -1
+		},
+		{
+			"type": "patchouli:image",
+			"image": "#particle",
+			"width": 16,
+			"height": 16,
+			"texture_width": 16,
+			"texture_height": 16,
+			"scale": 1.5,
+			"x": 47,
+			"y": 20
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(bold)Mass$(): #mass# $(br)$(bold)Charge$() : #charge# $(bold)Spin$(): #spin#$(br)$(bold)registry name$(): #reg_name#",
+			"x": 0,
+			"y": 45
+		},
+		{
+			"type": "patchouli:text",
+			"text": "#desc",
+			"x": 0,
+			"y": 85
+		}
+    ]
+}

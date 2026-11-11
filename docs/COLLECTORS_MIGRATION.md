@@ -127,6 +127,8 @@ This policy currently covers these three migrated cooling families. Other legacy
 
 ## Intentional corrections and validation limits
 
+JEI now has separate liquid/atmosphere collector categories with exact output rate and components, configured power, efficiency/scan guidance and scrolling world conditions. Every block state, biome ID/tag, dimension and priority is retained; world blocks are indexed as nonconsumed catalysts. Fresh recipe registration follows JEI's synchronized-recipe restart lifecycle. See [JEI_MIGRATION.md](JEI_MIGRATION.md) for tests and the remaining client-rendering boundary.
+
 The migrated collector fixes the legacy liquid collector charging `processor_power[1]` even though its readiness check used `processor_power[2]`. It consistently uses its own liquid-collector power setting. Generation also avoids charging when the computed rate is zero or stored fluid cannot accept the new output. Successful energy and fluid mutations mark the block entity dirty, and persisted scan state is revalidated after loading.
 
 Efficiency explicitly excludes the collector position and stays within zero through one. Recipe selection is stable across overlapping definitions. State-property validation, resource-key dimensions and reloaded recipe-manager lookups replace the legacy mutable maps and numeric-dimension assumptions. The collectors retain the original collection volumes, integer rate truncation, output capacity, default power settings and no-consumption behavior for world fluids.

@@ -1,0 +1,7 @@
+{
+  "name": "Server Script State",
+  "description": "Historical OpenComputers commands mapped to the common server-side accelerator state API. OpenComputers peripherals are not reintroduced.",
+  "icon": "qmd:accelerator_computer_port",
+  "parent": "qmd:multiblocks",
+  "sortnum": 4
+}

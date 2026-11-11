@@ -1,0 +1,56 @@
+{
+	"name": "Decay Chamber",
+	"icon": "qmd:decay_chamber_controller",
+	"category": "qmd:particle_chambers",
+	"sortnum": 2,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Some particles are unstable and can decay into other particles. The decay chamber is where you induce these particles to decay. This is analogous to Nuclearcraft's decay hastener but for particles."
+		},
+		{
+			"title": "Construction",
+			"type": "patchouli:text",
+			"text": "Decay Chambers are built the same as $(l:multiblocks/particle_chambers/target_chamber#construction)target chambers$(/l) except with the decay chamber controller instead of the target chamber controller.$(br2)Note: that the decay chamber does not have an inventory or tanks, so item and fluid ports do nothing. $(br2)The output beam ports act exactly the same as in the $(l:multiblocks/particle_chambers/target_chamber#ports)target chamber$(/l)."
+		},
+		{
+			"anchor": "detectors",
+			"title": "Detectors",
+			"type": "patchouli:text",
+			"text": "Like all $(l:multiblocks/particle_chambers/general#detectors)particle chambers$(/l), decay chambers can have detectors inside to increase the chamber's efficiency at the cost of power.$(br2)The decay chambers efficiency $(l)η$() modifies the recipe $(l:multiblocks/particle_chambers/general#cross_section)cross-section$(/l) $(l)σ$() by $(l)Σ=$(o)min$(l)(ησ,1)$()"
+		},
+		{
+			"type": "patchouli:text",
+			"text": ""
+		},
+		{
+			"header": "Operation",
+			"type": "qmd:diagram",
+			"image": "qmd:patchouli_books/qmd/images/decay_chamber_recipe.png",
+			"text": "To show how the decay chamber operates let's look at the example recipe in JEI above. Here a neutron decays into a proton, an electron antineutrino and an electron."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The information in the recipe is very similar to the $(l:multiblocks/particle_chambers/target_chamber#operation)target chamber's$(/l) with a few differences. First if we hover over the input neutron the energy is < 1 keV and there is no maximum energy stated, so it can take neutrons at any energy. This is the case for most decay chamber recipes though there are some recipes with a minimum and or a maximum energy. Second, the recipe input amount doesn't matter because the decay chamber recipe takes no time. "
+		},
+		{
+			"type": "qmd:diagram_low",
+			"image": "qmd:patchouli_books/qmd/images/decay_chamber_gui.png",
+			"text": "The only thing that matters is the output particles and the calculation for them is the same as in the $(l:multiblocks/particle_chambers/target_chamber#output_particles)target chamber$(/l). Let’s use the decay chamber below as an example."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The output amount is $(l)aₒ=aᵢaΣ$(), so if we use a 10 kp/t input beam of neutrons it gives us 10kpu/t×1pu×100% = 10kpu/t of any of the output particles because they output amount in the recipe for all of them was 1. Note that the cross-section for this decay is already 100% so no detectors are need for the maximum output.$(br)The energy of the output particles is $(l)E=(E₀+Q)/n$(). We are inputing at 45 MeV and the decay releases 1 of each particle so $(l)n=$()3, thus (45 MeV + 1.488 meV)/3 = 15.496 MeV"
+		},
+		{
+			"type": "patchouli:text",
+			"title": "Focus Loss",
+			"text": "The loss in focus is calculated the same as the $(l:multiblocks/particle_chambers/target_chamber#focus_loss)target chamber$(/l).$(br2)In our example we are inputing neutrons at 1 focus. For the electron antineutrino since both the neutron and electron antineutrino have no charge it loss is independent of the pu/t so it just 1-0.02×5=0.9"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "But for proton and electron since they are charged and have the same magnitude of charge (1) then their loss is 1-0.02×2.5$(br)-0.02×2.5×(1+1×$(o)sqrt$()(10 kpu/t /10 kpu/t))= 0.85$(br2)The specifics aren't really necessary just remember to have enough focus."
+		}
+
+	]
+}

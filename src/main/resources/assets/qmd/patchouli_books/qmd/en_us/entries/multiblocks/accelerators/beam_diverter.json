@@ -1,0 +1,49 @@
+{
+    "name": "Beam Diverter",
+    "icon": "qmd:beam_diverter_controller",
+    "category": "qmd:accelerators",
+    "sortnum": 3,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Beam Diverters can change the direction of a charged particle beam. Doing so the particle beam loses a small amount of energy to synchrotron radiation."
+        },
+		{
+            "header": "Constuction",
+			"type": "qmd:diagram",
+			"image":"qmd:patchouli_books/qmd/images/beam_diverter.png",
+            "text": "Beam Diverters are a 5x5x5 cube of accelerator casing that have a dipole filling the center. The dipole can also be in the vertical direction. They have all the same requirements as other $(l:multiblocks/accelerators/general#construction)accelerators$(/l). Beam Diverters do not need coolers in them."
+        },
+		{
+			"type": "qmd:diagram_high",
+			"image":"qmd:patchouli_books/qmd/images/beam_diverter2.png",
+            "text": "Example of 2 vertical beam diverters."
+        },
+		{
+            "title": "Operation",
+			"type": "patchouli:text",
+            "text": "To start the Beam Diverter, give its controller or input $(l:multiblocks/accelerators/general#redstone)Redstone Port$(/l) a signal. It operates like any other $(l:multiblocks/accelerators/general#operation)accelerator$(/l), requiring power and coolant. It may have multiple beam ports, but only one input and one output can be active at a time. Redstone pulses switch beam ports."
+        },
+		{     
+			"anchor": "switching",
+			"type": "patchouli:text",
+			"title": "Beam Port Switching",
+			"text": "A redstone pulse applied to a disabled beam port will make that beam port the 'active' beam port and disable the current 'active' beam port. What it switches to (either output or input) can be controlled by shift right clicking the beam port with the multitool."
+        },
+		{     
+			"type": "patchouli:text",
+			
+			"text": "Beam-port switching is available on Beam Diverters, $(l:multiblocks/accelerators/ring_accelerator)Ring Accelerators$(/l), and $(l:multiblocks/accelerators/decelerator)Decelerators$(/l). $(br2)Use redstone pulses to change the active port. The historical OpenComputers switchBeamPort command is documented for migration but is not reintroduced."
+        },
+		{
+            "anchor": "energy",
+			"title": "Particle Energy",
+			"type": "patchouli:text",
+            "text": "The maximum particle energy (in GeV) a Beam Diverter can bend is $(l)Eᵩ=(qB₂R)²/(2m)$(), the same dipole-strength limit as a $(l:multiblocks/accelerators/ring_accelerator#max_dipole)Ring Accelerator$(/l). Here, $(l)R$() is the diverter's effective radius, 160 by default. $(br2)Neutral particle beams cannot be bent, but can pass straight through."
+        },
+		{
+			"type": "patchouli:text",
+            "text": "The amount of energy lost by a particle bent in the beam diverter can be seen in the gui and is $(l)Eᵥ= Eq²/(6m⁴R²)$() $(br2)Note: the energy loss only occurs when the beam is bent if it goes straight through no energy is lost."
+        }
+    ]
+}

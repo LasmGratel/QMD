@@ -9,6 +9,9 @@ displayName="${mod_name}"
 authors="lach_01298, sanrom, zalgo, WuzgXY, igntuman, rtxyd, Pu-238, Determancer, tomdodd4598, FishingPole"
 description='''A Nuclearcraft addon that brings particle accelerators and particle physics to Minecraft.'''
 
+[[mixins]]
+config="${mod_id}.mixins.json"
+
 [[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"
@@ -35,4 +38,18 @@ modId="kubejs"
 type="optional"
 versionRange="[${kubejs_version},)"
 ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="jei"
+type="optional"
+versionRange="[${jei_version},)"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.${mod_id}]]
+modId="patchouli"
+type="required"
+versionRange="[1.21.1-93,)"
+ordering="AFTER"
 side="BOTH"

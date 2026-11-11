@@ -1,0 +1,73 @@
+{
+	"name": "Ring Accelerator",
+	"icon": "qmd:ring_accelerator_controller",
+	"category": "qmd:accelerators",
+	"sortnum": 2,
+	"pages": [
+		{
+			
+			"type": "patchouli:text",
+			"text": "Ring Accelerators raise input particles to much higher energies than $(l:multiblocks/accelerators/linear_accelerator)Linear Accelerators$(/l), but cannot start an accelerator system. The system must begin with a Linear Accelerator using an $(l:multiblocks/accelerators/linear_accelerator#ion_source)Ion Source$(/l). $(bold)Ring Accelerators have a minimum input particle energy$(), usually 5 MeV by default."
+		},
+		{
+			"type": "qmd:diagram_high",
+			"image":"qmd:patchouli_books/qmd/images/ring.png",
+			"text": "Example Ring Accelerator." 
+		},
+		{
+			"anchor": "construction",
+			"title": "Construction",
+			"type": "patchouli:text",
+			"text": "Ring Accelerators are a square torus of Accelerator Casings or Glass that must be 5 blocks wide. Like all $(l:multiblocks/accelerators/general#construction)accelerators$(/l), they require Coolant Vents in input and output modes and an Energy Port. A continuous ring of Accelerator Beam Blocks runs down the center. Every beam port must connect to that central ring with a beam block."
+		},
+		{
+			"type": "qmd:diagram_high",
+			"image":"qmd:patchouli_books/qmd/images/ring_beam.png",
+			"text": "Every corner and beam-port intersection requires a $(l:multiblocks/accelerators/general#dipole)Dipole Magnet$(/l), so a Ring Accelerator has at least four dipoles. The example above requires at least five." 
+		},
+		{
+			"type": "qmd:diagram_low",
+			"image":"qmd:patchouli_books/qmd/images/ring_cooler.png",
+			"text": "Lastly, the inside corners of the accelerator must not be accelerator casing or accelerator glass. That area can instead be used to place certain coolers! Example below." 
+		},
+		{
+            "anchor": "operation",
+			"title": "Operation",
+			"type": "patchouli:text",
+			"text": "A Ring Accelerator operates like any other $(l:multiblocks/accelerators/general#operation)accelerator$(/l), requiring power and coolant. It requires an existing particle beam at or above the default 5 MeV minimum input energy. Ring Accelerators can have multiple beam ports, but only one input and one output can be active at a time. $(l:multiblocks/accelerators/beam_diverter#switching)Beam-port switching$(/l) uses redstone."
+        },
+		{     
+			"type": "patchouli:text",
+			"title": "Redstone Control",
+			"text": "As with the $(l:multiblocks/accelerators/linear_accelerator#redstone)Linear Accelerator$(/l), a redstone signal applied to the controller or an input $(l:multiblocks/accelerators/general#redstone)Redstone Port$(/l) turns it on, with output energy $(l)E=EₓSᵣ/15$().$(br2)Server integrations can set the percentage through the $(l:multiblocks/open_computers/introduction#accelerator_control)common state API$(/l)."
+        },		
+		{
+           "title": "Particle Energy",
+			"type": "patchouli:text",
+			"text": "The resulting particle energy is more complicated to figure out than in a linear accelerator. The energy is limited by two factors, whichever factor is smaller will be the maximum particle output energy $(l)Eₓ=$(o)min$()$(l)(Eᵩ,Eᵣ)$(). These factors are from the dipole field strength and the synchrotron radiation losses."
+        },
+		{
+			"anchor": "max_dipole",
+			"title": "Max from Dipole Strength",
+			"type": "patchouli:text",
+			"text": "The maximum energy (in GeV) from dipole strength is $(l)Eᵩ=(qB₂R)²/(2m)$(), where $(l)q$() is particle charge, $(l)B₂$() is the sum of dipole strengths, $(l)R$() is the Ring Accelerator radius, and $(l)m$() is particle mass in MeV/c^2. For heavy particles such as protons, this is the main limit."
+        },
+		{
+			"anchor": "max_radiation",
+			"title": "Max from Radiation",
+			"type": "patchouli:text",
+			"text": "The maximum energy (in GeV) from the Radiation losses $(l)Eᵣ=m(3VR/|q|)⁰˙²⁵$() where $(l)V$() is the accelerator's voltage (in kV). For light particles like the electron this is the major concern."
+        },
+		{
+            "anchor": "synchrotron_Port",
+		    "header": "Synchrotron Ports",
+			"type": "qmd:diagram",
+			"image":"qmd:patchouli_books/qmd/images/synch_port.png",
+			"text": "Ring Accelerators can have one special Accelerator Synchrotron Port. It emits synchrotron radiation as high-energy photons. The same position rules as beam ports apply to Accelerator Synchrotron Ports."
+        },
+		{
+			"type": "patchouli:text",
+			"text": "Photon pu/t equals particle pu/t through the Ring Accelerator, and photon focus equals particle focus. Photon energy (in MeV) is $(l)Eᵧ=E³/(2πR(1000m)³)$(), where $(l)E$() is the output particle energy in MeV. $(br2)Because energy is proportional to $(l)1/m³$(), light particles such as electrons yield much higher energy."
+        }
+	]
+}

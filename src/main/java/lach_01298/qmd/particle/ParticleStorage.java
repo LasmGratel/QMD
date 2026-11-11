@@ -10,8 +10,11 @@ import java.math.BigInteger;
 
 /** The common bounded particle store. Energy limits are inclusive. */
 public class ParticleStorage implements IParticleStorage, IParticleStackHandler {
-    @Nullable protected ParticleStack particleStack;
-    @Nullable protected BlockEntity tile;
+
+    @Nullable
+    protected ParticleStack particleStack;
+    @Nullable
+    protected BlockEntity tile;
     protected long maxEnergy;
     protected long minEnergy;
     protected int capacity;
@@ -34,7 +37,9 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
         this(stack, maxEnergy, Integer.MAX_VALUE, 0);
     }
 
-    public ParticleStorage() { this(null, Long.MAX_VALUE, Integer.MAX_VALUE, 0); }
+    public ParticleStorage() {
+        this(null, Long.MAX_VALUE, Integer.MAX_VALUE, 0);
+    }
 
     public void readFromNBT(CompoundTag nbt) {
         long readMax = nbt.contains("maxEnergy", Tag.TAG_ANY_NUMERIC) ? nbt.getLong("maxEnergy") : maxEnergy;
@@ -48,7 +53,9 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
     }
 
     public CompoundTag writeToNBT(CompoundTag nbt) {
-        nbt.put("particle_stack", particleStack == null ? new CompoundTag() : particleStack.writeToNBT(new CompoundTag()));
+        nbt.put(
+            "particle_stack",
+            particleStack == null ? new CompoundTag() : particleStack.writeToNBT(new CompoundTag()));
         nbt.putLong("maxEnergy", maxEnergy);
         nbt.putInt("capacity", capacity);
         nbt.putLong("minEnergy", minEnergy);
@@ -61,7 +68,8 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
     }
 
     public void readFromNBT(CompoundTag nbt, int id) {
-        if (nbt.contains("ParticleStorage" + id, Tag.TAG_COMPOUND)) readFromNBT(nbt.getCompound("ParticleStorage" + id));
+        if (nbt.contains("ParticleStorage" + id, Tag.TAG_COMPOUND))
+            readFromNBT(nbt.getCompound("ParticleStorage" + id));
     }
 
     /** Direct machine-state assignment, independent of the insertion limits. */
@@ -70,13 +78,23 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
         changed();
     }
 
-    public void setTileEntity(@Nullable BlockEntity tile) { this.tile = tile; }
-    protected void changed() { if (tile != null) tile.setChanged(); }
-    @Override public ParticleStorageInfo getInfo() { return new ParticleStorageInfo(this); }
+    public void setTileEntity(@Nullable BlockEntity tile) {
+        this.tile = tile;
+    }
+
+    protected void changed() {
+        if (tile != null) tile.setChanged();
+    }
+
+    @Override
+    public ParticleStorageInfo getInfo() {
+        return new ParticleStorageInfo(this);
+    }
 
     @Override
     public boolean canReceiveParticle(@Nullable Direction side, @Nullable ParticleStack stack) {
-        if (stack == null || stack.isEmpty() || stack.getMeanEnergy() < minEnergy || stack.getMeanEnergy() > maxEnergy) return false;
+        if (stack == null || stack.isEmpty() || stack.getMeanEnergy() < minEnergy || stack.getMeanEnergy() > maxEnergy)
+            return false;
         if (particleStack == null || particleStack.isEmpty()) return stack.getAmount() <= capacity;
         return particleStack.matchesType(stack) && (long) particleStack.getAmount() + stack.getAmount() <= capacity;
     }
@@ -88,25 +106,47 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
             particleStack = stack.copy();
         } else {
             // Multiplication may exceed long even when both mean energies are valid.
-            BigInteger energy = BigInteger.valueOf(particleStack.getMeanEnergy()).multiply(BigInteger.valueOf(particleStack.getAmount()))
-                    .add(BigInteger.valueOf(stack.getMeanEnergy()).multiply(BigInteger.valueOf(stack.getAmount())));
+            BigInteger energy = BigInteger.valueOf(particleStack.getMeanEnergy())
+                .multiply(BigInteger.valueOf(particleStack.getAmount()))
+                .add(
+                    BigInteger.valueOf(stack.getMeanEnergy())
+                        .multiply(BigInteger.valueOf(stack.getAmount())));
             long totalAmount = (long) particleStack.getAmount() + stack.getAmount();
-            particleStack.setMeanEnergy(energy.divide(BigInteger.valueOf(totalAmount)).longValueExact());
+            particleStack.setMeanEnergy(
+                energy.divide(BigInteger.valueOf(totalAmount))
+                    .longValueExact());
             particleStack.addAmount(stack.getAmount());
         }
         changed();
         return true;
     }
 
-    @Override public boolean canExtractParticle(@Nullable Direction side) {
+    @Override
+    public boolean canExtractParticle(@Nullable Direction side) {
         return particleStack != null && !particleStack.isEmpty();
     }
 
     /** Mutable machine state, as in the original API; getParticle() returns a copy. */
-    @Override @Nullable public ParticleStack getParticleStack() { return particleStack; }
-    @Override public long getMaxEnergy() { return maxEnergy; }
-    @Override public long getMinEnergy() { return minEnergy; }
-    @Override public int getCapacity() { return capacity; }
+    @Override
+    @Nullable
+    public ParticleStack getParticleStack() {
+        return particleStack;
+    }
+
+    @Override
+    public long getMaxEnergy() {
+        return maxEnergy;
+    }
+
+    @Override
+    public long getMinEnergy() {
+        return minEnergy;
+    }
+
+    @Override
+    public int getCapacity() {
+        return capacity;
+    }
 
     public void setCapacity(int capacity) {
         if (capacity < 0) throw new IllegalArgumentException("Capacity must be nonnegative");
@@ -126,7 +166,8 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
         changed();
     }
 
-    @Override @Nullable
+    @Override
+    @Nullable
     public ParticleStack extractParticle(@Nullable Direction side) {
         if (!canExtractParticle(side)) return null;
         ParticleStack extracted = particleStack;
@@ -135,12 +176,14 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
         return extracted;
     }
 
-    @Override @Nullable
+    @Override
+    @Nullable
     public ParticleStack extractParticle(@Nullable Direction side, Particle type) {
         return canExtractParticle(side) && particleStack.getParticle() == type ? extractParticle(side) : null;
     }
 
-    @Override @Nullable
+    @Override
+    @Nullable
     public ParticleStack extractParticle(@Nullable Direction side, int amount) {
         if (amount <= 0 || !canExtractParticle(side)) return null;
         ParticleStack extracted = particleStack.copy();
@@ -151,11 +194,15 @@ public class ParticleStorage implements IParticleStorage, IParticleStackHandler 
         return extracted;
     }
 
-    @Override @Nullable
+    @Override
+    @Nullable
     public ParticleStack extractParticle(@Nullable Direction side, Particle type, int amount) {
         return canExtractParticle(side) && particleStack.getParticle() == type ? extractParticle(side, amount) : null;
     }
 
-    @Override @Nullable
-    public ParticleStack getParticle() { return particleStack == null ? null : particleStack.copy(); }
+    @Override
+    @Nullable
+    public ParticleStack getParticle() {
+        return particleStack == null ? null : particleStack.copy();
+    }
 }

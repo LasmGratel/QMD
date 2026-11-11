@@ -2,7 +2,7 @@ package lach_01298.qmd.recipe;
 
 import com.mojang.serialization.JsonOps;
 import com.nred.nuclearcraft.recipe.ProcessorRecipe;
-import lach_01298.qmd.Config;
+import lach_01298.qmd.config.QMDConfig;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +24,7 @@ public final class CoolingPolicyGameTests {
 
     @GameTest(template = "empty", batch = "qmd.cooling.reload", timeoutTicks = 1_000_000)
     public static void resourceReloadSelectsOneCoolingPolicyAndRestoresIt(GameTestHelper helper) {
-        boolean original = Config.OVERRIDE_NC_RECIPES.get();
+        boolean original = QMDConfig.OVERRIDE_NC_RECIPES.get();
         assertPolicy(helper, original);
         var ops = helper.getLevel().registryAccess().createSerializationContext(JsonOps.INSTANCE);
         ICondition condition = new OverrideNCRecipesCondition(original);
@@ -41,13 +41,13 @@ public final class CoolingPolicyGameTests {
             helper.assertTrue(System.nanoTime() <= deadline.get(), "Cooling-policy resource reload exceeded thirty seconds");
             CompletableFuture<Void> current = reload.get();
             if (current != null && current.isCompletedExceptionally()) {
-                Config.OVERRIDE_NC_RECIPES.set(original);
+                QMDConfig.OVERRIDE_NC_RECIPES.set(original);
                 helper.fail("Cooling-policy resource reload failed: " + current.handle((unused, failure) -> failure).join());
             }
         });
 
         helper.startSequence().thenExecute(() -> {
-            Config.OVERRIDE_NC_RECIPES.set(!original);
+            QMDConfig.OVERRIDE_NC_RECIPES.set(!original);
             reload.set(reload(helper));
         }).thenWaitUntil(() -> helper.assertTrue(reload.get().isDone(), "Waiting for alternate cooling policy"))
                 .thenExecute(() -> {
@@ -56,7 +56,7 @@ public final class CoolingPolicyGameTests {
                                 "Changing policy must replace the recipe manager");
                         assertPolicy(helper, !original);
                     } finally {
-                        Config.OVERRIDE_NC_RECIPES.set(original);
+                        QMDConfig.OVERRIDE_NC_RECIPES.set(original);
                     }
                     previousManager.set(helper.getLevel().getRecipeManager());
                     deadline.set(System.nanoTime() + TimeUnit.SECONDS.toNanos(30));

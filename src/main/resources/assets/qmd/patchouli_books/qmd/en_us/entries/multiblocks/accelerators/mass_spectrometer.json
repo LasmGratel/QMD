@@ -1,0 +1,65 @@
+{
+    "name": "Mass Spectrometer",
+    "icon": "qmd:mass_spectrometer_controller",
+    "category": "qmd:accelerators",
+    "sortnum": 7,
+    "pages": [
+        {
+			"type": "patchouli:text",
+            "text": "Mass Spectrometers are a special kind of accelerator that turns items and fluids into a stream of ions and then separates them using a magnetic field and collects the separated parts. This is useful for separating materials into their constituent elements and isotopes."
+        },
+		{		
+			"type": "qmd:diagram_low",
+			"image":"qmd:patchouli_books/qmd/images/mass_spectrometer.png",
+			"text": "Unlike other accelerators all this happens inside the mass spectrometer and so mass spectrometers are not part of larger accelerator systems.$(br2)Example mass spectrometer below." 
+		},
+		{
+			
+			"title": "Construction",
+			"type": "patchouli:text",
+			"text": "Mass Spectrometers like all $(l:multiblocks/accelerators/general#construction)Accelerators$(/l) are constructed out of casing or glass and require a Coolant Vent in input and output modes and an Energy Port. They are 7 blocks wide and tall and can be any odd number above 5 blocks long. The length determines the overall speed of the mass spectrometer. Inside the mass spectrometer are alternating vertical layers of electromagnets and electromagnet yokes, " 
+		},
+		{
+			"type": "qmd:diagram_low",
+			"image":"qmd:patchouli_books/qmd/images/mass_spectrometer_small.png",
+			"text": "and accelerator beam blocks. The electromagnets are arranged in a ring with the yokes in the center as pictured below. The first and last layer of the inside of the mass spectrometer must be electromagnets and yokes."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "By default the only types of electromagnets that can be used are BSCCO, YBCO and HBCCO. Each electromagnet layer has to be made of the same type of electromagnet but the layers can be of different types from each other. Every electromagnet layer adds a set amount of heat and base power usage (default configs are 3 kH/t and 12 kRF/t). The actual power usage is then the base power divided by the weighted average power efficiency of the magnet types used."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Each beam block layer requires an ion source (either basic or laser) on one horizontal side at the bottom in the casing. Above the ion source there must be 4 Accelerator Ion Collectors."
+		},
+		{
+			"type": "qmd:diagram_low",
+			"image":"qmd:patchouli_books/qmd/images/mass_spectrometer_beam_layer.png",
+			"text": "Below is a cross section of a mass spectrometer showing the beam block layer with the ion source and collectors. Note: the ion source for each beam block layer does not have to be on the same side as other layers."
+		},
+		{
+            "title": "Operation",
+            "type": "patchouli:text",
+            "text": "Mass spectrometers have the same requirements to function as other $(l:multiblocks/accelerators/general#operation)accelerators$(/l), needing energy and coolant to operate. They require a redstone signal to the controller (or input $(l:multiblocks/accelerators/general#redstone)redstone port$(/l)) to operate.$(br)Mass spectrometers function similar to ordinary nuclearcraft machines requiring items and fluids to be inputted and outputting items and fluids. Mass spectrometer recipes can be looked up in JEI."
+        },
+		{
+            "type": "patchouli:text",
+            "text": "Items and fluids are piped into either any of the ion sources or an ion source port. Items and fluids are piped out of the ion source collectors. Each item slot and tank output pair in the gui corresponds to all the ion collectors at the same height. Left to right in the gui corresponds to bottom to top for the ion collectors. In the gui items can also be put in and taking out and tanks can be voided by shift clicking them."
+        },
+		{
+            "type": "patchouli:text",
+            "text": "Holding shift and clicking the button that appears in the gui will also void all items and fluids including the coolant.$(br)In the gui there are the $(l:multiblocks/accelerators/general#power)power$(/l), $(l:multiblocks/accelerators/general#heat)heat$(/l) and $(l:multiblocks/accelerators/general#coolant)coolant$(/l) bars regular accelerators have. A slight difference is the maximum operating temperature is located on the heat bar tool tip."
+        },
+		{
+			"type": "patchouli:text",
+			"text": "In the gui the Speed Multiplier of the mass spectrometer can be seen. This determines how fast each recipe takes. The mass spectrometer's speed multiplier is the sum of all the ion source's output particle multipliers. This means that longer mass spectrometers, i.e. ones with more ion sources are faster than shorter ones."
+		},
+        {
+			"title": "Server Script Control",
+            "type": "patchouli:text",
+            "text": "Server integrations can start or stop Mass Spectrometers through the $(l:multiblocks/open_computers/introduction#accelerator_control)common percentage API$(/l). OpenComputers peripherals are not reintroduced."
+        }
+
+       
+    ]
+}

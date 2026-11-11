@@ -41,6 +41,8 @@ These helpers inspect particle definitions and construct values. Creating a stac
 
 ## Available recipe APIs
 
+The plugin registers one-object convenience schemas for all 18 QMD machine serializers. Use `event.recipes.qmd.ore_leacher({...})` (or the corresponding serializer name) with native recipe fields and no `type` field. The serializer still validates the resulting data. `event.custom` remains available. The tracked ore-leacher fixture now uses this builder and passed initial loading and asynchronous reloads in the 120-test KubeJS rescue run, with zero script errors or failed recipes.
+
 The ore leacher has a data-driven `qmd:ore_leacher` recipe type with validated data and network codecs. KubeJS can use `ServerEvents.recipes(event => event.custom({...}))` and normal recipe filters to add, remove and replace its recipes. See [ORE_LEACHER_MIGRATION.md](ORE_LEACHER_MIGRATION.md) for the format and a complete example.
 
 Atmosphere and liquid collectors use `qmd:atmosphere_collector` and `qmd:liquid_collector`. Both use the same fields:
@@ -79,16 +81,45 @@ Use `type: 'qmd:atmosphere_collector'` for atmosphere rules, normally omitting `
 
 Content registration belongs in `kubejs/startup_scripts/` and requires restarting the game. Recipe changes belong in `kubejs/server_scripts/` and support `/reload`. Avoid retaining mutable recipe-manager or level references across reloads.
 
+## Expanded machine recipes
+
+All active processing families support ordinary server recipe events, removal/replacement and `/reload`. Use the exact bundled JSON in `src/main/resources/data/qmd/recipe/` as a schema reference; IDs use modern flattened items and singular `recipe` resource directories. QMD defines no CraftTweaker or GroovyScript APIs.
+
+| Serializer IDs | Schema and runtime details |
+| --- | --- |
+| `qmd:accelerator_source`, `qmd:accelerator_cooling`, `qmd:mass_spectrometer` | [Accelerators](ACCELERATOR_MIGRATION.md); source item/fluid and particles, coolant properties, spectrometer products and chance data |
+| `qmd:target_chamber`, `qmd:decay_chamber`, `qmd:collision_chamber`, `qmd:beam_dump` | [Chambers](CHAMBERS_MIGRATION.md); ordered output channels and shapeless beam inputs, energy/focus and cross sections |
+| `qmd:neutral_containment`, `qmd:cell_filling`, `qmd:nucleosynthesis_chamber`, `qmd:vacuum_chamber_heating` | [Vacuum chambers](CHAMBERS_MIGRATION.md); cell/fluid exchange, plasma, cryogenic and casing thermal properties |
+| `qmd:irradiator`, `qmd:irradiator_fuel` | [Irradiator examples](IRRADIATOR_MIGRATION.md); process stacks, time/work multipliers, radiation and reservoir fuel speed |
+| `qmd:liquefier`, `qmd:liquefier_coolant` | [Liquefier schema](LIQUEFIER_MIGRATION.md); fluid conversion, heat, temperatures, energy and pressure coefficient |
+
+QMD's fission, waste recovery, material progression and mercury cycle additions use the corresponding native `nuclearcraftneohaul:*_recipe` serializers. They support the same standard KubeJS recipe events. The accelerator computer port also exposes `computerSnapshot()` and `computerSetPercentage(-1..100)` through normal server block-entity access; `-1` selects redstone.
+
+```js
+ServerEvents.recipes(event => {
+  event.remove({ id: 'qmd:liquefier/argon' })
+  event.custom({
+    type: 'qmd:liquefier',
+    ingredient: { tag: 'c:argon' }, amount: 100,
+    output: { id: 'qmd:liquid_argon', amount: 1 },
+    heat: 20.0, input_temperature: 723, output_temperature: 300,
+    energy: 100.0, pressure_coefficient: 0.1
+  }).id('kubejs:liquefier/argon')
+})
+```
+
+These values are an example customization, not the bundled balance. Resource reload replaces recipe instances and machine progress resets when its recipe changes. Avoid retaining recipe-manager references in scripts. The tracked integration smoke currently exercises ore-leacher/collector replacement and particle helper lifecycle; the new families' serializer/runtime reload behavior has Java GameTest coverage. This does not establish dedicated KubeJS builders or startup registration support.
+
 ## Remaining compatibility work
 
 The legacy sources define the parity target. The following behavior still needs a KubeJS equivalent:
 
 - Custom particle registration including texture, mass, charge, spin, weak and strong interactions; antiparticle and constituent relationships; particle ingredient alternatives and recipe matching.
 - Startup registration of accelerator coolers and their placement rules, RF cavities, magnets, ion sources, particle chamber detectors, vacuum chamber heaters, liquefier compressors, and item particle sources. Source item configuration includes capacity, stack limit, empty item, explosion size and radiation.
-- Adding, removing and replacing accelerator source/cooling, mass spectrometer, liquefier/coolant, target/decay/collision chamber, beam dump, irradiator/fuel, neutral containment, cell filling, nucleosynthesis and vacuum heating recipes. Preserve energy bounds, focus, heat, time, power, radiation and probabilistic products as applicable to each legacy recipe.
+- Typed particle-specific builders beyond the registered native-payload convenience schemas; scripted startup extension registration is separate work.
 - GroovyScript recipe builders, registry lookup, recipe removal and reload behavior, translated to KubeJS conventions.
 
-Collector world predicates now use dimension resource locations, biome IDs/tags and validated block-state properties. Other machine serializers remain to migrate. Add particle-aware schemas and convenience builders as their matching and reload behavior are migrated.
+Collector world predicates now use dimension resource locations, biome IDs/tags and validated block-state properties. The expanded machine serializers and native-payload builders are active and use the current recipe manager. The startup extension lifecycle still needs migration. `QMDStartupCatalogue` restores the missing immutable definition types so the merged event compiles, but the plugin does not register/post `QMDStartupEvents.registry`, and no lifecycle code applies its snapshot. Those startup declarations are not an available script API yet.
 
 ## References and verification
 
@@ -100,6 +131,8 @@ Collector world predicates now use dimension resource locations, biome IDs/tags 
 - Legacy compatibility references: `legacy-src/main/java/lach_01298/qmd/crafttweaker/` and `legacy-src/main/java/lach_01298/qmd/groovyscript/`.
 
 The plugin structure follows Neohaul's KubeJS plugin API. On 2026-11-07, the final `.\gradlew.bat runGameTestServer` passed all 34 required tests with KubeJS absent, and `.\gradlew.bat runGameTestServer -PwithKubeJS` passed all 35 with zero startup/server script errors and zero failed recipes across initial load and resource reloads. Both commands completed in 26 seconds. `.\gradlew.bat build` also passed in 13 seconds with all 39 unit tests successful. These results include the collector assertions and GUI corrections below.
+
+The 2026-11-10 particle-source follow-up also passed `.\gradlew.bat runGameTestServer -PwithKubeJS --console=plain`: all 47 required tests passed in 51 seconds, including the added source reload batch and the existing scripting smoke. Startup/server scripts reported zero errors and zero failed recipes across loads/reloads. The base run passed 46 tests and the release build passed all 47 unit tests. This adds runtime particle-source behavior without introducing new KubeJS content-registration APIs. See [PARTICLE_RUNTIME_MIGRATION.md](PARTICLE_RUNTIME_MIGRATION.md) and the current [handoff](DEVELOPMENT_HANDOFF.md).
 
 `.\gradlew.bat runGameTestServer -PwithKubeJS` syncs the tracked startup/server fixtures from `src/gameTest/kubejs/` into the corresponding script directories under `run/gametest/kubejs/`. These directories belong to the fixtures; stale/untracked scripts are removed on the next sync. Test-only datapack recipes provide existing IDs for removal and replacement. When KubeJS is installed, `KubeJSMigrationGameTests` adds one required test through a conditional generator; the base runtime has no hard KubeJS test dependency. The tracked assertions now cover:
 

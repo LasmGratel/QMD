@@ -4,6 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.mojang.serialization.JsonOps;
 import io.netty.buffer.Unpooled;
+import lach_01298.qmd.registry.QMDRecipes;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -45,9 +46,9 @@ public final class CollectorRecipeGameTests {
     @GameTest(template = "empty")
     public static void defaultRecipesRetainWorldAndOutputConditions(GameTestHelper helper) {
         List<RecipeHolder<CollectorRecipe>> liquid = helper.getLevel().getRecipeManager()
-                .getAllRecipesFor(QMDMachineRecipes.LIQUID_COLLECTOR_TYPE.get());
+                .getAllRecipesFor(QMDRecipes.LIQUID_COLLECTOR_TYPE.get());
         List<RecipeHolder<CollectorRecipe>> atmosphere = helper.getLevel().getRecipeManager()
-                .getAllRecipesFor(QMDMachineRecipes.ATMOSPHERE_COLLECTOR_TYPE.get());
+                .getAllRecipesFor(QMDRecipes.ATMOSPHERE_COLLECTOR_TYPE.get());
         Set<ResourceLocation> ids = liquid.stream().map(RecipeHolder::id).collect(Collectors.toSet());
         helper.assertTrue(ids.containsAll(Set.of(id("qmd:liquid_collector/water"), id("qmd:liquid_collector/salt_water"),
                         id("qmd:liquid_collector/lava")))
@@ -134,8 +135,8 @@ public final class CollectorRecipeGameTests {
         output.set(DataComponents.CUSTOM_NAME, Component.literal("Collector codec test"));
         for (CollectorRecipe.Kind kind : CollectorRecipe.Kind.values()) {
             CollectorRecipe original = new CollectorRecipe(kind, world, output, -73);
-            var serializer = kind == CollectorRecipe.Kind.LIQUID ? QMDMachineRecipes.LIQUID_COLLECTOR_SERIALIZER.get()
-                    : QMDMachineRecipes.ATMOSPHERE_COLLECTOR_SERIALIZER.get();
+            var serializer = kind == CollectorRecipe.Kind.LIQUID ? QMDRecipes.LIQUID_COLLECTOR_SERIALIZER.get()
+                    : QMDRecipes.ATMOSPHERE_COLLECTOR_SERIALIZER.get();
             var registryOps = helper.getLevel().registryAccess().createSerializationContext(JsonOps.INSTANCE);
             JsonElement encoded = serializer.codec().codec().encodeStart(registryOps, original).getOrThrow();
             assertEquivalent(helper, original, serializer.codec().codec().parse(registryOps, encoded).getOrThrow(), "data");

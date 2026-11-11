@@ -4,7 +4,9 @@ import org.jetbrains.annotations.Nullable;
 
 /** An independent snapshot of a particle storage, including long energy limits. */
 public final class ParticleStorageInfo {
-    @Nullable public final ParticleStack particleStack;
+
+    @Nullable
+    public final ParticleStack particleStack;
     public final long maxEnergy;
     public final long minEnergy;
     public final int capacity;

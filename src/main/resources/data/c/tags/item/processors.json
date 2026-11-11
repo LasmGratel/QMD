@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "#c:processors/basic",
-    "#c:processors/advanced",
-    "#c:processors/elite"
-  ]
-}

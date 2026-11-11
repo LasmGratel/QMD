@@ -1,0 +1,36 @@
+{
+	"name": "Decelerator",
+	"icon": "qmd:decelerator_controller",
+	"category": "qmd:accelerators",
+	"sortnum": 5,
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Decelerators decelerate particles to lower energy. This is useful for creating things like neutral antimatter in an $(l:multiblocks/vacuum_chambers/exotic_containment_chamber)exotic containment chamber$(/l) or just to lower particle energy to a certain amount."
+		},
+		{
+			"title": "Construction",
+			"type": "patchouli:text",
+			"text": "Decelerators are built like $(l:multiblocks/accelerators/ring_accelerator#construction)Ring Accelerators$(/l). The notable differences are that they cannot have Accelerator Synchrotron Ports and gain no benefit from more than one RF Cavity."
+		},
+		{
+			"title": "Operation",
+			"type": "patchouli:text",
+			"text": "A Decelerator functions like a $(l:multiblocks/accelerators/ring_accelerator#operation)Ring Accelerator$(/l). Its maximum input particle energy is $(br)$(l)Eᵩ=(qB₂R)²/(2m)$(), the same dipole-strength limit used for a $(l:multiblocks/accelerators/ring_accelerator#max_dipole)Ring Accelerator's$(/l) output."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "The energy of the output particles is determined by the strength of the redstone signal applied to the controller (or input $(l:multiblocks/accelerators/general#redstone)redstone port$(/l)). A full 15 strength will decelerate down to < 1 keV, effectivly zero. This is required for creating neutral antimatter. For any redstone strength, the energy the decelerator will try to output the particles at is $(br)$(l)E=Eᵩ(1-Sᵣ/15)$() where $(l)Sᵣ$() is the redstone signal strength."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "For example, if we have a decelerator with a max input energy of 2 GeV and we apply a redstone signal of 8, then $(br)2 GeV*(1-8/15)=933.33 MeV. $(br2)$(bold)Note:$() If the inputted particle energy is lower than this targeted energy it will leave the energy unchanged (i.e. it does not increase particle energy)."
+		},
+		{
+			"type": "patchouli:text",
+			"text": "As with Ring Accelerators, server integrations can control output percentage through the $(l:multiblocks/open_computers/introduction#accelerator_control)common server-side API$(/l). OpenComputers peripherals are not reintroduced."
+		}
+
+
+	]
+}
