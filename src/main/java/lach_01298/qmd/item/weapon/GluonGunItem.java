@@ -2,9 +2,11 @@ package lach_01298.qmd.item.weapon;
 
 import lach_01298.qmd.config.WeaponConfig;
 import lach_01298.qmd.entity.GluonBeamEntity;
+import lach_01298.qmd.registry.QMDDamageTypes;
 import lach_01298.qmd.registry.QMDEntities;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -16,7 +18,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.CustomData;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -45,23 +46,23 @@ public final class GluonGunItem extends ParticleWeaponItem {
         return 72000;
     }
 
+    private static Component getSilkTouchName() {
+        return Component.translatable("enchantment.minecraft.silk_touch");
+    }
+
+    private static Component getFortuneName() {
+        return Component.translatable("enchantment.minecraft.fortune")
+            .copy()
+            .append(CommonComponents.SPACE)
+            .append(Component.translatable("enchantment.level.4"));
+    }
+
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        var enchantments = context.level()
-            .registryAccess()
-            .registryOrThrow(Registries.ENCHANTMENT);
         if (silkTouch(stack)) {
-            tooltip.add(
-                Enchantment.getFullname(
-                    enchantments.getHolder(Enchantments.SILK_TOUCH)
-                        .get(),
-                    1));
+            tooltip.add(getSilkTouchName());
         } else {
-            tooltip.add(
-                Enchantment.getFullname(
-                    enchantments.getHolder(Enchantments.FORTUNE)
-                        .get(),
-                    4));
+            tooltip.add(getFortuneName());
         }
     }
 
@@ -72,22 +73,10 @@ public final class GluonGunItem extends ParticleWeaponItem {
             if (!level.isClientSide) {
                 boolean silk = !silkTouch(gun);
                 CustomData.update(DataComponents.CUSTOM_DATA, gun, tag -> tag.putBoolean("SilkTouch", silk));
-                var enchantments = level.registryAccess()
-                    .registryOrThrow(Registries.ENCHANTMENT);
                 if (silk) {
-                    player.displayClientMessage(
-                        Enchantment.getFullname(
-                            enchantments.getHolder(Enchantments.SILK_TOUCH)
-                                .get(),
-                            1),
-                        true);
+                    player.displayClientMessage(getSilkTouchName(), true);
                 } else {
-                    player.displayClientMessage(
-                        Enchantment.getFullname(
-                            enchantments.getHolder(Enchantments.FORTUNE)
-                                .get(),
-                            4),
-                        true);
+                    player.displayClientMessage(getFortuneName(), true);
                 }
             }
             return InteractionResultHolder.sidedSuccess(gun, level.isClientSide);
@@ -119,8 +108,8 @@ public final class GluonGunItem extends ParticleWeaponItem {
         if (hit instanceof EntityHitResult target) {
             target.getEntity()
                 .hurt(
-                    lach_01298.qmd.registry.QMDDamageTypes
-                        .source(lach_01298.qmd.registry.QMDDamageTypes.GLUON, beam, player),
+                    QMDDamageTypes
+                        .source(QMDDamageTypes.GLUON, beam, player),
                     WeaponConfig.GLUON_DAMAGE.get()
                         .floatValue());
             irradiate(target.getEntity(), WeaponConfig.GLUON_RADIATION.get());

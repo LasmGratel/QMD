@@ -134,7 +134,7 @@ public abstract class AbstractAcceleratorCategory<R extends AbstractAcceleratorR
                         .toList());
         if (recipe.particle()
             .toStack() != null)
-            builder.addOutputSlot(x() + 55, 12)
+            builder.addOutputSlot(x() + 54, 11)
                 .addIngredient(
                     ParticleType.PARTICLE,
                     recipe.particle()
@@ -144,7 +144,7 @@ public abstract class AbstractAcceleratorCategory<R extends AbstractAcceleratorR
             var output = recipe.itemProducts()
                 .get(i);
             if (output.isEmpty()) continue;
-            builder.addOutputSlot(x() + 38 + i * 19, 2)
+            builder.addOutputSlot(x() + 37 + i * 19, 1)
                 .addItemStacks(
                     Arrays.stream(output.getItemsRaw())
                         .map(ItemStack::copy)

@@ -24,11 +24,11 @@ public final class DecayChamberCategory extends AbstractChamberCategory<DecayCha
 
     @Override
     protected List<Point> particleInputs() {
-        return List.of(new Point(50, 32));
+        return List.of(new Point(49, 31));
     }
 
     @Override
     protected List<Point> particleOutputs() {
-        return List.of(new Point(83, 9), new Point(83, 32), new Point(83, 55));
+        return List.of(new Point(82, 8), new Point(82, 31), new Point(82, 54));
     }
 }

@@ -19,9 +19,9 @@ public final class GluonBeamSound extends AbstractTickableSoundInstance {
         this.beam = beam;
         looping = true;
         volume = 0.1F;
-        x = beam.getX();
-        y = beam.getY();
-        z = beam.getZ();
+        this.x = beam.getX();
+        this.y = beam.getY();
+        this.z = beam.getZ();
     }
 
     public static void onEntityJoin(EntityJoinLevelEvent event) {
@@ -42,21 +42,8 @@ public final class GluonBeamSound extends AbstractTickableSoundInstance {
 
     @Override
     public void tick() {
-        x = beam.getX();
-        y = beam.getY();
-        z = beam.getZ();
         if (beam.isRemoved()) {
             stop();
-            Minecraft.getInstance()
-                .getSoundManager()
-                .play(
-                    new SimpleSoundInstance(
-                        QMDSounds.GLUON_STOP.get(),
-                        SoundSource.NEUTRAL,
-                        0.1F,
-                        1F,
-                        RandomSource.create(),
-                        beam.blockPosition()));
         }
     }
 }

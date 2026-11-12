@@ -21,6 +21,16 @@ public final class MassSpectrometerCategory extends AbstractAcceleratorCategory<
     }
 
     @Override
+    protected int itemInputX() {
+        return 1;
+    }
+
+    @Override
+    protected int itemInputY() {
+        return 1;
+    }
+
+    @Override
     protected int fluidInputX() {
         return 1;
     }

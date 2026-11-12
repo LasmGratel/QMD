@@ -26,22 +26,22 @@ public final class TargetChamberCategory extends AbstractChamberCategory<TargetC
 
     @Override
     protected List<Point> particleInputs() {
-        return List.of(new Point(9, 35));
+        return List.of(new Point(8, 34));
     }
 
     @Override
     protected List<Point> particleOutputs() {
-        return List.of(new Point(77, 4), new Point(120, 35), new Point(77, 67));
+        return List.of(new Point(76, 3), new Point(119, 34), new Point(76, 66));
     }
 
     @Override
     protected List<Point> itemInputs() {
-        return List.of(new Point(44, 27));
+        return List.of(new Point(43, 26));
     }
 
     @Override
     protected List<Point> itemOutputs() {
-        return List.of(new Point(85, 27));
+        return List.of(new Point(84, 26));
     }
 
     @Override
@@ -63,6 +63,6 @@ public final class TargetChamberCategory extends AbstractChamberCategory<TargetC
     @Override
     protected void addAnimations(IRecipeExtrasBuilder builder, TargetChamberRecipe recipe) {
         JeiPanel.of("target_chamber_controller", 0, 0, 176, 200)
-            .progress(gui, builder, 182, 0, 21, 12, offset() + 62, 37, 80);
+            .progress(gui, builder, 182, 0, 21, 12, offset() + 61, 36, 80);
     }
 }

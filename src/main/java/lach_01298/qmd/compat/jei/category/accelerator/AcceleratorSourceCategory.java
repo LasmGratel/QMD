@@ -21,12 +21,12 @@ public final class AcceleratorSourceCategory extends AbstractAcceleratorCategory
 
     @Override
     protected int itemInputX() {
-        return 3;
+        return 2;
     }
 
     @Override
     protected int itemInputY() {
-        return 3;
+        return 2;
     }
 
     @Override

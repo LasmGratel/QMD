@@ -1,6 +1,6 @@
 {
 	"name": "单元",
-	"icon": "qmd:cell",
+	"icon": "qmd:cell_empty",
 	"category": "qmd:items_and_devices",
 	"sortnum": 0,
 	"pages": [
@@ -10,7 +10,7 @@
 		},
 		{
 			"type": "spotlight",
-			"item": "qmd:cell",
+			"item": "qmd:cell_empty",
 			"text": "将单元放入$(l:containment_chambers/neutral_containment)电中性遏制器$()的GUI即可提取或填充单元内容物。$(bold)单元必须带电，否则不能存储材料。$()为之充能的方法很多——单元支持常见的科技模组充能方式，例如[TE]热力膨胀的能量灌注机。"
 		},
 		{
