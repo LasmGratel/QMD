@@ -108,8 +108,7 @@ public final class GluonGunItem extends ParticleWeaponItem {
         if (hit instanceof EntityHitResult target) {
             target.getEntity()
                 .hurt(
-                    QMDDamageTypes
-                        .source(QMDDamageTypes.GLUON, beam, player),
+                    QMDDamageTypes.source(QMDDamageTypes.GLUON, beam, player),
                     WeaponConfig.GLUON_DAMAGE.get()
                         .floatValue());
             irradiate(target.getEntity(), WeaponConfig.GLUON_RADIATION.get());
